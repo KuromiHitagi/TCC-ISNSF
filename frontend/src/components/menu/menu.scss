@@ -1,0 +1,102 @@
+body {
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+  
+      // Overlay só aparece em mobile
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  
+    .hamburger-menu {
+      display: none; // escondido por padrão (desktop nunca usa esse menu)
+  
+      @media (max-width: 768px) {
+        position: fixed;
+        top: 0;
+        right: -300px; // escondido fora da tela
+        width: 280px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        transition: right 0.3s ease-in-out;
+  
+        &.hamburger-menu--open {
+          display: flex;   // aparece
+          right: 0;        // desliza para dentro
+        }
+      }
+  
+      .hamburger-menu__header {
+        display: none;
+  
+        @media (max-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 1.5rem;
+          border-bottom: 1px solid #e5e5e5;
+          background-color: #f8f9fa;
+        }
+  
+        .hamburger-menu__title {
+          margin: 0;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #333;
+        }
+  
+        .hamburger-menu__close {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #666;
+  
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+  
+      .hamburger-menu__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+      }
+  
+      .hamburger-menu__link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background-color: #f8f9fa;
+          color: #000;
+        }
+  
+        &.active {
+          background-color: #e3f2fd;
+          color: #007bff;
+          border-left: 4px solid #007bff;
+        }
+      }
+    } 
+  }
+  

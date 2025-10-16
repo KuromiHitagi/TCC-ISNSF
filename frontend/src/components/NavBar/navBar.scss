@@ -1,0 +1,117 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 200px; 
+    width: 100vw;
+  
+    border-bottom: 3px solid white;
+  
+    @media (max-width:768px) {
+      height: 150px;
+    }
+    .navbar__brand{
+      margin-left: 15px;
+      img{
+        @media (max-width:768px) {
+          margin-top: 25px;
+          height: 100px;
+        }
+        background: none;
+        height: 150px;
+        border-radius: 140px;
+      }
+      img:hover{
+          background-color: rgba(0, 0, 0, 0.144);
+          transform: scale(101%);
+      }
+    }
+  
+    .navbar__inner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        gap: 15px;
+        width:100vw;
+  
+        @media (max-width:768px) {
+          flex-direction: row;
+        }
+      }
+      .navbar__search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 450px;
+        border-radius: 20px;
+  
+        @media (max-width:768px) {
+          width: 200px;
+        }
+  
+          .navbar__search-button{
+            height: 35px;
+            width: 25px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+          }
+          .navbar__search-input{
+            color: black;
+            padding-left: 25px;
+            background: none;
+            width: 88%;
+            border-radius: 20px;
+            height: 35px;
+            border: none;
+          }
+      }
+      .navbar__desktop-menu {
+        display: flex;
+        gap: 1rem;
+        
+        .navlink{
+          color: white;
+        }
+        .navlink:hover{
+          padding-left: 5px;
+          padding-right: 5px;
+          border-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.144);
+          transform: scale(120%);
+        }
+  
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+  
+      .navbar__hamburger{
+        display: none;
+          
+        @media (max-width: 768px) {
+          display: block;
+          justify-content: end;
+          background-color: white;
+          color: black;
+          height: 40px;
+          margin-right: 15px;
+        } 
+      }
+  
+      @media (max-width: 768px) {
+        width: 97vw;
+      }
+    .spacement{
+      @media (max-width:768px) {
+          width: 120px;
+        }
+      width: 270px;
+    }
+  }

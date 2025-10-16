@@ -1,0 +1,148 @@
+.sobre-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width:768px) {
+        max-width: 468px;
+    }
+    .sobre-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3{ 
+            @media (max-width:768px) {
+                width: fit-content;
+                font-size: 18px;
+                padding: 7px;
+                height: 28px;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid white;
+            border-radius: 10px;
+            height: 40px;
+        }
+        .sobre-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @media (max-width:768px) {
+                .abu{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+
+                    p{  
+                   
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 10px;
+                        max-width: 150px;
+                        height: 40px;
+                        color: black;
+                        border: 1px solid white;
+                        border-radius: 25px;
+                        background-color: white;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        
+                    }
+                }
+                .abu2{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+
+                    p{  
+                   
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 10px;
+                        max-width: 150px;
+                        height: 40px;
+                        color: black;
+                        border: 1px solid white;
+                        border-radius: 25px;
+                        background-color: white;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        
+                    }
+                }
+                .a{
+                    max-width: 340px;
+                    font-size: 10px;
+                }
+            }
+            .abu{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap: 25px;
+            }
+            .abu2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap:25px;
+            }
+            p{  
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 13px;
+                width: 350px;
+                height: 40px;
+                color: black;
+                border: 1px solid white;
+                border-radius: 25px;
+                background-color: white;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .a{
+                width: 440px;
+            }
+        }
+    }
+
+    .sobre-mapa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2{
+            @media (max-width:768px) {
+                width: 100px;
+                font-size: 18px;
+            }
+
+            width: 130px;
+            border: 1px solid rgba(255, 255, 255, 0.582);
+            border-radius: 10px;
+        }
+        img{
+            @media (max-width:768px) {
+                width: 100vw;
+                height: 250px;
+            }
+            width: 650px;
+            height: 300px;
+            border: 2px solid black;
+        }
+    }
+}
