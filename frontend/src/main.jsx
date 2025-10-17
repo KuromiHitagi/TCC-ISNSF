@@ -3,7 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.scss'
 import Home from './pages/home/home.jsx';
 import About from './pages/about/about.jsx';
-import NavBar from './components/NavBar/navBar.jsx';
+import Form from './pages/form/form.jsx';
+import Login from './pages/login/login.jsx';
+import Search from './pages/search/search.jsx';
+import Guia from './pages/guia/guia.jsx';
+import Curriculo from './pages/curriculo/curriculo.jsx';
+
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
@@ -15,6 +20,6 @@ createRoot(document.getElementById('root')).render(
             <Route path='/search' element={<Search/>}/>
             <Route path='/guia' element={<Guia/>}/>
             <Route path='/curriculo' element={<Curriculo/>}/>
-            </Routes>
-            </BrowserRouter >
+        </Routes>
+    </BrowserRouter >
 )

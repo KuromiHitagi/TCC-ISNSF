@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import HamburgerMenu from "../menu/menu.jsx";
+import HamburgerMenu from '../menu/menu.jsx'
 import './navbar.scss';
 
 export default function Navbar() {
@@ -23,11 +23,11 @@ export default function Navbar() {
         <nav className="navbar__desktop-menu">
           <NavLink className="navlink" to="/">Home</NavLink>
           <NavLink className="navlink" to="/about">About</NavLink>
-          <NavLink className="navlink" to="/form"></NavLink>
+          <NavLink className="navlink" to="/form">Form</NavLink>
           <NavLink className="navlink" to="/login">Inscrição</NavLink>
-          <NavLink className="navlink" to="/search"></NavLink>
-          <NavLink className="navlink" to="/guia"></NavLink>
-          <NavLink className="navlink" to="/curriculo"></NavLink>
+          <NavLink className="navlink" to="/search">Busca</NavLink>
+          <NavLink className="navlink" to="/guia">Guia</NavLink>
+          <NavLink className="navlink" to="/curriculo">Curriculo</NavLink>
         </nav>
         </div>
         {/* Busca */}

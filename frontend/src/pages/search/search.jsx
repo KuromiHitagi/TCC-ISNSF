@@ -1,5 +1,5 @@
 import NavBar from '../../components/NavBar/navBar.jsx';
-import './about.scss';
+import './search.scss';
 
 export default function Search() {
     return(
