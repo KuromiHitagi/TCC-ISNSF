@@ -1,8 +1,71 @@
-.sobre-container{
+.About{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: black;
+    color: white;
+    width: 100%;
+
+    h1{
+        margin-top: 70px;
+    }
+
+    .info{
+        font-size: 20px;
+        border-bottom: 3px dotted cyan;
+        
+        pre{
+            text-align: justify;
+        }
+    }
+
+    .info2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 300px;
+        margin-top: 100px;
+        
+        .missoes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: justify;
+            font-size:18px;
+
+            min-height: 410px;
+
+            h2{
+                border-bottom: 3px dotted cyan;
+            }
+
+            pre{
+                text-align: justify;
+                height: 300px;
+            }
+        }
+        .normas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: justify;
+            font-size:18px;
+
+            min-height: 410px;
+
+            h2{
+                border-bottom: 3px dotted cyan;
+            }
+
+            pre{
+                text-align: justify;
+                height: 300px;
+            }
+        }
+    }
 
     @media (max-width:768px) {
         max-width: 468px;

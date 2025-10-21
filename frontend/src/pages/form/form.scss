@@ -1,0 +1,169 @@
+$cor-fundo: #000;
+$cor-principal: #0ff; 
+$cor-texto: #fff;
+$cor-secundaria: #111;
+$cor-botao: #0ff;
+$cor-hover: #08c;
+
+$fonte-principal: 'Poppins', sans-serif;
+
+body {
+  background-color: $cor-fundo;
+  color: $cor-texto;
+  font-family: $fonte-principal;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $cor-secundaria;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 0.5rem;
+    }
+    h1 {
+      color: $cor-principal;
+      font-size: 1.4rem;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      color: $cor-texto;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $cor-principal;
+      }
+    }
+
+    input[type="search"] {
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      color: $cor-texto;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+  }
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+
+  .icon {
+    text-align: center;
+
+    i {
+      font-size: 1.8rem;
+      color: $cor-principal;
+    }
+
+    p {
+      margin-top: 0.4rem;
+      color: $cor-texto;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.cadastro {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto 4rem auto;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $cor-texto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    input {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 0.6rem 1rem;
+      color: $cor-texto;
+
+      &::placeholder {
+        color: #aaa;
+      }
+
+      &:focus {
+        border-color: $cor-principal;
+        outline: none;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      background-color: $cor-botao;
+      color: $cor-fundo;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $cor-hover;
+        color: $cor-texto;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $cor-secundaria;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #111;
+
+  p {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  .social {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    i {
+      font-size: 1.2rem;
+      color: $cor-texto;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $cor-principal;
+      }
+    }
+  }
+}

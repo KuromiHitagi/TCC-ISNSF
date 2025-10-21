@@ -5,7 +5,7 @@ export default function Curriculo() {
     return(
         <div className="Curriculo">
             <NavBar/>
-            <h1>Sobre Nós</h1>
+            <h1>Curriculo</h1>
             <p>  </p>
         </div>
     )
