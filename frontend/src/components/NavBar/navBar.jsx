@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Menu Desktop */}
         <nav className="navbar__desktop-menu">
           <NavLink className="navlink" to="/">Home</NavLink>
-          <NavLink className="navlink" to="/about">About</NavLink>
+          <NavLink className="navlink" to="/about">Sobre</NavLink>
           <NavLink className="navlink" to="/form">Form</NavLink>
           <NavLink className="navlink" to="/login">Inscrição</NavLink>
           <NavLink className="navlink" to="/search">Busca</NavLink>

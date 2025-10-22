@@ -3,8 +3,9 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    height: 200px; 
-    width: 100%;
+    max-height: 200px; 
+    max-width: 100%;
+    padding: 0;
   
     border-bottom: 3px solid white;
     background-color: black;
@@ -15,6 +16,7 @@
 
     .imglogodiv{
       width: 275px;
+      padding: 0;
       .navbar__brand{
         img{
           background: none;
@@ -68,6 +70,7 @@
             justify-content: center;
             align-items: center;
             background: none;
+            border: none;
           }
           .navbar__search-input{
             color: black;
@@ -86,12 +89,14 @@
         .navlink{
           color: white;
           transition: all 0.2s ease-in-out;
+          text-decoration: none;
         }
         .navlink:hover{
+          background-color: rgb(43, 43, 43);
+          text-decoration: underline;
           padding-left: 5px;
           padding-right: 5px;
           border-radius: 5px;
-          background-color: rgba(0, 0, 0, 0.144);
           transform: scale(120%);
         }
   
