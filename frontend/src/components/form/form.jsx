@@ -1,39 +1,27 @@
-import { useState } from "react";
-import Response from "./Response";
+import { useState, useEffect } from "react";
+import Response from "./response.jsx";
 import "./form.scss";
 
 export default function Questionario() {
-  const perguntas = [
-    { id: 1, texto: "Qual é a sua preferência em relação ao ambiente de trabalho?", opcoes: [
-      "Trabalhar em equipe, colaborando com os demais.",
-      "Trabalhar de forma independente, focando em tarefas individuais.",
-      "Atuar em um ambiente criativo.",
-      "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
-    ]},
-    { id: 2, texto: "O que mais o motiva em sua vida profissional?", opcoes: [
-      "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
-      "Criar inovações e desenvolver novos produtos ou serviços.",
-      "Resolver problemas complexos e enfrentar desafios.",
-      "Garantir segurança e estabilidade financeira.",
-    ]},
-    { id: 3, texto: "Como você se sente em relação a mudanças no ambiente de trabalho?", opcoes: [
-      "Aprecio mudanças e novos desafios.",
-      "Prefiro um ambiente de trabalho estável e previsível.",
-      "Aceito mudanças, desde que haja um planejamento adequado.",
-      "Evito mudanças, valorizando a rotina.",
-    ]},
-    { id: 4, texto: "Como você prefere lidar com prazos e metas no trabalho?", opcoes: [
-      "Gosto de ter prazos claros e seguir um planejamento detalhado.",
-      "Prefiro flexibilidade, adaptando-me conforme a situação.",
-      "Busco sempre superar metas e desafios, mesmo que seja pressão extra.",
-      "Trabalho melhor quando há colaboração e apoio da equipe.",
-    ]},
-  ];
-
+  const [perguntas, setPerguntas] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [respostas, setRespostas] = useState({});
   const [erro, setErro] = useState("");
   const [finalizado, setFinalizado] = useState(false);
+
+  useEffect(() => {
+    fetch('/perguntas.json')
+      .then(response => response.json())
+      .then(data => {
+        setPerguntas(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Erro ao carregar perguntas:', error);
+        setLoading(false);
+      });
+  }, []);
 
   const perguntaAtual = perguntas[indiceAtual];
 
@@ -53,6 +41,14 @@ export default function Questionario() {
       setFinalizado(true);
     }
   };
+
+  if (loading) {
+    return <div className="questionario">Carregando perguntas...</div>;
+  }
+
+  if (perguntas.length === 0) {
+    return <div className="questionario">Erro ao carregar perguntas.</div>;
+  }
 
   return (
     <div className="questionario">

@@ -5,12 +5,15 @@
     "env": "^0.0.2",
     "express": "^5.1.0",
     "init": "^0.1.2",
+    "nodemon": "^3.1.10",
     "openai": "^6.6.0"
   },
+  "types": "module",
   "name": "backend",
   "version": "1.0.0",
-  "main": "form.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",

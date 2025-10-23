@@ -6,7 +6,9 @@ export default function Home() {
     return(
         <div className="Home">
             <NavBar/>
-            <h1>Bem-Vindo ao teste Vocacional</h1>
+            <div className="main">
+                <h1>Bem-Vindo ao teste Vocacional</h1>
+            </div>
             <Footer/>
         </div>
     )

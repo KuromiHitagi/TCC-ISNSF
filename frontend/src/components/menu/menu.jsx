@@ -28,12 +28,13 @@ const HamburgerMenu = ({ isOpen, onClose }) => {
         </div>
         
         <div className="hamburger-menu__content">
-          <NavLink to="/" className="hamburger-menu__link" onClick={handleLinkClick}>Home</NavLink>
-          <NavLink to="/register" className="hamburger-menu__link" onClick={handleLinkClick}>Inscrição</NavLink>
-          <NavLink to="/search" className="hamburger-menu__link" onClick={handleLinkClick}>Questionário</NavLink>
-          <NavLink to="/curriculo" className="hamburger-menu__link" onClick={handleLinkClick}>Currículo</NavLink>
-          <NavLink to="/about" className="hamburger-menu__link" onClick={handleLinkClick}>Sobre</NavLink>
-          <NavLink to="/guia" className="hamburger-menu__link" onClick={handleLinkClick}>Guia</NavLink>
+          <NavLink className="hamburger-menu__link" to="/">Home</NavLink>
+          <NavLink className="hamburger-menu__link" to="/about">Sobre</NavLink>
+          <NavLink className="hamburger-menu__link" to="/form">Form</NavLink>
+          <NavLink className="hamburger-menu__link" to="/login">Inscrição</NavLink>
+          <NavLink className="hamburger-menu__link" to="/search">Busca</NavLink>
+          <NavLink className="hamburger-menu__link" to="/guia">Guia</NavLink>
+          <NavLink className="hamburger-menu__link" to="/curriculo">Curriculo</NavLink>
         </div>
       </nav>
     </>

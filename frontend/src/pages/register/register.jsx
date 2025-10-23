@@ -3,10 +3,10 @@ import Footer from '../../components/Footer/index.jsx'
 import './register.scss';
 
 
-export default function CadastroPage() {
+export default function Register() {
   return (
     <div className="pagina-cadastro">
-     
+
       <NavBar />
 
       <section className="cadastro">
@@ -17,11 +17,10 @@ export default function CadastroPage() {
           <input type="text" placeholder="CPF" required />
           <input type="text" placeholder="Área de Interesse" required />
           <input type="email" placeholder="E-mail" required />
+          <input tupe="text" placeholder='Senha'required/>
           <button type="submit">Junte-se à TEC.VAGAS</button>
         </form>
       </section>
-
-      
 
       <Footer />
     </div>

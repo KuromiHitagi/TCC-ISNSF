@@ -1,0 +1,4603 @@
+[
+    {
+      "id": 1,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 2,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 3,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 4,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 5,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 6,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 7,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 8,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 9,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 10,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 11,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 12,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 13,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 14,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 15,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 16,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 17,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 18,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 19,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 20,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 21,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 22,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 23,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 24,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 25,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 26,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 27,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 28,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 29,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 30,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 31,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 32,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 33,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 34,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 35,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 36,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 37,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 38,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 39,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 40,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 41,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 42,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 43,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 44,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 45,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 46,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 47,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 48,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 49,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 50,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 51,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 52,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 53,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 54,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 55,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 56,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 57,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 58,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 59,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 60,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 61,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 62,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 63,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 64,
+      "respostas": {
+        "1": "Trabalhar em equipe, colaborando com os demais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 65,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 66,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 67,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 68,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 69,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 70,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 71,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 72,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 73,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 74,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 75,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 76,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 77,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 78,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 79,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 80,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 81,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 82,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 83,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 84,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 85,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 86,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 87,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 88,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 89,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 90,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 91,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 92,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 93,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 94,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 95,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 96,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 97,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 98,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 99,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 100,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 101,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 102,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 103,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 104,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 105,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 106,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 107,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 108,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 109,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 110,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 111,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 112,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 113,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 114,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 115,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 116,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 117,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 118,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 119,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 120,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 121,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 122,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 123,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 124,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 125,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 126,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 127,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 128,
+      "respostas": {
+        "1": "Trabalhar de forma independente, focando em tarefas individuais.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 129,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 130,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 131,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 132,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 133,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 134,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 135,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 136,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 137,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 138,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 139,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 140,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 141,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 142,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 143,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 144,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 145,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 146,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Marketing",
+        "Gestão de Projetos",
+        "Design",
+        "Desenvolvimento de Software"
+      ]
+    },
+    {
+      "id": 147,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 148,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 149,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 150,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 151,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 152,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 153,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 154,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Marketing",
+        "Gestão de Projetos",
+        "Design",
+        "Desenvolvimento de Software"
+      ]
+    },
+    {
+      "id": 155,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 156,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 157,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 158,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 159,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 160,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Design"
+      ]
+    },
+    {
+      "id": 161,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 162,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 163,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 164,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 165,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 166,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 167,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 168,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 169,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 170,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 171,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 172,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 173,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 174,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 175,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 176,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 177,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 178,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 179,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 180,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 181,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 182,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 183,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 184,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 185,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 186,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 187,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 188,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 189,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 190,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 191,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 192,
+      "respostas": {
+        "1": "Atuar em um ambiente criativo.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 193,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 194,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 195,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 196,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 197,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 198,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 199,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 200,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 201,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 202,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 203,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 204,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 205,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 206,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 207,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Psicologia",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 208,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Contribuir para o bem-estar dos outros e causar um impacto positivo.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Educação",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Contabilidade",
+        "Psicologia"
+      ]
+    },
+    {
+      "id": 209,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 210,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 211,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 212,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 213,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 214,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 215,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 216,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 217,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 218,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 219,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 220,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 221,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 222,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 223,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Design",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 224,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Criar inovações e desenvolver novos produtos ou serviços.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade",
+        "Design"
+      ]
+    },
+    {
+      "id": 225,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 226,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 227,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 228,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 229,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 230,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 231,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 232,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 233,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 234,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 235,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 236,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 237,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 238,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 239,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 240,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Resolver problemas complexos e enfrentar desafios.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 241,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 242,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 243,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 244,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aprecio mudanças e novos desafios.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 245,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 246,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 247,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 248,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Prefiro um ambiente de trabalho estável e previsível.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 249,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos",
+        "Marketing"
+      ]
+    },
+    {
+      "id": 250,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 251,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Análise de Dados",
+        "Engenharia",
+        "Marketing",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 252,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Aceito mudanças, desde que haja um planejamento adequado.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 253,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Gosto de ter prazos claros e seguir um planejamento detalhado."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    },
+    {
+      "id": 254,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Prefiro flexibilidade, adaptando-me conforme a situação."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Desenvolvimento de Software",
+        "Gestão de Projetos",
+        "Recursos Humanos",
+        "Marketing",
+        "Contabilidade"
+      ]
+    },
+    {
+      "id": 255,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Busco sempre superar metas e desafios, mesmo que seja pressão extra."
+      },
+      "area_recomendada": [
+        "Administração",
+        "Análise de Dados",
+        "Recursos Humanos",
+        "Engenharia",
+        "Contabilidade",
+        "Pesquisa"
+      ]
+    },
+    {
+      "id": 256,
+      "respostas": {
+        "1": "Operar em um ambiente estruturado, seguindo procedimentos estabelecidos.",
+        "2": "Garantir segurança e estabilidade financeira.",
+        "3": "Evito mudanças, valorizando a rotina.",
+        "4": "Trabalho melhor quando há colaboração e apoio da equipe."
+      },
+      "area_recomendada": [
+        "Recursos Humanos",
+        "Administração",
+        "Contabilidade",
+        "Gestão de Projetos"
+      ]
+    }
+  ]

@@ -23,16 +23,16 @@
           height: 100px;
           width: 275px;
           border-radius: 140px;
+          transition: 0.3s all ease-in-out;
+
+          &:hover{
+            transform: scale(105%);
+          }
 
           @media (max-width:768px) {
             margin-top: 25px;
             height: 100px;
           }
-        }
-        img:hover{
-            background-color: rgba(0, 0, 0, 0.144);
-            transform: scale(110%);
-
         }
       }
     }   

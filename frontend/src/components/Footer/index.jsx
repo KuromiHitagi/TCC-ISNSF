@@ -12,10 +12,12 @@ export default function Footer() {
                 <p>Termos de Uso</p>
                 <div className="social">
                     <p>Siga-nos em nossas redes sociais</p>
-                    <FaFacebook />
-                    <FaInstagram />
-                    <FaLinkedin />
-                    <FaTwitter />
+                    <div className="logo">
+                        <a target='_blank' href="#"><FaFacebook className="logo-icon" /></a>
+                        <a target='_blank' href="#"><FaInstagram className="logo-icon" /></a>
+                        <a target='_blank' href="#"><FaLinkedin className="logo-icon" /></a>
+                        <a target='_blank' href="#"><FaTwitter className="logo-icon" /></a>                        
+                    </div>
                 </div>
             </div>
         </div>

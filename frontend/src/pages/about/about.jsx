@@ -25,7 +25,7 @@ export default function About() {
                                 A TecVagas tem como objetivo preparar para o mercado de trabalho e novas oportunidades.
                             </li>
                             <li>
-                                Promover novas experiências para o crescimento profissional e pessoal do candidato. 
+                                Promover novas experiências para o crescimento profissional e pessoal do candidato.
                             </li>
                             <li>
                                 E ajudar empresas a encontrar o profissional correto com rapidez e transparência.
@@ -36,9 +36,17 @@ export default function About() {
                 <div className="normas">
                     <h2>Normas</h2>
                     <p>
-                        A TecVagas trabalha com transparência e honestidade. 
-                        <br /><br />Valorizamos a diversidade e acreditamos que todos <br />devem ter oportunidades.
-                        <br /><br />Para isso, buscamos compreender as necessidades <br />de cada profissional.
+                        <ul>
+                            <li>
+                                A TecVagas trabalha com transparência e honestidade.
+                            </li>
+                            <li>
+                                Valorizamos a diversidade e acreditamos que todos devem ter oportunidades.
+                            </li>
+                            <li>
+                                Para isso, buscamos compreender as necessidades de cada profissional.
+                            </li>
+                        </ul>
                     </p>
                 </div>
             </div>
