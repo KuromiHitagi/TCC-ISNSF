@@ -27,9 +27,9 @@ const q1Map = {
     "Trabalho melhor quando há colaboração e apoio da equipe.": ["Recursos Humanos", "Psicologia", "Educação"]
   };
   
-  // Função para obter áreas compatíveis (interseção)
+  // Função para obter áreas compatíveis (união)
   function getCompatibleAreas(respostas) {
-    const sets = [];
+    const allAreas = new Set();
     for (const [key, resp] of Object.entries(respostas)) {
       let map;
       if (key === "1") map = q1Map;
@@ -37,11 +37,10 @@ const q1Map = {
       else if (key === "3") map = q3Map;
       else if (key === "4") map = q4Map;
       if (map && map[resp]) {
-        sets.push(new Set(map[resp]));
+        map[resp].forEach(area => allAreas.add(area));
       }
     }
-    if (sets.length === 0) return new Set();
-    return sets.reduce((acc, set) => new Set([...acc].filter(x => set.has(x))));
+    return allAreas;
   }
   
 export { getCompatibleAreas };

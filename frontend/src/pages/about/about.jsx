@@ -19,35 +19,31 @@ export default function About() {
             <div className="info2">
                 <div className="missoes">
                     <h2>Missão</h2>
-                    <p>
-                        <ul>
-                            <li>
-                                A TecVagas tem como objetivo preparar para o mercado de trabalho e novas oportunidades.
-                            </li>
-                            <li>
-                                Promover novas experiências para o crescimento profissional e pessoal do candidato.
-                            </li>
-                            <li>
-                                E ajudar empresas a encontrar o profissional correto com rapidez e transparência.
-                            </li>
-                        </ul>
-                   </p>
+                    <ul>
+                        <li>
+                            A TecVagas tem como objetivo preparar para o mercado de trabalho e novas oportunidades.
+                        </li>
+                        <li>
+                            Promover novas experiências para o crescimento profissional e pessoal do candidato.
+                        </li>
+                        <li>
+                            E ajudar empresas a encontrar o profissional correto com rapidez e transparência.
+                        </li>
+                    </ul>
                 </div>
                 <div className="normas">
                     <h2>Normas</h2>
-                    <p>
-                        <ul>
-                            <li>
-                                A TecVagas trabalha com transparência e honestidade.
-                            </li>
-                            <li>
-                                Valorizamos a diversidade e acreditamos que todos devem ter oportunidades.
-                            </li>
-                            <li>
-                                Para isso, buscamos compreender as necessidades de cada profissional.
-                            </li>
-                        </ul>
-                    </p>
+                    <ul>
+                        <li>
+                            A TecVagas trabalha com transparência e honestidade.
+                        </li>
+                        <li>
+                            Valorizamos a diversidade e acreditamos que todos devem ter oportunidades.
+                        </li>
+                        <li>
+                            Para isso, buscamos compreender as necessidades de cada profissional.
+                        </li>
+                    </ul>
                 </div>
             </div>
             <Footer />

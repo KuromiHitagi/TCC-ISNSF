@@ -40,7 +40,7 @@ app.post('/api/analise', (req, res) => {
     });
     recomendacao += '\nConsidere explorar essas áreas para encontrar uma carreira que se alinhe com suas preferências.';
 
-    res.json({ resultado: recomendacao });
+    res.json({ resultado: recomendacao, areas: compatibleAreas });
   } catch (err) {
     console.error('Erro na análise:', err);
     res.status(500).json({ erro: 'Erro interno do servidor.' });

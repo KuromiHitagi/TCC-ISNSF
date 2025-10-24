@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import CursosCarousel from "../carrossel/carrossel.jsx";
 
 export default function Response({ respostas }) {
   const [resultado, setResultado] = useState("Analisando suas respostas...");
+  const [areas, setAreas] = useState([]);
 
   useEffect(() => {
     const gerarAnalise = async () => {
@@ -18,13 +20,16 @@ export default function Response({ respostas }) {
         if (res.ok) {
           // Se a requisição deu certo, exibe o resultado da IA
           setResultado(data.resultado);
+          setAreas(data.areas || []);
         } else {
           // Se backend retornou erro
           setResultado("Erro ao gerar análise: " + data.erro);
+          setAreas([]);
         }
       } catch (err) {
         setResultado("Erro ao conectar com o backend.");
         console.error("Erro fetch /api/analise:", err);
+        setAreas([]);
       }
     };
 
@@ -35,6 +40,7 @@ export default function Response({ respostas }) {
     <div className="response">
       <h2>Resultado da Análise</h2>
       <pre>{resultado}</pre>
+      {areas.length > 0 && <CursosCarousel areas={areas} />}
     </div>
   );
 }
