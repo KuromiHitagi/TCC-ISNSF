@@ -15,6 +15,10 @@ export default function Login() {
                     
                     
                     <button className="butão" type="submit">Entrar</button>
+                    <p>Ou entre com o</p>
+                    <button className='google-button'>
+                        <img src="/img/" alt="google-button" />
+                    </button>
                     
                     <Link className="butão" to="/register">Cadastrar-se</Link>
                     

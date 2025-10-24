@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CursosCarousel from "../carrossel/carrossel.jsx";
+import CursosCarousel from "../carrossel-form/carrossel.jsx";
 
 export default function Response({ respostas }) {
   const [resultado, setResultado] = useState("Analisando suas respostas...");
@@ -39,7 +39,6 @@ export default function Response({ respostas }) {
   return (
     <div className="response">
       <h2>Resultado da Análise</h2>
-      <pre>{resultado}</pre>
       {areas.length > 0 && <CursosCarousel areas={areas} />}
     </div>
   );
