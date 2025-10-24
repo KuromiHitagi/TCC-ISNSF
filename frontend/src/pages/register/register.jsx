@@ -1,5 +1,6 @@
 import NavBar from '../../components/NavBar/navBar.jsx';
-import Footer from '../../components/Footer/index.jsx'
+import Footer from '../../components/Footer/index.jsx';
+import { Link } from 'react-router-dom';
 import './register.scss';
 
 
@@ -18,7 +19,9 @@ export default function Register() {
           <input type="text" placeholder="Área de Interesse" required />
           <input type="email" placeholder="E-mail" required />
           <input tupe="text" placeholder='Senha'required/>
-          <button type="submit">Junte-se à TEC.VAGAS</button>
+
+          <button className="butão" type="submit">Junte-se ao TEC.VAGAS</button>
+          <Link className="butão" to="/login">Login</Link>
         </form>
       </section>
 

@@ -1,4 +1,5 @@
 import NavBar from '../../components/NavBar/navBar.jsx';
+import { Link } from 'react-router-dom'
 import './login.scss';
 
 export default function Login() {
@@ -7,14 +8,16 @@ export default function Login() {
             <NavBar />
 
             <section className="cadastro">
-                <h2>Cadastro</h2>
+                <h2>Login</h2>
                 <form>
-                    <input type="text" placeholder="Nome" required />
-                    <input type="text" placeholder="Idade" required />
-                    <input type="text" placeholder="CPF" required />
-                    <input type="text" placeholder="Área de Interesse" required />
                     <input type="email" placeholder="E-mail" required />
-                    <button type="submit">Junte-se à TEC.VAGAS</button>
+                    <input type="text" placeholder="Nome" required />
+                    
+                    
+                    <button className="butão" type="submit">Entrar</button>
+                    
+                    <Link className="butão" to="/register">Cadastrar-se</Link>
+                    
                 </form>
             </section>
 

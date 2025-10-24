@@ -1,10 +1,10 @@
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
     max-height: 200px; 
-    max-width: 100%;
+    min-width: 100%;
     padding: 0;
   
     border-bottom: 3px solid white;
@@ -17,6 +17,7 @@
     .imglogodiv{
       width: 275px;
       padding: 0;
+
       .navbar__brand{
         img{
           background: none;
@@ -44,10 +45,83 @@
         flex-direction: column;
         height: 150px;
         gap: 15px;
-        width:100vw;
-  
+        width:100%;
+
         @media (max-width:768px) {
           flex-direction: row;
+        }
+
+        .navbar__nav-and-search {
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+          gap: 100px;
+        }
+      }
+      
+      .navbar__home-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 25px;
+
+        &:hover{
+          background-color: rgb(216, 216, 216);
+        }
+      }
+      .navbar__home {
+        background-color: none;
+        border-radius: 25px;
+        width: 100%;
+        color: black;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+
+        &:hover{
+          text-decoration: underline;
+          transform: scale(105%);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(211, 211, 211, 0.4),
+            transparent
+          );
+          transform: skewX(-25deg);
+        }
+
+        &:hover::before {
+          animation: shine 0.5s forwards;
+        }
+      }
+      .navbar__dropdown-button {
+        background: white;
+        border: none;
+        border-radius: 45px;
+        border-left: 1px solid black;
+        color: black;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin: 0;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: rgb(216, 216, 216);
         }
       }
       .navbar__search{
@@ -82,24 +156,71 @@
             border: none;
           }
       }
-      .navbar__desktop-menu {
+      .navbar__navlist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
         display: flex;
-        gap: 1rem;
-        
-        .navlink{
-          color: white;
-          transition: all 0.2s ease-in-out;
-          text-decoration: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+
+        padding: 8px 0px 0px 0px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        &.navbar__navlist--visible {
+          opacity: 1;
+          visibility: visible;
         }
-        .navlink:hover{
-          background-color: rgb(43, 43, 43);
-          text-decoration: underline;
-          padding-left: 5px;
-          padding-right: 5px;
-          border-radius: 5px;
-          transform: scale(120%);
+
+        li {
+          .navlink{
+            background-color: white;
+            border-radius: 25px;
+            color: black;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0px 5px 5px;
+            width: 88px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover{
+              background-color: rgb(203, 203, 203);
+              text-decoration: underline;
+              transform: scale(105%);
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: -75%;
+              width: 50%;
+              height: 100%;
+              background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(100, 100, 100, 0.4),
+                transparent
+              );
+              transform: skewX(-25deg);
+            }
+
+            &:hover::before {
+              animation: shine 0.5s forwards;
+            }
+          }
         }
-  
+
         @media (max-width: 768px) {
           display: none;
         }
@@ -125,6 +246,15 @@
       @media (max-width:768px) {
           width: 120px;
         }
-      width: 400px;
+      max-width: 400px;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
     }
   }
