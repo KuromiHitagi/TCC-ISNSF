@@ -1,59 +1,55 @@
-.Home {
-  .main {
-    .butão {
-      position: relative; /* necessário pro pseudo-elemento ficar dentro */
-      background-color: rgb(15, 15, 15);
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      font-weight: 900;
-      font-size: 1.1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      margin-top: 25px;
-      overflow: hidden; /* pra esconder o brilho quando ele sai do botão */
-      transition: background-color 0.4s ease, transform 0.4s ease;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-      &:hover {
-        background: linear-gradient(
-          to right,
-          rgb(20, 20, 20),
-          rgb(40, 40, 40),
-          rgb(51, 51, 51)
-        );
-        transform: translateY(-2px);
-        transform: scale(110%);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
+  .butao {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 25px;
+    text-decoration: none;
+    transition: background-color 0.4s ease, transform 0.4s ease;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -75%; /* começa fora da esquerda */
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(211, 211, 211, 0.4),
-          transparent
-        );
-        transform: skewX(-25deg);
-      }
-
-      &:hover::before {
-        animation: shine 0.5s forwards;
-      }
+    &:hover {
+      background: linear-gradient(
+        to right,
+        rgb(20, 20, 20),
+        rgb(40, 40, 40),
+        rgb(51, 51, 51)
+      );
+      transform: translateY(-2px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    @keyframes shine {
-      0% {
-        left: -75%;
-      }
-      100% {
-        left: 125%; /* passa totalmente pra direita */
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        transparent 100%
+      );
+      transform: translateX(-100%);
+      opacity: 0;
+      z-index: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: translateX(100%);
+      opacity: 1;
     }
   }
 }

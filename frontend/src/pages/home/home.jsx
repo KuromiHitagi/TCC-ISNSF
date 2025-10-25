@@ -5,7 +5,7 @@ import "./home.scss";
 
 export default function Home() {
   return (
-    <div className="Home">
+    <div>
       <NavBar />
       <div className="main">
         <div className="apresentacao">
@@ -17,7 +17,7 @@ export default function Home() {
             No TECVAGAS, conectamos você às melhores oportunidades de trabalho
           </pre>
 
-          <Link className="butão" to="/login">
+          <Link className="butao" to="/login">
             Inscreva-se
           </Link>
         </div>
