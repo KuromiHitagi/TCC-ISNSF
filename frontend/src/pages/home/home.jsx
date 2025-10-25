@@ -34,8 +34,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="empresas-candidatos"></div>
-        <div className="parceiros"></div>
+        <div className="empresas-candidatos fade-in"></div>
+        <div className="parceiros fade-in"></div>
       </div>
       <Footer />
     </div>

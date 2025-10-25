@@ -7,87 +7,6 @@ $cor-hover: #08c;
 
 $fonte-principal: 'Poppins', sans-serif;
 
-body {
-  background-color: $cor-fundo;
-  color: $cor-texto;
-  font-family: $fonte-principal;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: $cor-secundaria;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-
-  .logo {
-    display: flex;
-    align-items: center;
-    img {
-      width: 50px;
-      height: 50px;
-      margin-right: 0.5rem;
-    }
-    h1 {
-      color: $cor-principal;
-      font-size: 1.4rem;
-    }
-  }
-
-  .menu {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    a {
-      color: $cor-texto;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-
-      &:hover {
-        color: $cor-principal;
-      }
-    }
-
-    input[type="search"] {
-      background-color: #222;
-      border: 1px solid #333;
-      border-radius: 20px;
-      padding: 0.4rem 1rem;
-      color: $cor-texto;
-
-      &::placeholder {
-        color: #aaa;
-      }
-    }
-  }
-}
-
-.nav-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-
-  .icon {
-    text-align: center;
-
-    i {
-      font-size: 1.8rem;
-      color: $cor-principal;
-    }
-
-    p {
-      margin-top: 0.4rem;
-      color: $cor-texto;
-      font-size: 0.9rem;
-    }
-  }
-}
-
 .cadastro {
   text-align: center;
   max-width: 400px;
@@ -102,6 +21,18 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+
+    #opcoes{
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      color: $cor-texto;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
 
     input {
       background-color: #111;
@@ -136,86 +67,5 @@ header {
         color: $cor-texto;
       }
     }
-  }
-}
-
-footer {
-  background-color: $cor-secundaria;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  border-top: 1px solid #111;
-
-  p {
-    color: #aaa;
-    font-size: 0.9rem;
-  }
-
-  .social {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-
-    i {
-      font-size: 1.2rem;
-      color: $cor-texto;
-      transition: color 0.3s;
-
-      &:hover {
-        color: $cor-principal;
-      }
-    }
-  }
-}
-
-
-.butão {
-  position: relative; /* necessário pro pseudo-elemento ficar dentro */
-  background-color: rgb(15, 15, 15);
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  font-weight: 900;
-  font-size: 1.1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-top: 25px;
-  overflow: hidden; /* pra esconder o brilho quando ele sai do botão */
-  transition: background-color 0.4s ease, transform 0.4s ease;
-
-  &:hover {
-    background: linear-gradient(to right, rgb(20, 20, 20), rgb(40, 40, 40), rgb(51, 51, 51));
-    transform: translateY(-2px);
-    transform: scale(110%);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%; /* começa fora da esquerda */
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(211, 211, 211, 0.4),
-      transparent
-    );
-    transform: skewX(-25deg);
-  }
-
-  &:hover::before {
-    animation: shine 0.5s forwards;
-  }
-}
-
-@keyframes shine {
-  0% {
-    left: -75%;
-  }
-  100% {
-    left: 125%; /* passa totalmente pra direita */    
   }
 }

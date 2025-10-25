@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__nav-and-search">
           {/* Home sempre visível */}
-          <div className="navbar__home-container">
+          <div className={`navbar__home-container ${isDropdownOpen ? "open" : ""}`}>
             <NavLink className="navlink navbar__home" to="/">Home</NavLink>
             {/* Botão dropdown */}
             <button
@@ -38,7 +38,7 @@ export default function Navbar() {
               <li><NavLink className="navlink" to="/login">Inscrição</NavLink></li>
               <li><NavLink className="navlink" to="/search">Busca</NavLink></li>
               <li><NavLink className="navlink" to="/guia">Guia</NavLink></li>
-              <li><NavLink className="navlink" to="/curriculo">Curriculo</NavLink></li>
+              <li><NavLink className="navlink ult" to="/curriculo">Curriculo</NavLink></li>
             </ul>
           </div>
           {/* Busca */}

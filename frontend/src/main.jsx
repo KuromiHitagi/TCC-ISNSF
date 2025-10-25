@@ -10,6 +10,18 @@ import Search from './pages/search/search.jsx';
 import Guia from './pages/guia/guia.jsx';
 import Curriculo from './pages/curriculo/curriculo.jsx';
 
+const elements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
+    } else {
+      el.classList.remove('show');
+    }
+  });
+});
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
