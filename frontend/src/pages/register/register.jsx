@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './register.scss';
 import { useState } from 'react';
 import api from '../../api.js';
+import { signInWithGoogle, auth, googleProvider } from '../../firebase.js';
+import { signInWithRedirect } from 'firebase/auth';
 
 
 export default function Register() {
@@ -24,6 +26,8 @@ export default function Register() {
   const [userSenha, setUserSenha] = useState("");
   const [incSenha, setIncSenha] = useState("");
 
+  // Estados para cadastro com Google - removidos pois agora usa página separada
+
   if(opcao == "--Selecione--" || opcao == "") {
     show = <div className='nothing'><h2>Por favor selecione entre: Empresa e Usuário</h2></div>
   } else if (opcao == "empresa") {
@@ -40,12 +44,12 @@ export default function Register() {
         "nome":nomeUser,
         "idade": idade,
         "cpf": cpf,
-        "areainteresse": areainteresse,
+        "area_interesse": areainteresse,
         "email": emailUser,
         "senha": userSenha
         }
 
-        const response = await api.post('/cadastrar/user', body);
+        const response = await api.post('/usuario', body);
 
         if(response.status === 200) {
           alert("Conta criada com Sucesso!")
@@ -70,12 +74,12 @@ export default function Register() {
         const body = {
         "nome": nomeInc,
         "cnpj": cnpj,
-        "areaprofissionalizada": areaprofissionalizada,
+        "area_profissional": areaprofissionalizada,
         "email": emailInc,
         "senha": incSenha
         }
 
-        const response = await api.post('/cadastrar/inc', body);
+        const response = await api.post('/empresa', body);
 
         if(response.status === 200) {
           alert("Conta criada com Sucesso!")
@@ -95,6 +99,51 @@ export default function Register() {
     }
   }
 
+  async function registerWithGoogle() {
+    try {
+      const result = await signInWithGoogle();
+
+      if (result) {
+        // Popup method succeeded
+        const { token: idToken, user } = result;
+        Navigate('/register/complete-google', {
+          state: {
+            googleUser: {
+              idToken,
+              displayName: user.displayName,
+              email: user.email
+            },
+            tipo: opcao
+          }
+        });
+      } else {
+        // This shouldn't happen with popup method, but just in case
+        alert('Erro inesperado no cadastro com Google.');
+      }
+    } catch (error) {
+      console.error('Erro no cadastro com Google:', error);
+
+      if (error.code === 'auth/popup-blocked') {
+        alert('Popups estão bloqueados. Tentando método alternativo...');
+        // Try redirect method as fallback
+        try {
+          await signInWithRedirect(auth, googleProvider);
+          alert('Redirecionando para autenticação Google...');
+        } catch {
+          alert('Erro na autenticação. Por favor, permita popups ou use outro navegador.');
+        }
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        alert('Autenticação cancelada. Tente novamente.');
+      } else if (error.code === 'auth/cancelled-popup-request') {
+        alert('Solicitação cancelada. Tente novamente.');
+      } else {
+        alert('Erro no cadastro com Google. Tente novamente.');
+      }
+    }
+  }
+
+
+
   function formEmpresa() {
     return(
       <div className="pre-input">
@@ -103,6 +152,11 @@ export default function Register() {
         <input value={areaprofissionalizada} onChange={(e) => setAreaprofissionalizada(e.target.value)} type="text" placeholder="Área profissionalizada" required />
         <input value={emailInc} onChange={(e) => setEmailInc(e.target.value)} type="email" placeholder="E-mail" required />
         <input value={incSenha} onChange={(e) => setIncSenha(e.target.value)} type="password" placeholder='Senha'required/>
+
+        <p>Ou cadastre-se com o</p>
+        <button className='google-button' type="button" onClick={registerWithGoogle}>
+          <img src="/img/" alt="google-button" />
+        </button>
       </div>
     )
   }
@@ -116,9 +170,16 @@ export default function Register() {
         <input value={areainteresse} onChange={(e) => setAreainteresse(e.target.value)} type="text" placeholder="Área de Interesse" required />
         <input value={emailUser} onChange={(e) => setEmailUser(e.target.value)} type="email" placeholder="E-mail" required />
         <input value={userSenha} onChange={(e) => setUserSenha(e.target.value)} type="password" placeholder='Senha'required/>
+
+        <p>Ou cadastre-se com o</p>
+        <button className='google-button' type="button" onClick={registerWithGoogle}>
+          <img src="/img/" alt="google-button" />
+        </button>
       </div>
     )
   }
+
+
 
   return (
     <div>
@@ -139,8 +200,11 @@ export default function Register() {
           {show}
 
           <button className="butão" type="submit">Junte-se a TEC.VAGAS</button>
-          <Link className="butão" to="/login">Login</Link>
         </form>
+
+
+
+        <Link className="butão" to="/login">Login</Link>
       </section>
 
       <Footer />

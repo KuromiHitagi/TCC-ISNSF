@@ -1,41 +1,100 @@
-import * as repo from '../repo/userRepo.js'
-import { Router } from 'express'
-import { generateToken } from '../utils/JWT.js'
+import * as repo from '../repository/userRepository.js';
+import { generateToken, getAuthentication } from '../utils/jwt.js';
+import { Router } from "express";
+import { upload } from '../repository/userRepository.js';
 
-const api = Router()
 
-api.post('/cadastrar/user', async (req, resp) => {
-    try {
-        let novaConta = req.body;
-        let info = await repo.CriarConta(novaConta)
-        resp.status(200).send({novoId : info})
-    } catch (error) {
-        console.error('Erro ao criar conta de usuário:', error);
-        if (error.code === 'ER_DUP_ENTRY') {
-            resp.status(400).send({ erro: 'Email ou CPF já cadastrado.' });
-        } else {
-            resp.status(500).send({ erro: 'Erro interno do servidor.' });
-        }
-    }
-})
+const endpoints = Router();
 
-api.post('/gerarToken', async (req, resp) => {
-    let email = req.body.email;
-    let senha = req.body.senha;
+// FOTO USUARIO
+ endpoints.put('/user/:id/imagem', upload.single('img'), async (req, resp) => {
+    let caminho = req.file.path;   // lê o caminho do arquivo gerado pelo multer
+    let id = req.params.id;
 
-    let credenciais = await repo.GerarToken(email, senha);
+    await repo.alterarFotoUsuario(id, caminho);
+    resp.send();
+});
 
+// Criar conta de usuário
+endpoints.post('/usuario', async (req, resp) => {
+  try {
+    const novoUsuario = req.body;
+    const id = await repo.criarConta(novoUsuario);
+    resp.send({ novoId: id });
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+// Login de usuário
+endpoints.post('/usuario/login', async (req, resp) => {
+  try {
+    const { email, senha } = req.body;
+    const credenciais = await repo.validarCredenciais(email, senha);
     if (!credenciais) {
-      resp.status(401).send({
-        erro: 'Credenciais inválidas.'
-      });
+      return resp.status(401).send({ erro: 'Credenciais inválidas' });
     }
-    else {
-      resp.send({
-        token: generateToken(credenciais),
-        email: credenciais.email
-      });
-    }
-  })
+    const token = generateToken(credenciais);
+    resp.send({ token });
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
 
-export default api;
+// Buscar perfil do usuário (autenticado)
+endpoints.get('/usuario/perfil', getAuthentication(), async (req, resp) => {
+  try {
+    const usuario = await repo.buscarUsuarioPorId(req.user.id);
+    if (!usuario) {
+      return resp.status(404).send({ erro: 'Usuário não encontrado' });
+    }
+    resp.send(usuario);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+// Atualizar perfil do usuário (autenticado)
+endpoints.put('/usuario/perfil', getAuthentication(), async (req, resp) => {
+  try {
+    const dados = req.body;
+    await repo.atualizarUsuario(req.user.id, dados);
+    resp.send({ mensagem: 'Perfil atualizado com sucesso' });
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+// Deletar conta do usuário (autenticado)
+endpoints.delete('/usuario', getAuthentication(), async (req, resp) => {
+  try {
+    await repo.deletarUsuario(req.user.id);
+    resp.send({ mensagem: 'Conta deletada com sucesso' });
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+// Adicionar foto do usuário (autenticado)
+endpoints.post('/usuario/foto', getAuthentication(), upload.single('foto'), async (req, resp) => {
+  try {
+    const caminhoFoto = req.file ? req.file.path : req.body.caminho_foto;
+    const foto = { caminho: caminhoFoto };
+    const id = await repo.adicionarFotoUsuario(req.user.id, foto);
+    resp.send({ novoId: id });
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+// Listar fotos do usuário (autenticado)
+endpoints.get('/usuario/foto', getAuthentication(), async (req, resp) => {
+  try {
+    const fotos = await repo.mostrarFotosUsuario(req.user.id);
+    resp.send(fotos);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
+export default endpoints;

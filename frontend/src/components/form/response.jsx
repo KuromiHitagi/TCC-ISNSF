@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CursosCarousel from "../carrossel-form/carrossel.jsx";
+import api from "../../api.js";
 
 export default function Response({ respostas }) {
   const [resultado, setResultado] = useState("Analisando suas respostas...");
@@ -8,27 +9,18 @@ export default function Response({ respostas }) {
   useEffect(() => {
     const gerarAnalise = async () => {
       try {
-        // Requisição relativa, o proxy do Vite redireciona para o backend
-        const res = await fetch("/api/analise", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ respostas }),
-        });
+        const res = await api.post("/api/analise", { respostas });
 
-        const data = await res.json();
-
-        if (res.ok) {
-          // Se a requisição deu certo, exibe o resultado da IA
-          setResultado(data.resultado);
-          setAreas(data.areas || []);
+        if (res.status === 200) {
+          setResultado(res.data.resultado);
+          setAreas(res.data.areas || []);
         } else {
-          // Se backend retornou erro
-          setResultado("Erro ao gerar análise: " + data.erro);
+          setResultado("Erro ao gerar análise: " + res.data.erro);
           setAreas([]);
         }
       } catch (err) {
         setResultado("Erro ao conectar com o backend.");
-        console.error("Erro fetch /api/analise:", err);
+        console.error("Erro api /api/analise:", err);
         setAreas([]);
       }
     };
@@ -39,6 +31,7 @@ export default function Response({ respostas }) {
   return (
     <div className="response">
       <h2>Resultado da Análise</h2>
+      <p>{resultado}</p>
       {areas.length > 0 && <CursosCarousel areas={areas} />}
     </div>
   );

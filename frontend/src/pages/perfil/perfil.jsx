@@ -16,7 +16,8 @@ export default function Perfil() {
     async function sair() {
         window.location.reload();
         localStorage.removeItem("EMAIL");
-        localStorage.removeItem("TOKEN")
+        localStorage.removeItem("TOKEN");
+        localStorage.removeItem("USER_TYPE");
     }
 
     return(
