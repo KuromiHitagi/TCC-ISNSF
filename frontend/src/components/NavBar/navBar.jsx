@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import HamburgerMenu from '../menu/menu.jsx'
 import './navBar.scss';
@@ -9,6 +9,12 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  let enable = false;
+  const userEmail = localStorage.getItem("EMAIL")
+  if(userEmail != undefined && userEmail != null&& userEmail != "") {
+    enable = true;
+  }
 
   return (
     <header className="navbar">
@@ -61,7 +67,9 @@ export default function Navbar() {
         {/* Menu Hamburguer */}
         <HamburgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
       </div>
-      <div className="spacement"></div>
+      <div className={`spacement ${enable ? "logged" : ""}`}>
+        <Link className="perfil-link" to='/perfil'>{userEmail}</Link>
+      </div>
     </header>
   );
 }

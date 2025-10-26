@@ -45,7 +45,7 @@
     flex-direction: column;
     height: 150px;
     gap: 15px;
-    width: 100%;
+    width: 80%;
 
     @media (max-width: 768px) {
       flex-direction: row;
@@ -264,15 +264,38 @@
   @media (max-width: 768px) {
     width: 97vw;
   }
-}
 
-.spacement {
-  max-width: 400px;
-
-  @media (max-width: 768px) {
+  .spacement {
+    width: 400px;
+    height: 150px;
     display: none;
+
+    &.logged{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .perfil-link{
+        color: white;
+        text-decoration: none;
+        transition: all ease-in-out 0.3s;
+
+        &:hover{
+          padding: 7px 15px 7px 15px;
+          background-color: #3d3d3d;
+          transform: scale(110%);
+          border-radius: 15px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
+
+
 
 @keyframes shine {
   0% {

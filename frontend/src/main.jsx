@@ -9,6 +9,7 @@ import Register from './pages/register/register.jsx'
 import Search from './pages/search/search.jsx';
 import Guia from './pages/guia/guia.jsx';
 import Curriculo from './pages/curriculo/curriculo.jsx';
+import Perfil from './pages/perfil/perfil.jsx';
 
 const elements = document.querySelectorAll('.fade-in');
 
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='/search' element={<Search/>}/>
             <Route path='/guia' element={<Guia/>}/>
             <Route path='/curriculo' element={<Curriculo/>}/>
+            <Route path='/perfil' element={<Perfil />}/>
         </Routes>
     </BrowserRouter >
 )

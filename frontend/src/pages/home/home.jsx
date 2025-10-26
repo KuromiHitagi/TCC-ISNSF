@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import "./home.scss";
 
 export default function Home() {
+  const userEmail = localStorage.getItem("EMAIL")
+  let enable = true;
+  if(userEmail != null && userEmail != undefined && userEmail != "") {
+    enable = false;
+  }
+
   return (
     <div>
       <NavBar />
@@ -17,7 +23,7 @@ export default function Home() {
             No TECVAGAS, conectamos você às melhores oportunidades de trabalho
           </pre>
 
-          <Link className="butao" to="/login">
+          <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
             Inscreva-se
           </Link>
         </div>

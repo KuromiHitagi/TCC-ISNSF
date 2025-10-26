@@ -1,0 +1,6 @@
+- [x] Corrigir função Criar() no register.jsx para usar await no api.post e verificar response.status
+- [x] Adicionar try-catch nos controllers para tratar erros de inserção (ex: duplicatas)
+- [x] Verificar se o banco de dados está configurado e tabelas criadas
+- [x] Testar criação de conta após correções
+- [x] Corrigir rotas para incluir /api prefix
+- [x] Atualizar baseURL no frontend para incluir /api

@@ -51,5 +51,9 @@
       transform: translateX(100%);
       opacity: 1;
     }
+
+    &.logged{
+      display: none;
+    }
   }
 }
