@@ -38,9 +38,9 @@ const Home = () => {
           </div>
           <div className="empresas-candidatos fade-in"></div>
           <div className="parceiros fade-in"></div>
-          <Footer />
         </div>
       </motion.div>
+      <Footer />
     </div>
   );
 };
