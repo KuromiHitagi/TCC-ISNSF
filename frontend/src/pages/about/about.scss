@@ -41,24 +41,18 @@
             font-size:18px;
 
             min-height: 410px;
+            width: 700px;
 
             h2{
                 border-bottom: 3px dotted cyan;
             }
 
-            p{
-                text-align: justify;
-                height: 300px;
-                max-width: 400px;
-                line-height: 1.8;
-                overflow-wrap: break-word;
-
-                ul{
-                    display: flex;
-                    flex-direction: column;
-                    gap:20px;
-                }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap:20px;
             }
+            
         }
         .normas{
             display: flex;
@@ -69,23 +63,16 @@
             font-size:18px;
 
             min-height: 410px;
+            width: 700px;
 
             h2{
                 border-bottom: 3px dotted cyan;
             }
 
-            p{
-                text-align: justify;
-                height: 300px;
-                max-width: 400px;
-                line-height: 1.8;
-                overflow-wrap: break-word;
-
-                ul{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 52px;
-                }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 41px;
             }
         }
     }

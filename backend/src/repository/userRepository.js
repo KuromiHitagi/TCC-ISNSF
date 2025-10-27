@@ -1,6 +1,6 @@
 import { connection } from "../config/db.js";
 import bcrypt from 'bcryptjs';
-import multer from'multer';
+import multer from 'multer';
 
 const upload = multer({ dest: 'public/storage' })
 

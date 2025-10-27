@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 
   next();
 });
+
 //cors automatico (nao funfa)
 //app.use(cors({
 //origin: process.env.ALLOWED_ORIGIN || "http://localhost:5173",

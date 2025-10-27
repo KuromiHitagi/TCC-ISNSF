@@ -2,9 +2,15 @@ import './index.scss'
 import { FaHome, FaUserEdit, FaClipboardList, FaBriefcase, FaFileAlt, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
+    let enable = false;
+    const userEmail = localStorage.getItem("EMAIL")
+    if(userEmail != undefined && userEmail != null&& userEmail != "") {
+        enable = true;
+    }
+
     return (
         <div className="Footer">
-            <div className="info1">
+            <div className={`info1 ${enable ? "logged" : ""}`}>
                 <p>Junte-se a nós e transforme sua carreira</p>
             </div>
             <div className="info2">

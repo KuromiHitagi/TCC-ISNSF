@@ -55,13 +55,13 @@
       display: flex;
       align-items: center;
       flex-direction: row-reverse;
-      gap: 100px;
+      gap: 200px;
 
       .navbar__home-container {
         position: relative;
         display: flex;
         align-items: center;
-        width: 150px;
+        width: 350px;
         background-color: white;
         border-top: 1px solid black;
         border-radius: 15px;
@@ -133,6 +133,7 @@
 
         .navbar__navlist {
           background-color: white;
+          width: 100%;
           border-radius: 0px 0px 15px 15px;
           list-style: none;
           padding: 8px 0 0 0;
@@ -157,11 +158,16 @@
           }
 
           li {
+            &.subscribe.logged{
+              pointer-events: none;
+              opacity: 0.5;
+            }
             .ult{
               border-radius: 0 0 15px 15px;
 
               &:hover{
                 border: none;
+                border-radius: 0 0 10px 10px;
               }
             }
             .navlink {
@@ -171,7 +177,7 @@
               text-decoration: none;
               display: block;
               padding: 5px 0 5px 5px;
-              width: 145px;
+              width: 98.8%;
               position: relative;
               overflow: hidden;
 
@@ -216,7 +222,7 @@
         justify-content: center;
         align-items: center;
         background-color: white;
-        width: 450px;
+        width: 350px;
         border-radius: 20px;
 
         @media (max-width: 768px) {

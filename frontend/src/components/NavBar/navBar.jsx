@@ -39,12 +39,12 @@ export default function Navbar() {
             </button>
             {/* Navlist dos outros itens */}
             <ul className={`navbar__navlist ${isDropdownOpen ? 'navbar__navlist--visible' : ''}`}>
-              <li><NavLink className="navlink" to="/about">Sobre</NavLink></li>
-              <li><NavLink className="navlink" to="/form">Form</NavLink></li>
-              <li><NavLink className="navlink" to="/login">Inscrição</NavLink></li>
+              <li><NavLink className="navlink" to="/form">Formulário</NavLink></li>
+              <li className={`subscribe ${enable ? "logged" : ""}`}><NavLink className="navlink" to="/login">Inscrição</NavLink></li>
               <li><NavLink className="navlink" to="/search">Busca</NavLink></li>
               <li><NavLink className="navlink" to="/guia">Guia</NavLink></li>
-              <li><NavLink className="navlink ult" to="/curriculo">Curriculo</NavLink></li>
+              <li><NavLink className="navlink" to="/curriculo">Curriculo</NavLink></li>
+              <li><NavLink className="navlink ult" to="/about">Sobre Nós</NavLink></li>
             </ul>
           </div>
           {/* Busca */}

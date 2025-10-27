@@ -6,7 +6,7 @@ import { useState } from 'react';
 import api from '../../api.js';
 import { signInWithGoogle, auth, googleProvider } from '../../firebase.js';
 import { signInWithRedirect } from 'firebase/auth';
-
+import InputMask from 'react-input-mask'
 
 export default function Register() {
   const [open, setOpen] = useState(false)
@@ -25,6 +25,9 @@ export default function Register() {
   const [emailInc, setEmailInc] = useState("");
   const [userSenha, setUserSenha] = useState("");
   const [incSenha, setIncSenha] = useState("");
+  const [tel, setTel] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [dataNascimento, setDataNasc] = useState("");
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
 
@@ -44,6 +47,9 @@ export default function Register() {
         "nome":nomeUser,
         "idade": idade,
         "cpf": cpf,
+        "data_nascimento": dataNascimento,
+        "cidade": cidade,
+        "telefone": tel,
         "area_interesse": areainteresse,
         "email": emailUser,
         "senha": userSenha
@@ -56,6 +62,9 @@ export default function Register() {
           setNomeUser("")
           setIdade("")
           setCpf("")
+          setDataNasc("")
+          setCidade("")
+          setTel("")
           setAreainteresse("")
           setEmailUser("")
           setUserSenha("")
@@ -88,6 +97,7 @@ export default function Register() {
           setAreaprofissionalizada("")
           setEmailInc("")
           setIncSenha("")
+          Navigate('/login')
         }
         else{
           alert("Erro ao criar conta")
@@ -148,15 +158,10 @@ export default function Register() {
     return(
       <div className="pre-input">
         <input value={nomeInc} onChange={(e) => setNomeInc(e.target.value)} type="text" placeholder="Nome" required />
-        <input value={cnpj} onChange={(e) => setCnpj(e.target.value)} type="text" placeholder="CNPJ" required />
+        <input value={cnpj} onChange={(e) => setCnpj(e.target.value)} type="text" placeholder="CNPJ: (12345678901234)" required />
         <input value={areaprofissionalizada} onChange={(e) => setAreaprofissionalizada(e.target.value)} type="text" placeholder="Área profissionalizada" required />
         <input value={emailInc} onChange={(e) => setEmailInc(e.target.value)} type="email" placeholder="E-mail" required />
         <input value={incSenha} onChange={(e) => setIncSenha(e.target.value)} type="password" placeholder='Senha'required/>
-
-        <p>Ou cadastre-se com o</p>
-        <button className='google-button' type="button" onClick={registerWithGoogle}>
-          <img src="/img/" alt="google-button" />
-        </button>
       </div>
     )
   }
@@ -166,15 +171,13 @@ export default function Register() {
       <div className="pre-input">
         <input value={nomeUser} onChange={(e) => setNomeUser(e.target.value)} type="text" placeholder="Nome" required />
         <input value={idade} onChange={(e) => setIdade(e.target.value)} type="text" placeholder="Idade" required />
-        <input value={cpf} onChange={(e) => setCpf(e.target.value)} type="text" placeholder="CPF" required />
+        <input value={cpf} onChange={(e) => setCpf(e.target.value)} type="text" placeholder="CPF: (12345678901)" required />
+        <input value={dataNascimento} onChange={(e) => setDataNasc(e.target.value)} type="text" placeholder='Data de Nascimento: (AAAA-MM-DD)' />
+        <input value={cidade} onChange={(e) => setCidade(e.target.value)} type="text" placeholder='Cidade' />
+        <input value={tel} onChange={(e) => setTel(e.target.value)} placeholder='Telefone: (12345678901)' type='text'/>
         <input value={areainteresse} onChange={(e) => setAreainteresse(e.target.value)} type="text" placeholder="Área de Interesse" required />
         <input value={emailUser} onChange={(e) => setEmailUser(e.target.value)} type="email" placeholder="E-mail" required />
         <input value={userSenha} onChange={(e) => setUserSenha(e.target.value)} type="password" placeholder='Senha'required/>
-
-        <p>Ou cadastre-se com o</p>
-        <button className='google-button' type="button" onClick={registerWithGoogle}>
-          <img src="/img/" alt="google-button" />
-        </button>
       </div>
     )
   }
@@ -186,7 +189,7 @@ export default function Register() {
 
       <NavBar />
 
-      <section className="cadastro">
+      <div className="main">
         <h2>Cadastro</h2>
 
         <form className='register-form' onSubmit={Criar}>
@@ -199,13 +202,22 @@ export default function Register() {
 
           {show}
 
-          <button className="butão" type="submit">Junte-se a TEC.VAGAS</button>
+          <button className="butão-submit" type="submit">Junte-se a TEC.VAGAS</button>
         </form>
 
 
+        <div className="logs">
+          <Link className="butão" to="/login">Login</Link>
 
-        <Link className="butão" to="/login">Login</Link>
-      </section>
+          <div className="google">
+            <p>Ou cadastre-se com o</p>
+            <button className='butão btn' type="button" onClick={registerWithGoogle}>
+              <img src="/img/google.png" height={20} alt="google-button" />
+              <p>Google</p>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>

@@ -110,15 +110,19 @@ export default function Login() {
                 <form onSubmit={(e) => { e.preventDefault(); login(); }} className='login-form'>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="E-mail: " required />
                     <input value={senha} onChange={(e) => setSenha(e.target.value)} type="password" placeholder="Senha: " required />
-                    <button className="butão" type="submit">Entrar</button>
+                    <button className="butão-submit" type="submit">Entrar</button>
                 </form>
+                <div className="logs">
+                    <Link className="butão" to="/register">Cadastrar-se</Link>
 
-                <p>Ou entre com o</p>
-                <button className='google-button' onClick={loginWithGoogle}>
-                    <img src="/img/" alt="google-button" />
-                </button>
-
-                <Link className="butão" to="/register">Cadastrar-se</Link>
+                    <div className="google">
+                        <p>Ou entre com o</p>
+                        <button className='butão btn' onClick={loginWithGoogle}>
+                        <img src="/img/google.png" alt="google-button" />
+                        <p>Google</p>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <Footer />
