@@ -1,6 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import { getCompatibleAreas } from '../routes/compatibility.js';
+import { analyzeResponsesWithHuggingFace } from '../utils/huggingface.js';
 
 const router = express.Router();
 
@@ -14,16 +15,22 @@ try {
 }
 
 // Endpoint para análise
-router.post('/api/analise', (req, res) => {
+router.post('/api/analise', async (req, res) => {
   try {
     const { respostas } = req.body;
     if (!respostas || typeof respostas !== 'object') {
       return res.status(400).json({ erro: 'Respostas inválidas.' });
     }
 
-    // Calcular áreas compatíveis
-    const compatibleSet = getCompatibleAreas(respostas);
-    const compatibleAreas = Array.from(compatibleSet);
+    // Tentar usar Hugging Face primeiro
+    let compatibleAreas = await analyzeResponsesWithHuggingFace(respostas);
+
+    if (!compatibleAreas || compatibleAreas.length === 0) {
+      // Fallback para o método atual se Hugging Face falhar
+      console.log('Usando método de compatibilidade tradicional');
+      const compatibleSet = getCompatibleAreas(respostas);
+      compatibleAreas = Array.from(compatibleSet);
+    }
 
     if (compatibleAreas.length === 0) {
       return res.json({ resultado: 'Não foi possível determinar áreas compatíveis com base nas suas respostas. Tente novamente.' });

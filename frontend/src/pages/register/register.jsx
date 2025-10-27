@@ -1,16 +1,18 @@
-import NavBar from '../../components/NavBar/navBar.jsx';
-import Footer from '../../components/Footer/index.jsx';
-import { Link, useNavigate } from 'react-router-dom';
-import './register.scss';
-import { useState } from 'react';
-import api from '../../api.js';
-import { signInWithGoogle, auth, googleProvider } from '../../firebase.js';
-import { signInWithRedirect } from 'firebase/auth';
-import InputMask from 'react-input-mask'
+import NavBar from "../../components/NavBar/navBar.jsx";
+import Footer from "../../components/Footer/index.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import "./register.scss";
+import { useState } from "react";
+import api from "../../api.js";
+import { signInWithGoogle, auth, googleProvider } from "../../firebase.js";
+import { signInWithRedirect } from "firebase/auth";
+import InputMask from "react-input-mask";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
-export default function Register() {
-  const [open, setOpen] = useState(false)
-  const [opcao, setOpcao] = useState("")
+const Register = () => {
+  const [open, setOpen] = useState(false);
+  const [opcao, setOpcao] = useState("");
   let show = null;
   const Navigate = useNavigate();
 
@@ -31,8 +33,12 @@ export default function Register() {
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
 
-  if(opcao == "--Selecione--" || opcao == "") {
-    show = <div className='nothing'><h2>Por favor selecione entre: Empresa e Usuário</h2></div>
+  if (opcao == "--Selecione--" || opcao == "") {
+    show = (
+      <div className="nothing">
+        <h2>Por favor selecione entre: Empresa e Usuário</h2>
+      </div>
+    );
   } else if (opcao == "empresa") {
     show = formEmpresa();
   } else if (opcao == "usuario") {
@@ -41,70 +47,67 @@ export default function Register() {
 
   async function Criar(e) {
     e.preventDefault();
-    if(opcao == "usuario") {
-      try{
+    if (opcao == "usuario") {
+      try {
         const body = {
-        "nome":nomeUser,
-        "idade": idade,
-        "cpf": cpf,
-        "data_nascimento": dataNascimento,
-        "cidade": cidade,
-        "telefone": tel,
-        "area_interesse": areainteresse,
-        "email": emailUser,
-        "senha": userSenha
-        }
+          nome: nomeUser,
+          idade: idade,
+          cpf: cpf,
+          data_nascimento: dataNascimento,
+          cidade: cidade,
+          telefone: tel,
+          area_interesse: areainteresse,
+          email: emailUser,
+          senha: userSenha,
+        };
 
-        const response = await api.post('/usuario', body);
+        const response = await api.post("/usuario", body);
 
-        if(response.status === 200) {
-          alert("Conta criada com Sucesso!")
-          setNomeUser("")
-          setIdade("")
-          setCpf("")
-          setDataNasc("")
-          setCidade("")
-          setTel("")
-          setAreainteresse("")
-          setEmailUser("")
-          setUserSenha("")
-          Navigate('/login')
+        if (response.status === 200) {
+          alert("Conta criada com Sucesso!");
+          setNomeUser("");
+          setIdade("");
+          setCpf("");
+          setDataNasc("");
+          setCidade("");
+          setTel("");
+          setAreainteresse("");
+          setEmailUser("");
+          setUserSenha("");
+          Navigate("/login");
+        } else {
+          alert("Erro ao criar conta");
         }
-        else{
-          alert("Erro ao criar conta")
-        }
-      } catch(error) {
-        console.error('Erro:', error)
-        alert('Erro ao conectar com o servidor.')
+      } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao conectar com o servidor.");
       }
-
     } else if (opcao == "empresa") {
-      try{
+      try {
         const body = {
-        "nome": nomeInc,
-        "cnpj": cnpj,
-        "area_profissional": areaprofissionalizada,
-        "email": emailInc,
-        "senha": incSenha
-        }
+          nome: nomeInc,
+          cnpj: cnpj,
+          area_profissional: areaprofissionalizada,
+          email: emailInc,
+          senha: incSenha,
+        };
 
-        const response = await api.post('/empresa', body);
+        const response = await api.post("/empresa", body);
 
-        if(response.status === 200) {
-          alert("Conta criada com Sucesso!")
-          setNomeInc("")
-          setCnpj("")
-          setAreaprofissionalizada("")
-          setEmailInc("")
-          setIncSenha("")
-          Navigate('/login')
+        if (response.status === 200) {
+          alert("Conta criada com Sucesso!");
+          setNomeInc("");
+          setCnpj("");
+          setAreaprofissionalizada("");
+          setEmailInc("");
+          setIncSenha("");
+          Navigate("/login");
+        } else {
+          alert("Erro ao criar conta");
         }
-        else{
-          alert("Erro ao criar conta")
-        }
-      } catch(error) {
-        console.error('Erro:', error)
-        alert('Erro ao conectar com o servidor.')
+      } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao conectar com o servidor.");
       }
     }
   }
@@ -116,110 +119,208 @@ export default function Register() {
       if (result) {
         // Popup method succeeded
         const { token: idToken, user } = result;
-        Navigate('/register/complete-google', {
+        Navigate("/register/complete-google", {
           state: {
             googleUser: {
               idToken,
               displayName: user.displayName,
-              email: user.email
+              email: user.email,
             },
-            tipo: opcao
-          }
+            tipo: opcao,
+          },
         });
       } else {
         // This shouldn't happen with popup method, but just in case
-        alert('Erro inesperado no cadastro com Google.');
+        alert("Erro inesperado no cadastro com Google.");
       }
     } catch (error) {
-      console.error('Erro no cadastro com Google:', error);
+      console.error("Erro no cadastro com Google:", error);
 
-      if (error.code === 'auth/popup-blocked') {
-        alert('Popups estão bloqueados. Tentando método alternativo...');
+      if (error.code === "auth/popup-blocked") {
+        alert("Popups estão bloqueados. Tentando método alternativo...");
         // Try redirect method as fallback
         try {
           await signInWithRedirect(auth, googleProvider);
-          alert('Redirecionando para autenticação Google...');
+          alert("Redirecionando para autenticação Google...");
         } catch {
-          alert('Erro na autenticação. Por favor, permita popups ou use outro navegador.');
+          alert(
+            "Erro na autenticação. Por favor, permita popups ou use outro navegador."
+          );
         }
-      } else if (error.code === 'auth/popup-closed-by-user') {
-        alert('Autenticação cancelada. Tente novamente.');
-      } else if (error.code === 'auth/cancelled-popup-request') {
-        alert('Solicitação cancelada. Tente novamente.');
+      } else if (error.code === "auth/popup-closed-by-user") {
+        alert("Autenticação cancelada. Tente novamente.");
+      } else if (error.code === "auth/cancelled-popup-request") {
+        alert("Solicitação cancelada. Tente novamente.");
       } else {
-        alert('Erro no cadastro com Google. Tente novamente.');
+        alert("Erro no cadastro com Google. Tente novamente.");
       }
     }
   }
 
-
-
   function formEmpresa() {
-    return(
+    return (
       <div className="pre-input">
-        <input value={nomeInc} onChange={(e) => setNomeInc(e.target.value)} type="text" placeholder="Nome" required />
-        <input value={cnpj} onChange={(e) => setCnpj(e.target.value)} type="text" placeholder="CNPJ: (12345678901234)" required />
-        <input value={areaprofissionalizada} onChange={(e) => setAreaprofissionalizada(e.target.value)} type="text" placeholder="Área profissionalizada" required />
-        <input value={emailInc} onChange={(e) => setEmailInc(e.target.value)} type="email" placeholder="E-mail" required />
-        <input value={incSenha} onChange={(e) => setIncSenha(e.target.value)} type="password" placeholder='Senha'required/>
+        <input
+          value={nomeInc}
+          onChange={(e) => setNomeInc(e.target.value)}
+          type="text"
+          placeholder="Nome"
+          required
+        />
+        <input
+          value={cnpj}
+          onChange={(e) => setCnpj(e.target.value)}
+          type="text"
+          placeholder="CNPJ: (12345678901234)"
+          required
+        />
+        <input
+          value={areaprofissionalizada}
+          onChange={(e) => setAreaprofissionalizada(e.target.value)}
+          type="text"
+          placeholder="Área profissionalizada"
+          required
+        />
+        <input
+          value={emailInc}
+          onChange={(e) => setEmailInc(e.target.value)}
+          type="email"
+          placeholder="E-mail"
+          required
+        />
+        <input
+          value={incSenha}
+          onChange={(e) => setIncSenha(e.target.value)}
+          type="password"
+          placeholder="Senha"
+          required
+        />
       </div>
-    )
+    );
   }
 
   function formUsuario() {
-    return(
+    return (
       <div className="pre-input">
-        <input value={nomeUser} onChange={(e) => setNomeUser(e.target.value)} type="text" placeholder="Nome" required />
-        <input value={idade} onChange={(e) => setIdade(e.target.value)} type="text" placeholder="Idade" required />
-        <input value={cpf} onChange={(e) => setCpf(e.target.value)} type="text" placeholder="CPF: (12345678901)" required />
-        <input value={dataNascimento} onChange={(e) => setDataNasc(e.target.value)} type="text" placeholder='Data de Nascimento: (AAAA-MM-DD)' />
-        <input value={cidade} onChange={(e) => setCidade(e.target.value)} type="text" placeholder='Cidade' />
-        <input value={tel} onChange={(e) => setTel(e.target.value)} placeholder='Telefone: (12345678901)' type='text'/>
-        <input value={areainteresse} onChange={(e) => setAreainteresse(e.target.value)} type="text" placeholder="Área de Interesse" required />
-        <input value={emailUser} onChange={(e) => setEmailUser(e.target.value)} type="email" placeholder="E-mail" required />
-        <input value={userSenha} onChange={(e) => setUserSenha(e.target.value)} type="password" placeholder='Senha'required/>
+        <input
+          value={nomeUser}
+          onChange={(e) => setNomeUser(e.target.value)}
+          type="text"
+          placeholder="Nome"
+          required
+        />
+        <input
+          value={idade}
+          onChange={(e) => setIdade(e.target.value)}
+          type="text"
+          placeholder="Idade"
+          required
+        />
+        <input
+          value={cpf}
+          onChange={(e) => setCpf(e.target.value)}
+          type="text"
+          placeholder="CPF: (12345678901)"
+          required
+        />
+        <input
+          value={dataNascimento}
+          onChange={(e) => setDataNasc(e.target.value)}
+          type="text"
+          placeholder="Data de Nascimento: (AAAA-MM-DD)"
+        />
+        <input
+          value={cidade}
+          onChange={(e) => setCidade(e.target.value)}
+          type="text"
+          placeholder="Cidade"
+        />
+        <input
+          value={tel}
+          onChange={(e) => setTel(e.target.value)}
+          placeholder="Telefone: (12345678901)"
+          type="text"
+        />
+        <input
+          value={areainteresse}
+          onChange={(e) => setAreainteresse(e.target.value)}
+          type="text"
+          placeholder="Área de Interesse"
+          required
+        />
+        <input
+          value={emailUser}
+          onChange={(e) => setEmailUser(e.target.value)}
+          type="email"
+          placeholder="E-mail"
+          required
+        />
+        <input
+          value={userSenha}
+          onChange={(e) => setUserSenha(e.target.value)}
+          type="password"
+          placeholder="Senha"
+          required
+        />
       </div>
-    )
+    );
   }
-
-
 
   return (
     <div>
-
       <NavBar />
 
-      <div className="main">
-        <h2>Cadastro</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        <div className="main">
+          <h2>Cadastro</h2>
 
-        <form className='register-form' onSubmit={Criar}>
+          <form className="register-form" onSubmit={Criar}>
+            <select
+              value={opcao}
+              onClick={() => setOpen(!open)}
+              onChange={(e) => setOpcao(e.target.value)}
+              className={open ? "opcoes open" : "opcoes"}
+              required
+            >
+              <option value="">-- Selecione --</option>
+              <option value="empresa">Empresa</option>
+              <option value="usuario">Usuário</option>
+            </select>
 
-          <select value={opcao} onClick={() => setOpen(!open)} onChange={(e) => setOpcao(e.target.value)}  className={open ? "opcoes open" : "opcoes"} required>
-            <option value="">-- Selecione --</option>
-            <option value="empresa">Empresa</option>
-            <option value="usuario">Usuário</option>
-          </select>
+            {show}
 
-          {show}
-
-          <button className="butão-submit" type="submit">Junte-se a TEC.VAGAS</button>
-        </form>
-
-
-        <div className="logs">
-          <Link className="butão" to="/login">Login</Link>
-
-          <div className="google">
-            <p>Ou cadastre-se com o</p>
-            <button className='butão btn' type="button" onClick={registerWithGoogle}>
-              <img src="/img/google.png" height={20} alt="google-button" />
-              <p>Google</p>
+            <button className="butão-submit" type="submit">
+              Junte-se a TEC.VAGAS
             </button>
+          </form>
+
+          <div className="logs">
+            <Link className="butão" to="/login">
+              Login
+            </Link>
+
+            <div className="google">
+              <p>Ou cadastre-se com o</p>
+              <button
+                className="butão btn"
+                type="button"
+                onClick={registerWithGoogle}
+              >
+                <img src="/img/google.png" height={20} alt="google-button" />
+                <p>Google</p>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <Footer />
     </div>
   );
-}
+};
+
+export default Register;

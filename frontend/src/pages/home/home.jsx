@@ -1,49 +1,48 @@
 import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { Link } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion"; 
 import "./home.scss";
 
-export default function Home() {
-  const userEmail = localStorage.getItem("EMAIL")
+const Home = () => {
+  const userEmail = localStorage.getItem("EMAIL");
   let enable = true;
-  if(userEmail != null && userEmail != undefined && userEmail != "") {
+  if (userEmail != null && userEmail != undefined && userEmail != "") {
     enable = false;
   }
 
   return (
     <div>
       <NavBar />
-      <div className="main">
-        <div className="apresentacao">
-          <h1 className="titulo">TECVAGAS: Sua plataforma de Oportunidades</h1>
-          <pre className="texto">
-            Você está pronto para dar o próximo passo na sua carreira?
-          </pre>
-          <pre className="texto">
-            No TECVAGAS, conectamos você às melhores oportunidades de trabalho
-          </pre>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        <div className="main">
+          <div className="apresentacao">
+            <h1 className="titulo">
+              TECVAGAS: Sua plataforma de Oportunidades
+            </h1>
+            <pre className="texto">
+              Você está pronto para dar o próximo passo na sua carreira?
+            </pre>
+            <pre className="texto">
+              No TECVAGAS, conectamos você às melhores oportunidades de trabalho
+            </pre>
 
-          <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
-            Inscreva-se
-          </Link>
-        </div>
-        <div className="categoria">
-          <div className="img-categoria">
-            <div className="imgbackground1">
-              <h2>Primeiro Emprego</h2>
-            </div>
-            <div className="imgbackground2">
-              <h2>Administração</h2>
-            </div>
-            <div className="imgbackground3">
-              <h2>Vendas</h2>
-            </div>
+            <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
+              Inscreva-se
+            </Link>
           </div>
+          <div className="empresas-candidatos fade-in"></div>
+          <div className="parceiros fade-in"></div>
+          <Footer />
         </div>
-        <div className="empresas-candidatos fade-in"></div>
-        <div className="parceiros fade-in"></div>
-      </div>
-      <Footer />
+      </motion.div>
     </div>
   );
-}
+};
+
+export default Home;

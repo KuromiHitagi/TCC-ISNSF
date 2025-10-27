@@ -1,10 +1,12 @@
 import { useState } from "react";
 import NavBar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
-import Questionario from '../../components/form/form.jsx'; // ajuste o caminho conforme seu projeto
+import Questionario from '../../components/form/form.jsx'; 
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import './form.scss';
 
-export default function Form() {
+const Form = () => {
   const [mostrarQuestionario, setMostrarQuestionario] = useState(false);
 
   const exibir1 = () => {
@@ -15,9 +17,19 @@ export default function Form() {
     <div>
       <NavBar />
 
-      <div className="main">
+      <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="main">
         {!mostrarQuestionario ? (
-          <div className="intro">
+          <motion.div
+            key="intro"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="intro">
             <img className="form-character" src="/img/form-character.png" alt="" />
             <h2 className="form-title">Bem-vindo ao Teste Vocacional</h2>
             <p>
@@ -27,13 +39,22 @@ export default function Form() {
             <button className="vamos-la" onClick={exibir1}>
               Vamos-lá →
             </button>
-          </div>
+          </motion.div>
         ) : (
-          <Questionario />
+          <motion.div
+            key="questionario"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="questionario-container">
+            <Questionario />
+          </motion.div>
         )}
-      </div>
+      </motion.div>
 
       <Footer />
     </div>
   );
 }
+
+export default Form;

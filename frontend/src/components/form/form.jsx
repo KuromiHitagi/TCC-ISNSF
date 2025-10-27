@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Response from "./response.jsx";
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from "framer-motion";
 import "./form.scss";
 
 export default function Questionario() {
@@ -52,32 +54,49 @@ export default function Questionario() {
 
   return (
     <div className="questionario">
-      {!finalizado ? (
-        <>
-          <h2>Pergunta {indiceAtual + 1} de {perguntas.length}</h2>
-          <p className="pergunta">{perguntaAtual.texto}</p>
+      <AnimatePresence mode="wait">
+        {!finalizado ? (
+          <motion.div
+            key={indiceAtual}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2>Pergunta {indiceAtual + 1} de {perguntas.length}</h2>
+            <p className="pergunta">{perguntaAtual.texto}</p>
 
-          <div className="opcoes">
-            {perguntaAtual.opcoes.map((opcao, i) => (
-              <label key={i} className="opcao">
-                <input
-                  type="radio"
-                  name={`pergunta-${perguntaAtual.id}`}
-                  value={opcao}
-                  checked={respostas[perguntaAtual.id] === opcao}
-                  onChange={() => handleSelect(perguntaAtual.id, opcao)}
-                />
-                {opcao}
-              </label>
-            ))}
-          </div>
+            <div className="opcoes">
+              {perguntaAtual.opcoes.map((opcao, i) => (
+                <label key={i} className="opcao">
+                  <input
+                    type="radio"
+                    name={`pergunta-${perguntaAtual.id}`}
+                    value={opcao}
+                    checked={respostas[perguntaAtual.id] === opcao}
+                    onChange={() => handleSelect(perguntaAtual.id, opcao)}
+                  />
+                  {opcao}
+                </label>
+              ))}
+            </div>
 
-          {erro && <p className="erro">{erro}</p>}
-          <button onClick={proximaPergunta}>Próxima</button>
-        </>
-      ) : (
-        <Response respostas={respostas} />
-      )}
+            {erro && <p className="erro">{erro}</p>}
+            <button onClick={proximaPergunta}>
+              {indiceAtual === perguntas.length - 1 ? "Concluir" : "Próxima"}
+            </button>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="response"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Response respostas={respostas} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

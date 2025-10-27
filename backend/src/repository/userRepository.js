@@ -1,8 +1,18 @@
 import { connection } from "../config/db.js";
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
+import path from 'path';
 
-const upload = multer({ dest: 'public/storage' })
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../../public/storage'));
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
 
 
 // FOTOS USUARIO

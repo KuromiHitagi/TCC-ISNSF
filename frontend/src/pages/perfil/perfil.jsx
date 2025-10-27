@@ -3,8 +3,10 @@ import Navbar from '../../components/NavBar/navBar.jsx'
 import './perfil.scss'
 import { useNavigate } from 'react-router';
 import Footer from '../../components/Footer/index.jsx';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
-export default function Perfil() {
+const Perfil = () => {
     const Navigate = useNavigate()
     
     useEffect(() => {
@@ -24,10 +26,16 @@ export default function Perfil() {
     return(
         <div>
             <Navbar />
-            <div className="main">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="main">
                 <button onClick={sair}>Sair :D</button>
-            </div>
+            </motion.div>
             <Footer />
-        </div>    
+        </div>
     )
 }
+
+export default Perfil;

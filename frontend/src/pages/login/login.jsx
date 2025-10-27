@@ -5,8 +5,10 @@ import Footer from '../../components/Footer/index.jsx';
 import { useEffect, useState } from 'react';
 import api from '../../api.js';
 import { signInWithGoogle } from '../../firebase.js';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
-export default function Login() {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const Navigate = useNavigate();
@@ -103,7 +105,11 @@ export default function Login() {
         <div>
             <NavBar />
 
-            <div className="main">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="main">
 
                 <h2>Login</h2>
 
@@ -123,9 +129,11 @@ export default function Login() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <Footer />
         </div>
     )
 }
+
+export default Login;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -31,7 +33,12 @@ export default function CursosCarousel({ areas }) {
   }
 
   return (
-    <section className="cursos">
+    <motion.section
+      className="cursos"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
@@ -51,13 +58,18 @@ export default function CursosCarousel({ areas }) {
       >
         {areasData.map((area, index) => (
           <SwiperSlide key={index}>
-            <div className="card container">
+            <motion.div
+              className="card container"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <h3>{area.titulo}</h3>
               <p>{area.descricao}</p>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </motion.section>
   );
 }
