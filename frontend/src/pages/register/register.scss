@@ -9,7 +9,7 @@ $fonte-principal: 'Poppins', sans-serif;
 
 .main {
   text-align: center;
-  width: 60%;
+  width: 100%;
   margin: 0 auto 4rem auto;
 
   h2 {
@@ -23,7 +23,7 @@ $fonte-principal: 'Poppins', sans-serif;
     justify-content: center;
     gap: 1.8rem;
 
-    width: 100%;
+    width: 60%;
 
     .opcoes{
       text-align: center;
@@ -49,8 +49,230 @@ $fonte-principal: 'Poppins', sans-serif;
 
       &::placeholder{
         color: #aaa;
+  }
+}
+
+.complete-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    color: $cor-texto;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+
+    .photo-preview {
+      width: 200px;
+      height: 200px;
+      border: 2px dashed #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: #111;
+
+      .preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .placeholder {
+        text-align: center;
+        color: #aaa;
+
+        span {
+          font-size: 3rem;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
       }
     }
+
+    .file-button {
+      background-color: $cor-botao;
+      color: $cor-fundo;
+      border: none;
+      border-radius: 25px;
+      padding: 0.8rem 2rem;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $cor-hover;
+        color: $cor-texto;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 300px;
+
+      button {
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &.upload-button {
+          background-color: $cor-botao;
+          color: $cor-fundo;
+
+          &:hover:not(:disabled) {
+            background-color: $cor-hover;
+            color: $cor-texto;
+          }
+
+          &:disabled {
+            background-color: #333;
+            color: #666;
+            cursor: not-allowed;
+          }
+        }
+
+        &.skip-button {
+          background-color: transparent;
+          color: $cor-texto;
+          border: 1px solid #333;
+
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cadastro {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 4rem auto;
+  padding: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $cor-texto;
+  }
+
+  p {
+    color: #aaa;
+    margin-bottom: 2rem;
+  }
+
+  .additional-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.8rem;
+    width: 60%;
+    margin: 0 auto;
+
+    h3 {
+      color: $cor-texto;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      font-size: 18px;
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 20px;
+      width: 97%;
+      height: 30px;
+      padding: 0.6rem 1rem;
+      color: $cor-texto;
+
+      &::placeholder {
+        color: #aaa;
+      }
+
+      &:focus {
+        border-color: $cor-principal;
+        outline: none;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      background-color: $cor-botao;
+      color: $cor-fundo;
+      border: none;
+      border-radius: 25px;
+      height: 50px;
+      padding: 0;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        text-decoration: underline;
+        background-color: $cor-hover;
+        color: $cor-texto;
+      }
+    }
+  }
+
+  .butão {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    background-color: $cor-botao;
+    color: $cor-fundo;
+    border: none;
+    border-radius: 25px;
+    width: 20%;
+    height: 50px;
+    text-decoration: none;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $cor-hover;
+      color: $cor-texto;
+      transform: scale(110%);
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+  }
+}
 
     .pre-input{
       display: flex;
@@ -78,6 +300,145 @@ $fonte-principal: 'Poppins', sans-serif;
           border-color: $cor-principal;
           outline: none;
         }
+
+        &[type=number]{
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button{
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        }
+        
+      }
+
+      .date-picker-wrapper {
+        width: 100%;
+      }
+
+      .date-picker-input {
+        font-size: 18px;
+        background-color: #111;
+        border: 1px solid #333;
+        border-radius: 20px;
+        width: 97%;
+        min-height: 30px;
+        padding: 0.6rem 1rem;
+        color: $cor-texto;
+
+        &::placeholder {
+          color: #aaa;
+        }
+
+        &:focus {
+          border-color: $cor-principal;
+          outline: none;
+        }
+      }
+
+      // Date picker popup dark theme
+      .react-datepicker-wrapper {
+        width: 100%;
+      }
+
+      .react-datepicker__triangle {
+        display: none;
+      }
+
+      .react-datepicker {
+        background-color: #111;
+        border: 1px solid #333;
+        border-radius: 20px;
+        color: rgb(218, 218, 218);
+        font-family: $fonte-principal;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .react-datepicker__header {
+        background-color: #222;
+        border-bottom: 1px solid #333;
+        border-radius: 20px 20px 0 0;
+        padding: 10px;
+      }
+
+      .react-datepicker__current-month,
+      .react-datepicker-time__header {
+        color: rgb(218, 218, 218);
+        font-weight: bold;
+      }
+
+      .react-datepicker__day-names,
+      .react-datepicker__week {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .react-datepicker__day-name,
+      .react-datepicker__day {
+        color: rgb(218, 218, 218);
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        margin: 2px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .react-datepicker__day-name {
+        color: #aaa;
+        cursor: default;
+      }
+
+      .react-datepicker__day:hover {
+        background-color: #333;
+      }
+
+      .react-datepicker__day--selected,
+      .react-datepicker__day--keyboard-selected {
+        background-color: rgb(30, 188, 228);
+        color: #000;
+      }
+
+      .react-datepicker__day--selected:hover {
+        background-color: rgb(46, 144, 194);
+      }
+
+      .react-datepicker__day--outside-month {
+        color: #666;
+      }
+
+      .react-datepicker__day--disabled {
+        color: #666;
+        cursor: not-allowed;
+      }
+
+      .react-datepicker__navigation {
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        top: 10px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+      }
+
+      .react-datepicker__navigation:hover {
+        background-color: #333;
+      }
+
+      .react-datepicker__navigation-icon::before {
+        border-color: $cor-texto;
+        border-width: 2px 2px 0 0;
+      }
+
+      .react-datepicker__month-container {
+        background-color: #111;
       }
     }
 

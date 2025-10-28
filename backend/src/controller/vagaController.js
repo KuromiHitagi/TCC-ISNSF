@@ -1,4 +1,5 @@
 import * as repo from '../repository/vagaRepository.js';
+import * as empresaRepo from '../repository/empresaRepository.js';
 import { getAuthentication } from '../utils/jwt.js';
 import { Router } from "express";
 
@@ -29,9 +30,15 @@ endpoints.get('/vaga/:id', async (req, resp) => {
 });
 
 // Criar nova vaga (autenticado)
-endpoints.post('/vaga', getAuthentication(), async (req, resp) => {
+endpoints.post('/vaga/criar', getAuthentication(), async (req, resp) => {
   try {
     const novaVaga = req.body;
+    // Buscar empresa pelo ID do usuário logado (assumindo que o usuário é empresa)
+    const empresa = await empresaRepo.buscarEmpresaPorId(req.user.id);
+    if (!empresa) {
+      return resp.status(400).send({ erro: 'Empresa não encontrada para o usuário logado' });
+    }
+    novaVaga.empresa_id = empresa.id;
     novaVaga.usuario_id = req.user.id; // Associar ao usuário logado
     const id = await repo.criarVaga(novaVaga);
     resp.send({ novoId: id });

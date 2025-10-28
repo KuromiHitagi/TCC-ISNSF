@@ -5,15 +5,21 @@ $cor-secundaria: #111;
 $cor-botao: #0ff;
 $cor-hover: #08c;
 
-$fonte-principal: 'Poppins', sans-serif;
+$fonte-principal: Verdana, Geneva, Tahoma, sans-serif;
 
-.main {
+#mainL {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   text-align: center;
-  width: 60%;
+  min-height: 60vh;
+  width: 100%;
   margin: 0 auto 4rem auto;
 
   h2 {
-    margin-bottom: 1rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
     color: $cor-texto;
   }
 
@@ -23,7 +29,7 @@ $fonte-principal: 'Poppins', sans-serif;
     justify-content: center;
     gap: 1.8rem;
 
-    width: 100%;
+    width: 60%;
 
     input {
       font-size: 18px;

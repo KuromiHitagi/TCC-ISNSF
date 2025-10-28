@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HamburgerMenu from "../menu/menu.jsx";
+import api from "../../api.js";
 import "./navBar.scss";
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [enableInc, setEnableInc] = useState(false);
   const [enableUser, setEnableUser] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const [userPhoto, setUserPhoto] = useState("");
 
   useEffect(() => {
     const verify = localStorage.getItem("USER_TYPE");
@@ -32,6 +34,25 @@ const Navbar = () => {
       setEnable(true);
       setUserEmail(email);
     }
+
+    // Buscar foto do perfil
+    const fetchUserPhoto = async () => {
+      const userType = localStorage.getItem("USER_TYPE");
+      if (userType) {
+        try {
+          const endpoint = userType === "usuario" ? "/usuario/perfil" : "/empresa/perfil";
+          const response = await api.get(endpoint);
+          const photoField = userType === "usuario" ? "user_foto" : "empresa_foto";
+          if (response.data[photoField]) {
+            setUserPhoto(`http://localhost:3001/storage/${response.data[photoField]}`);
+          }
+        } catch (error) {
+          console.error("Erro ao buscar foto do perfil:", error);
+        }
+      }
+    };
+
+    fetchUserPhoto();
   }, []);
 
   return (
@@ -131,6 +152,7 @@ const Navbar = () => {
         </div>
         <div className={`spacement ${enable ? "logged" : ""}`}>
           <Link className="perfil-link" to="/perfil">
+            {userPhoto && <img src={userPhoto} alt="Foto de perfil" className="navbar-profile-photo" />}
             {userEmail}
           </Link>
         </div>

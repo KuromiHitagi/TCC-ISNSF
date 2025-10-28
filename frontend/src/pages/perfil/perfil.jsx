@@ -105,8 +105,8 @@ const Perfil = () => {
                 <div className="profile-container">
                     <div className="profile-header">
                         <div className="profile-photo">
-                            {userProfile?.foto ? (
-                                <img src={`http://localhost:3001${userProfile.foto}`} alt="Foto de perfil" className="profile-image" />
+                            {userProfile?.user_foto || userProfile?.empresa_foto ? (
+                                <img src={`http://localhost:3001/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto de perfil" className="profile-image" />
                             ) : (
                                 <div className="photo-placeholder">
                                     <span>👤</span>
@@ -122,7 +122,7 @@ const Perfil = () => {
 
                     <div className="profile-actions">
                         <button onClick={() => setShowPhotoModal(true)} className="photo-button">
-                            {userProfile?.foto ? "Alterar Foto de Perfil" : "Adicionar Foto de Perfil"}
+                            {userProfile?.user_foto || userProfile?.empresa_foto ? "Alterar Foto de Perfil" : "Adicionar Foto de Perfil"}
                         </button>
                         <button onClick={sair} className="logout-button">Sair</button>
                     </div>
@@ -131,14 +131,14 @@ const Perfil = () => {
                 {showPhotoModal && (
                     <div className="modal-overlay">
                         <div className="modal-content">
-                            <h3>{userProfile?.foto ? "Alterar" : "Adicionar"} Foto de Perfil</h3>
+                            <h3>{userProfile?.user_foto || userProfile?.empresa_foto ? "Alterar" : "Adicionar"} Foto de Perfil</h3>
 
                             <div className="photo-upload">
                                 <div className="photo-preview">
                                     {preview ? (
                                         <img src={preview} alt="Preview" className="preview-image" />
-                                    ) : userProfile?.foto ? (
-                                        <img src={`http://localhost:3001${userProfile.foto}`} alt="Foto atual" className="preview-image" />
+                                    ) : userProfile?.user_foto || userProfile?.empresa_foto ? (
+                                        <img src={`http://localhost:3001/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto atual" className="preview-image" />
                                     ) : (
                                         <div className="placeholder">
                                             <span>📷</span>

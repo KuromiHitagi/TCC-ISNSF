@@ -32,10 +32,10 @@ const Curriculo = () => {
             properties: {
               page: {
                 margin: {
-                  top: 2500, // 2.5cm
-                  right: 2000, // 2cm
-                  bottom: 2500, // 2.5cm
-                  left: 3000, // 3cm
+                  top: 1700, // 3cm
+                  right: 1134, // 2cm
+                  bottom: 1134, // 2cm
+                  left: 1700, // 3cm
                 },
               },
             },
@@ -49,7 +49,7 @@ const Curriculo = () => {
                 children: [
                   new TextRun({
                     text: texto,
-                    font: "Times New Roman",
+                    font: "Arial",
                     size: 24, // 12pt
                   }),
                 ],
@@ -108,7 +108,42 @@ const Curriculo = () => {
               id="word"
               ref={wordRef}
               contentEditable="true"
-              data-placeholder="Digite seu currículo aqui..."
+              data-placeholder={`João da Silva
+(11) 99999-9999 | joaosilva@email.com | São Paulo/SP
+LinkedIn: linkedin.com/in/joaosilva | GitHub: github.com/joaosilva
+
+
+Objetivo profissional
+Atuar como desenvolvedor front-end, aplicando conhecimentos em React e JavaScript.
+
+
+Resumo profissional
+Profissional com experiência em desenvolvimento web, focado em boas práticas e interfaces responsivas. Comunicativo, curioso e com facilidade para aprendizado.
+
+
+Formação acadêmica
+Bacharelado em Sistemas de Informação – Universidade X, Conclusão: 2024
+
+
+Experiência profissional
+Empresa Y – Estagiário de Desenvolvimento (2023 – Atual)
+Desenvolvimento de aplicações ReactJS e consumo de APIs REST.
+
+
+Habilidades
+JavaScript | React | Node.js | Git | Figma
+
+
+Cursos e certificações
+Curso de React Avançado – Alura (2024)
+
+
+Idiomas
+Inglês – Intermediário
+
+
+Projetos e atividades extras
+Participação em hackathons e projetos voluntários de tecnologia.`}
             >
             </div>
             <button id="download" onClick={baixarCurriculo}>

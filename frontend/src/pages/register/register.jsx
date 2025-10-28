@@ -21,9 +21,11 @@ const Register = () => {
 
   const [nomeUser, setNomeUser] = useState("");
   const [nomeInc, setNomeInc] = useState("");
+  const [idade, setIdade] = useState("");
   const [cpf, setCpf] = useState("");
   const [cpfRaw, setCpfRaw] = useState("");
   const [cnpj, setCnpj] = useState("");
+  const [cnpjRaw, setCnpjRaw] = useState("");
   const [areainteresse, setAreainteresse] = useState("");
   const [areaprofissionalizada, setAreaprofissionalizada] = useState("");
   const [emailUser, setEmailUser] = useState("");
@@ -58,6 +60,7 @@ const Register = () => {
 
         const body = {
           nome: nomeUser,
+          idade: idade,
           cpf: cpfRaw,
           data_nascimento: formattedDate,
           cidade: cidade,
@@ -77,6 +80,7 @@ const Register = () => {
           const senha = userSenha;
 
           setNomeUser("");
+          setIdade("");
           setCpf("");
           setDataNasc(null);
           setCidade("");
@@ -116,7 +120,7 @@ const Register = () => {
       try {
         const body = {
           nome: nomeInc,
-          cnpj: cnpj,
+          cnpj: cnpjRaw,
           area_profissional: areaprofissionalizada,
           email: emailInc,
           senha: incSenha,
@@ -222,12 +226,15 @@ const Register = () => {
           placeholder="Nome"
           required
         />
-        <input
+        <IMaskInput
+          mask="00.000.000/0000-00"
           value={cnpj}
-          onChange={(e) => setCnpj(e.target.value)}
-          type="text"
-          placeholder="CNPJ: (12345678901234)"
-          required
+          onAccept={(value, mask) => {
+            setCnpj(value);
+            setCnpjRaw(mask.unmaskedValue);
+          }}
+          placeholder="CNPJ:"
+          className="input-mask"
         />
         <input
           value={areaprofissionalizada}
@@ -265,6 +272,16 @@ const Register = () => {
           required
         />
 
+        <input 
+        value={idade}
+        onChange={(e) => setIdade(e.target.value)}
+        type="number"
+        min={16}
+        max={80} 
+        placeholder="Idade"
+        required
+        />
+
         <IMaskInput
           mask="000.000.000-00"
           value={cpf}
@@ -272,8 +289,9 @@ const Register = () => {
             setCpf(value);
             setCpfRaw(mask.unmaskedValue);
           }}
-          placeholder="CPF: (12345678901)"
+          placeholder="CPF:"
           className="input-mask"
+          required
         />
         <DatePicker
           selected={dataNascimento}
@@ -281,6 +299,7 @@ const Register = () => {
           dateFormat="dd/MM/yyyy"
           placeholderText="Data de Nascimento"
           className="date-picker-input"
+          wrapperClassName="date-picker-wrapper"
         />
         <input
           value={cidade}
@@ -295,7 +314,7 @@ const Register = () => {
             setTel(value);
             setTelRaw(mask.unmaskedValue);
           }}
-          placeholder="Telefone: (12345678901)"
+          placeholder="Telefone:"
           className="input-mask"
         />
         <input

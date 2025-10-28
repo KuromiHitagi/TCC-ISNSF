@@ -42,33 +42,39 @@
         align-items: center;
         flex-direction: column;
         padding: 0;
-        margin: 0;
+        margin: 50px 0 0 0;
 
-        #word{
-            white-space: normal;
-            overflow-wrap: break-word;
-            min-height: 400px;
-            min-width: 500px;
-            max-width: 500px;
+        #word {
+            padding: 20px 30px; // muito mais limpo que 113px
+            min-height: 1123px;
+            width: 794px;
+            max-width: 794px;
             background-color: #141414;
             border-radius: 10px;
             position: relative;
+            color: #fff; // cor do texto real
 
             &:empty::before {
                 content: attr(data-placeholder);
                 color: #888;
                 font-style: italic;
                 pointer-events: none;
-                position: absolute;
-                top: 10px;
-                left: 10px;
+                white-space: pre-wrap; // respeita quebras de linha
+                display: block;
+                margin: 0; // remove margens extras
+                line-height: 1.8;
+                font-family: 'Arial', sans-serif;
+                font-size: 16px;
+                padding: 10px 0;
             }
 
-            p{
-                font-size: 20px;
-                font-family: 'Times New Roman', Times, serif
+            p {
+                font-size: 18px;
+                font-family: 'Arial', sans-serif;
+                margin: 0 0 10px 0;
             }
         }
+
 
         #download{
             margin-top: 1rem;

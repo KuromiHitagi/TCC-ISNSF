@@ -35,7 +35,9 @@ export async function adicionarFotoEmpresa(idEmpresa, foto) {
      WHERE id = ?
   `;
 
-  await connection.query(comando, [foto.caminho, idEmpresa]);
+  // Extrair apenas o nome do arquivo do caminho completo
+  const nomeArquivo = foto.caminho.split(/[/\\]/).pop();
+  await connection.query(comando, [nomeArquivo, idEmpresa]);
 };
 
 export async function alterarFotoEmpresa(id, caminho) {
@@ -111,6 +113,17 @@ export async function buscarEmpresaPorEmail(email) {
   `;
 
   const [registros] = await connection.query(comando, [email]);
+  return registros[0];
+}
+
+export async function buscarEmpresaPorNome(nome) {
+  const comando = `
+    SELECT id, nome, email, cnpj, empresa_foto, area_profissional
+      FROM empresa
+     WHERE nome = ?;
+  `;
+
+  const [registros] = await connection.query(comando, [nome]);
   return registros[0];
 }
 
