@@ -76,12 +76,11 @@ endpoints.delete('/usuario', getAuthentication(), async (req, resp) => {
 });
 
 // Adicionar foto do usuário (autenticado)
-endpoints.post('/usuario/foto', getAuthentication(), upload.single('foto'), async (req, resp) => {
+endpoints.post('/usuario/foto', getAuthentication(), upload.single('foto_usuario'), async (req, resp) => {
   try {
     const caminhoFoto = req.file ? req.file.path : req.body.caminho_foto;
-    const foto = { caminho: caminhoFoto };
-    const id = await repo.adicionarFotoUsuario(req.user.id, foto);
-    resp.send({ novoId: id });
+    await repo.adicionarFotoUsuario(req.user.id, caminhoFoto);
+    resp.send({ mensagem: 'Foto adicionada com sucesso' });
   } catch (err) {
     resp.status(400).send({ erro: err.message });
   }

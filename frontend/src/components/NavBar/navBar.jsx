@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -12,11 +12,27 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  let enable = false;
-  const userEmail = localStorage.getItem("EMAIL");
-  if (userEmail != undefined && userEmail != null && userEmail != "") {
-    enable = true;
-  }
+  const [enable, setEnable] = useState(false);
+  const [enableInc, setEnableInc] = useState(false);
+  const [enableUser, setEnableUser] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    const verify = localStorage.getItem("USER_TYPE");
+    if (verify === "empresa") {
+      setEnableInc(true);
+      setEnableUser(false);
+    } else if (verify === "usuario") {
+      setEnableInc(false);
+      setEnableUser(true);
+    }
+
+    const email = localStorage.getItem("EMAIL");
+    if (email && email.trim() !== "") {
+      setEnable(true);
+      setUserEmail(email);
+    }
+  }, []);
 
   return (
     <motion.div
@@ -65,19 +81,19 @@ const Navbar = () => {
                     Inscrição
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink className="navlink" to="/search">
-                    Busca
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/guia">
-                    Guia
-                  </NavLink>
-                </li>
-                <li>
+                <li className={`curriculo ${enableUser ? "loggedUser" : ""}`}>
                   <NavLink className="navlink" to="/curriculo">
                     Curriculo
+                  </NavLink>
+                </li>
+                <li className={`vagas_empresas ${enableInc ? "loggedInc" : ""}`}>
+                  <NavLink className="navlink" to="/postar_vagas">
+                    Postar Vagas
+                  </NavLink>
+                </li>
+                <li className={`vagas_usuario ${enableUser ? "loggedUser" : ""}`}>
+                  <NavLink className="navlink" to="/buscar_vagas">
+                    Buscar Vagas
                   </NavLink>
                 </li>
                 <li>

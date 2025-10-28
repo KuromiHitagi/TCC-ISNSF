@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Document, Packer, Paragraph, TextRun } from "docx";
 import "./curriculo.scss";
 
 const Curriculo = () => {
   const [mostrarTooltip, setMostrarTooltip] = useState(false);
   const [fechado, setFechado] = useState(false);
+  const wordRef = useRef(null);
 
   useEffect(() => {
     // verifica se o usuário já fechou o pop-up antes
@@ -15,35 +17,56 @@ const Curriculo = () => {
     setFechado(jaFechou);
   }, []);
 
-  const baixarCurriculo = () => {
-    const texto = document.getElementById("word").innerHTML;
-    const conteudo = `
-      <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body {
-              font-family: "Times New Roman", serif;
-              font-size: 12pt;
-              line-height: 2;
-              text-align: justify;
-              margin: 3cm 2cm 2cm 3cm;
-            }
-            h1 {
-              text-align: center;
-              font-weight: bold;
-            }
-          </style>
-        </head>
-        <body>${texto}</body>
-      </html>
-    `;
+  const baixarCurriculo = async () => {
+    const texto = wordRef.current ? wordRef.current.innerText.trim() : "";
 
-    const blob = new Blob([conteudo], { type: "application/msword" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "meu_curriculo.doc";
-    link.click();
+    if (!texto) {
+      alert("Por favor, digite algum conteúdo no currículo antes de baixar.");
+      return;
+    }
+
+    try {
+      const doc = new Document({
+        sections: [
+          {
+            properties: {
+              page: {
+                margin: {
+                  top: 2500, // 2.5cm
+                  right: 2000, // 2cm
+                  bottom: 2500, // 2.5cm
+                  left: 3000, // 3cm
+                },
+              },
+            },
+            children: [
+              new Paragraph({
+                spacing: {
+                  line: 360, // 1.5 line spacing (240 = single, 360 = 1.5)
+                  after: 240, // space after paragraph
+                },
+                alignment: "justify", // justified text
+                children: [
+                  new TextRun({
+                    text: texto,
+                    font: "Times New Roman",
+                    size: 24, // 12pt
+                  }),
+                ],
+              }),
+            ],
+          },
+        ],
+      });
+
+      const buffer = await Packer.toBlob(doc);
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(buffer);
+      link.download = "meu_curriculo.docx";
+      link.click();
+    } catch (error) {
+      console.error("Erro ao gerar o arquivo DOCX:", error);
+    }
   };
 
   const fecharTooltip = (e) => {
@@ -81,8 +104,12 @@ const Curriculo = () => {
             onMouseEnter={() => !fechado && setMostrarTooltip(true)}
             onMouseLeave={() => setMostrarTooltip(false)}
           >
-            <div id="word" contentEditable="true">
-              <p className="text">Título</p>
+            <div
+              id="word"
+              ref={wordRef}
+              contentEditable="true"
+              data-placeholder="Digite seu currículo aqui..."
+            >
             </div>
             <button id="download" onClick={baixarCurriculo}>
               Baixar Currículo

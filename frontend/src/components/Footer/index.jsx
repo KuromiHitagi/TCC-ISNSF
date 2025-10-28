@@ -1,5 +1,5 @@
 import './index.scss'
-import { FaHome, FaUserEdit, FaClipboardList, FaBriefcase, FaFileAlt, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaHome, FaUserEdit, FaClipboardList, FaBriefcase, FaFileAlt, FaFacebook, FaInstagram,FaYoutube } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -25,10 +25,9 @@ export default function Footer() {
                 <div className="social">
                     <p>Siga-nos em nossas redes sociais</p>
                     <div className="logo">
-                        <a target='_blank' href="#"><FaFacebook className="logo-icon" /></a>
-                        <a target='_blank' href="#"><FaInstagram className="logo-icon" /></a>
-                        <a target='_blank' href="#"><FaLinkedin className="logo-icon" /></a>
-                        <a target='_blank' href="#"><FaTwitter className="logo-icon" /></a>
+                        <a target='_blank' href="https://web.facebook.com/profile.php?id=61583085595766"><FaFacebook className="logo-icon" /></a>
+                        <a target='_blank' href="https://www.instagram.com/tec.vagas/"><FaInstagram className="logo-icon" /></a>
+                        <a target='_blank' href="https://www.youtube.com/@tecvagas"><FaYoutube className="logo-icon" /></a>
                     </div>
                 </div>
             </div>

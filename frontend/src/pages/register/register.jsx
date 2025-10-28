@@ -6,7 +6,10 @@ import { useState } from "react";
 import api from "../../api.js";
 import { signInWithGoogle, auth, googleProvider } from "../../firebase.js";
 import { signInWithRedirect } from "firebase/auth";
-import InputMask from "react-input-mask";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { IMaskInput } from "react-imask";
+
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -18,8 +21,8 @@ const Register = () => {
 
   const [nomeUser, setNomeUser] = useState("");
   const [nomeInc, setNomeInc] = useState("");
-  const [idade, setIdade] = useState("");
   const [cpf, setCpf] = useState("");
+  const [cpfRaw, setCpfRaw] = useState("");
   const [cnpj, setCnpj] = useState("");
   const [areainteresse, setAreainteresse] = useState("");
   const [areaprofissionalizada, setAreaprofissionalizada] = useState("");
@@ -28,8 +31,9 @@ const Register = () => {
   const [userSenha, setUserSenha] = useState("");
   const [incSenha, setIncSenha] = useState("");
   const [tel, setTel] = useState("");
+  const [telRaw, setTelRaw] = useState("");
   const [cidade, setCidade] = useState("");
-  const [dataNascimento, setDataNasc] = useState("");
+  const [dataNascimento, setDataNasc] = useState(null);
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
 
@@ -49,13 +53,15 @@ const Register = () => {
     e.preventDefault();
     if (opcao == "usuario") {
       try {
+        // Format date to YYYY-MM-DD for backend
+        const formattedDate = dataNascimento ? dataNascimento.toISOString().split('T')[0] : null;
+
         const body = {
           nome: nomeUser,
-          idade: idade,
-          cpf: cpf,
-          data_nascimento: dataNascimento,
+          cpf: cpfRaw,
+          data_nascimento: formattedDate,
           cidade: cidade,
-          telefone: tel,
+          telefone: telRaw,
           area_interesse: areainteresse,
           email: emailUser,
           senha: userSenha,
@@ -65,22 +71,46 @@ const Register = () => {
 
         if (response.status === 200) {
           alert("Conta criada com Sucesso!");
+
+          // Store values before clearing form
+          const email = emailUser;
+          const senha = userSenha;
+
           setNomeUser("");
-          setIdade("");
           setCpf("");
-          setDataNasc("");
+          setDataNasc(null);
           setCidade("");
           setTel("");
           setAreainteresse("");
           setEmailUser("");
           setUserSenha("");
-          Navigate("/login");
+
+          // Perform automatic login after successful registration
+          try {
+            const loginBody = {
+              email: email,
+              senha: senha
+            };
+            const loginResponse = await api.post("/usuario/login", loginBody);
+            const userToken = loginResponse.data.token;
+
+            localStorage.setItem("EMAIL", email);
+            localStorage.setItem("TOKEN", userToken);
+            localStorage.setItem("USER_TYPE", "usuario");
+
+            Navigate("/register/complete");
+          } catch (loginError) {
+            console.error("Erro no login automático:", loginError);
+            alert("Conta criada, mas erro no login automático. Faça login manualmente.");
+            Navigate("/login");
+          }
         } else {
           alert("Erro ao criar conta");
         }
       } catch (error) {
         console.error("Erro:", error);
-        alert("Erro ao conectar com o servidor.");
+        const errorMessage = error.response?.data?.erro || "Erro ao conectar com o servidor.";
+        alert(errorMessage);
       }
     } else if (opcao == "empresa") {
       try {
@@ -96,18 +126,43 @@ const Register = () => {
 
         if (response.status === 200) {
           alert("Conta criada com Sucesso!");
+
+          // Store values before clearing form
+          const email = emailInc;
+          const senha = incSenha;
+
           setNomeInc("");
           setCnpj("");
           setAreaprofissionalizada("");
           setEmailInc("");
           setIncSenha("");
-          Navigate("/login");
+
+          // Perform automatic login after successful registration
+          try {
+            const loginBody = {
+              email: email,
+              senha: senha
+            };
+            const loginResponse = await api.post("/empresa/login", loginBody);
+            const userToken = loginResponse.data.token;
+
+            localStorage.setItem("EMAIL", email);
+            localStorage.setItem("TOKEN", userToken);
+            localStorage.setItem("USER_TYPE", "empresa");
+
+            Navigate("/register/complete");
+          } catch (loginError) {
+            console.error("Erro no login automático:", loginError);
+            alert("Conta criada, mas erro no login automático. Faça login manualmente.");
+            Navigate("/login");
+          }
         } else {
           alert("Erro ao criar conta");
         }
       } catch (error) {
         console.error("Erro:", error);
-        alert("Erro ao conectar com o servidor.");
+        const errorMessage = error.response?.data?.erro || "Erro ao conectar com o servidor.";
+        alert(errorMessage);
       }
     }
   }
@@ -209,25 +264,23 @@ const Register = () => {
           placeholder="Nome"
           required
         />
-        <input
-          value={idade}
-          onChange={(e) => setIdade(e.target.value)}
-          type="text"
-          placeholder="Idade"
-          required
-        />
-        <input
+
+        <IMaskInput
+          mask="000.000.000-00"
           value={cpf}
-          onChange={(e) => setCpf(e.target.value)}
-          type="text"
+          onAccept={(value, mask) => {
+            setCpf(value);
+            setCpfRaw(mask.unmaskedValue);
+          }}
           placeholder="CPF: (12345678901)"
-          required
+          className="input-mask"
         />
-        <input
-          value={dataNascimento}
-          onChange={(e) => setDataNasc(e.target.value)}
-          type="text"
-          placeholder="Data de Nascimento: (AAAA-MM-DD)"
+        <DatePicker
+          selected={dataNascimento}
+          onChange={(date) => setDataNasc(date)}
+          dateFormat="dd/MM/yyyy"
+          placeholderText="Data de Nascimento"
+          className="date-picker-input"
         />
         <input
           value={cidade}
@@ -235,11 +288,15 @@ const Register = () => {
           type="text"
           placeholder="Cidade"
         />
-        <input
+        <IMaskInput
+          mask="(00) 00000-0000"
           value={tel}
-          onChange={(e) => setTel(e.target.value)}
+          onAccept={(value, mask) => {
+            setTel(value);
+            setTelRaw(mask.unmaskedValue);
+          }}
           placeholder="Telefone: (12345678901)"
-          type="text"
+          className="input-mask"
         />
         <input
           value={areainteresse}

@@ -101,12 +101,12 @@ body {
       top: 50%;
       transform: translateY(-50%);
       z-index: 10;
-      color: #ffa600;
+      color: rgb(0, 255, 255);
       font-weight: bold;
       transition: 0.3s;
 
       &:hover {
-        color: #ff7700; // destaque dourado no hover
+        color: rgb(81, 255, 255); // destaque dourado no hover
         transform: translateY(-50%) scale(1.2);
       }
     }

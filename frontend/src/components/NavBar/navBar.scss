@@ -158,9 +158,29 @@
           }
 
           li {
+            &.curriculo{
+              display: none;
+
+              &.loggedUser{
+                display: block;
+              }
+            }
+            &.vagas_empresas{
+              display: none;
+
+              &.loggedInc{
+                display: block;
+              }
+            }
+            &.vagas_usuario{
+              display: none;
+
+              &.loggedUser{
+                display: block;
+              }
+            }
             &.subscribe.logged{
-              pointer-events: none;
-              opacity: 0.5;
+              display: none;
             }
             .ult{
               border-radius: 0 0 15px 15px;

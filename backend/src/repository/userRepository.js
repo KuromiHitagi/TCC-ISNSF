@@ -2,6 +2,10 @@ import { connection } from "../config/db.js";
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -29,17 +33,14 @@ export async function mostrarFotosUsuario(idUsuario) {
   return registros;
 }
 
-export async function adicionarFotoUsuario(idUsuario, foto) {
+export async function adicionarFotoUsuario(idUsuario, caminhoFoto) {
   const comando = `
-    INSERT INTO fotousuario (usuario_id, caminho_foto)
-         VALUES (?, ?);
+    UPDATE usuario
+       SET user_foto = ?
+     WHERE id = ?
   `;
 
-  const [info] = await connection.query(comando, [
-    idUsuario,
-    foto.caminho
-  ]);
-  return info.insertId;
+  await connection.query(comando, [caminhoFoto.replace(/\\/g, '/'), idUsuario]);
 };
 
 export async function alterarFotoUsuario(id, caminho) {
@@ -81,14 +82,13 @@ export async function validarCredenciais(email, senha) {
 
 export async function criarConta(novoUsuario) {
   const comando = `
-    INSERT INTO usuario (nome, idade, cpf, data_nascimento, cidade, telefone, email, senha, area_interesse)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+    INSERT INTO usuario (nome, cpf, data_nascimento, cidade, telefone, email, senha, area_interesse)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?);
   `;
 
   const hash = await bcrypt.hash(novoUsuario.senha, 10);
   const [info] = await connection.query(comando, [
     novoUsuario.nome,
-    novoUsuario.idade || null,
     novoUsuario.cpf || null,
     novoUsuario.data_nascimento || null,
     novoUsuario.cidade || null,
@@ -102,7 +102,7 @@ export async function criarConta(novoUsuario) {
 
 export async function buscarUsuarioPorId(id) {
   const comando = `
-    SELECT id, nome, idade, cpf, data_nascimento, cidade, telefone, email
+    SELECT id, nome, cpf, data_nascimento, cidade, telefone, email, user_foto
       FROM usuario
      WHERE id = ?
   `;
@@ -114,13 +114,12 @@ export async function buscarUsuarioPorId(id) {
 export async function atualizarUsuario(id, dados) {
   const comando = `
     UPDATE usuario
-       SET nome = ?, idade = ?, cpf = ?, data_nascimento = ?, cidade = ?, telefone = ?, email = ?
+       SET nome = ?, cpf = ?, data_nascimento = ?, cidade = ?, telefone = ?, email = ?
      WHERE id = ?
   `;
 
   await connection.query(comando, [
     dados.nome,
-    dados.idade,
     dados.cpf,
     dados.data_nascimento,
     dados.cidade,
@@ -141,7 +140,7 @@ export async function deletarUsuario(id) {
 
 export async function buscarUsuarioPorEmail(email) {
   const comando = `
-    SELECT id, nome, idade, cpf, data_nascimento, cidade, telefone, email
+    SELECT id, nome, cpf, data_nascimento, cidade, telefone, email
       FROM usuario
      WHERE email = ?
   `;
