@@ -108,42 +108,45 @@ const Curriculo = () => {
               id="word"
               ref={wordRef}
               contentEditable="true"
-              data-placeholder={`João da Silva
-(11) 99999-9999 | joaosilva@email.com | São Paulo/SP
-LinkedIn: linkedin.com/in/joaosilva | GitHub: github.com/joaosilva
+              data-placeholder={`
+                                João da Silva
+                                (11) 99999-9999 | joaosilva@email.com | São Paulo/SP
+                                LinkedIn: linkedin.com/in/joaosilva | GitHub: github.com/joaosilva
 
 
-Objetivo profissional
-Atuar como desenvolvedor front-end, aplicando conhecimentos em React e JavaScript.
+                                Objetivo profissional:
+                                Atuar como desenvolvedor front-end, aplicando conhecimentos em React e JavaScript.
 
 
-Resumo profissional
-Profissional com experiência em desenvolvimento web, focado em boas práticas e interfaces responsivas. Comunicativo, curioso e com facilidade para aprendizado.
+                                Resumo profissional:
+                                Profissional com experiência em desenvolvimento web, focado em boas práticas e 
+                                interfaces responsivas. 
+                                Comunicativo, curioso e com facilidade para aprendizado.
 
 
-Formação acadêmica
-Bacharelado em Sistemas de Informação – Universidade X, Conclusão: 2024
+                                Formação acadêmica:
+                                Bacharelado em Sistemas de Informação – Universidade X, Conclusão: 2024
 
 
-Experiência profissional
-Empresa Y – Estagiário de Desenvolvimento (2023 – Atual)
-Desenvolvimento de aplicações ReactJS e consumo de APIs REST.
+                                Experiência profissional:
+                                Empresa Y – Estagiário de Desenvolvimento (2023 – Atual)
+                                Desenvolvimento de aplicações ReactJS e consumo de APIs REST.
 
 
-Habilidades
-JavaScript | React | Node.js | Git | Figma
+                                Habilidades:
+                                JavaScript | React | Node.js | Git | Figma
 
 
-Cursos e certificações
-Curso de React Avançado – Alura (2024)
+                                Cursos e certificações:
+                                Curso de React Avançado – Alura (2024)
 
 
-Idiomas
-Inglês – Intermediário
+                                Idiomas:
+                                Inglês – Intermediário
 
 
-Projetos e atividades extras
-Participação em hackathons e projetos voluntários de tecnologia.`}
+                                Projetos e atividades extras:
+                                Participação em hackathons e projetos voluntários de tecnologia.`}
             >
             </div>
             <button id="download" onClick={baixarCurriculo}>
