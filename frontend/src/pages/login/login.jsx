@@ -1,12 +1,13 @@
 import NavBar from '../../components/NavBar/navBar.jsx';
-import { Link, useNavigate } from 'react-router-dom'
-import './login.scss';
 import Footer from '../../components/Footer/index.jsx';
+import api from '../../services/api.js';
+import { signInWithGoogle } from '../../services/firebase.js';
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import api from '../../api.js';
-import { signInWithGoogle } from '../../firebase.js';
+import './login.scss';
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import googleIcon from '../../assets/google.png';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -32,9 +33,11 @@ const Login = () => {
             try {
                 const response = await api.post('/usuario/login', body)
                 const userEmail = email;
+                const userName = response.data.nome;
                 const userToken = response.data.token;
 
                 localStorage.setItem("EMAIL", userEmail);
+                localStorage.setItem("NOME", userName)
                 localStorage.setItem("TOKEN", userToken);
                 localStorage.setItem("USER_TYPE", "usuario");
 
@@ -42,18 +45,20 @@ const Login = () => {
                 return;
             } catch {
                 // Se falhar como usuário, tentar como empresa
-                try {
-                    const response = await api.post('/empresa/login', body)
-                    const userEmail = email;
-                    const userToken = response.data.token;
+            try {
+                const response = await api.post('/empresa/login', body)
+                const userEmail = email;
+                const userName = response.data.nome;
+                const userToken = response.data.token;
 
-                    localStorage.setItem("EMAIL", userEmail);
-                    localStorage.setItem("TOKEN", userToken);
-                    localStorage.setItem("USER_TYPE", "empresa");
+                localStorage.setItem("EMAIL", userEmail);
+                localStorage.setItem("NOME", userName);
+                localStorage.setItem("TOKEN", userToken);
+                localStorage.setItem("USER_TYPE", "empresa");
 
-                    Navigate('/');
-                    return;
-                } catch {
+                Navigate('/');
+                return;
+            } catch {
                     alert("Credenciais inválidas para usuário ou empresa");
                 }
             }
@@ -124,7 +129,7 @@ const Login = () => {
                     <div className="google">
                         <p>Ou entre com o</p>
                         <button className='butão btn' onClick={loginWithGoogle}>
-                        <img src="/img/google.png" alt="google-button" />
+                        <img src={googleIcon} alt="google-button" />
                         <p>Google</p>
                         </button>
                     </div>

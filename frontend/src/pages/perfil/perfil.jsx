@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Navbar from '../../components/NavBar/navBar.jsx'
-import './perfil.scss'
 import { useNavigate } from 'react-router';
+import Navbar from '../../components/NavBar/navBar.jsx'
 import Footer from '../../components/Footer/index.jsx';
-import api from '../../api.js';
+import api from '../../services/api.js';
+import './perfil.scss'
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -90,6 +90,7 @@ const Perfil = () => {
     const sair = () => {
         window.location.reload();
         localStorage.removeItem("EMAIL");
+        localStorage.removeItem("NOME")
         localStorage.removeItem("TOKEN");
         localStorage.removeItem("USER_TYPE");
     };
@@ -106,7 +107,7 @@ const Perfil = () => {
                     <div className="profile-header">
                         <div className="profile-photo">
                             {userProfile?.user_foto || userProfile?.empresa_foto ? (
-                                <img src={`http://localhost:3001/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto de perfil" className="profile-image" />
+                                <img src={`${api.defaults.baseURL}/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto de perfil" className="profile-image" />
                             ) : (
                                 <div className="photo-placeholder">
                                     <span>👤</span>
@@ -138,7 +139,7 @@ const Perfil = () => {
                                     {preview ? (
                                         <img src={preview} alt="Preview" className="preview-image" />
                                     ) : userProfile?.user_foto || userProfile?.empresa_foto ? (
-                                        <img src={`http://localhost:3001/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto atual" className="preview-image" />
+                                        <img src={`${api.defaults.baseURL}/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto atual" className="preview-image" />
                                     ) : (
                                         <div className="placeholder">
                                             <span>📷</span>

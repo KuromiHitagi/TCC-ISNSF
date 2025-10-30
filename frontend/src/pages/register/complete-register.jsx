@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../api.js";
+import api from "../../services/api.js";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -105,7 +105,9 @@ const CompleteRegister = () => {
                 style={{ display: "none" }}
               />
               <label htmlFor="photo-input" className="file-button">
+                <button>
                 Escolher Foto
+                </button>
               </label>
 
               <div className="buttons">

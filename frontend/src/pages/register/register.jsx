@@ -1,14 +1,15 @@
 import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import "./register.scss";
 import { useState } from "react";
-import api from "../../api.js";
-import { signInWithGoogle, auth, googleProvider } from "../../firebase.js";
+import { signInWithGoogle, auth, googleProvider } from "../../services/firebase.js";
 import { signInWithRedirect } from "firebase/auth";
+import { IMaskInput } from "react-imask";
+import api from "../../services/api.js";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { IMaskInput } from "react-imask";
+import "./register.scss";
+import googleIcon from "../../assets/google.png";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -149,8 +150,10 @@ const Register = () => {
             };
             const loginResponse = await api.post("/empresa/login", loginBody);
             const userToken = loginResponse.data.token;
+            const userName = loginResponse.data.nome;
 
             localStorage.setItem("EMAIL", email);
+            localStorage.setItem("NOME", userName);
             localStorage.setItem("TOKEN", userToken);
             localStorage.setItem("USER_TYPE", "empresa");
 
@@ -386,7 +389,7 @@ const Register = () => {
                 type="button"
                 onClick={registerWithGoogle}
               >
-                <img src="/img/google.png" height={20} alt="google-button" />
+                <img src={googleIcon} height={20} alt="google-button" />
                 <p>Google</p>
               </button>
             </div>

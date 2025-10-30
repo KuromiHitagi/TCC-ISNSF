@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.scss'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home.jsx";
 import About from "./pages/about/about.jsx";
@@ -14,6 +13,7 @@ import CompleteGoogleRegistration from "./pages/register/complete-google.jsx";
 import Curriculo from "./pages/curriculo/curriculo.jsx";
 import Perfil from "./pages/perfil/perfil.jsx";
 
+import './styles/index.scss'
 const elements = document.querySelectorAll('.fade-in');
 
 window.addEventListener('scroll', () => {

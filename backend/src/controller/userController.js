@@ -1,5 +1,5 @@
 import * as repo from '../repository/userRepository.js';
-import { generateToken, getAuthentication } from '../utils/jwt.js';
+import { generateToken, getAuthentication } from '../utils/JWT.js';
 import { Router } from "express";
 import { upload } from '../repository/userRepository.js';
 
@@ -35,7 +35,7 @@ endpoints.post('/usuario/login', async (req, resp) => {
       return resp.status(401).send({ erro: 'Credenciais inválidas' });
     }
     const token = generateToken(credenciais);
-    resp.send({ token });
+    resp.send({ token, nome: credenciais.nome });
   } catch (err) {
     resp.status(400).send({ erro: err.message });
   }

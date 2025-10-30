@@ -1,5 +1,5 @@
 import * as repo from '../repository/candidaturaRepository.js';
-import { getAuthentication } from '../utils/jwt.js';
+import { getAuthentication } from '../utils/JWT.js';
 import { Router } from "express";
 
 const endpoints = Router();

@@ -3,32 +3,26 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import areasData from "../form/areas.json";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./carrossel.scss";
 
 export default function CursosCarousel({ areas }) {
-  const [areasData, setAreasData] = useState([]);
+  const [filteredAreas, setFilteredAreas] = useState([]);
 
   useEffect(() => {
     if (areas && areas.length > 0) {
-      fetch('/areas.json')
-        .then(response => response.json())
-        .then(data => {
-          const filteredAreas = areas.map(area => ({
-            titulo: area,
-            descricao: data[area] || 'Descrição não disponível.'
-          }));
-          setAreasData(filteredAreas);
-        })
-        .catch(error => {
-          console.error('Erro ao carregar áreas:', error);
-        });
+      const filtered = areas.map(area => ({
+        titulo: area,
+        descricao: areasData[area] || 'Descrição não disponível.'
+      }));
+      setFilteredAreas(filtered);
     }
   }, [areas]);
 
-  if (areasData.length === 0) {
+  if (filteredAreas.length === 0) {
     return <div>Carregando áreas...</div>;
   }
 
@@ -56,7 +50,7 @@ export default function CursosCarousel({ areas }) {
         centeredSlides={false}
         centeredSlidesBounds={false}
       >
-        {areasData.map((area, index) => (
+        {filteredAreas.map((area, index) => (
           <SwiperSlide key={index}>
             <motion.div
               className="card container"

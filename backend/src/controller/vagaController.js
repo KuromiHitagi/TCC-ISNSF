@@ -1,6 +1,6 @@
 import * as repo from '../repository/vagaRepository.js';
 import * as empresaRepo from '../repository/empresaRepository.js';
-import { getAuthentication } from '../utils/jwt.js';
+import { getAuthentication } from '../utils/JWT.js';
 import { Router } from "express";
 
 const endpoints = Router();

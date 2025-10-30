@@ -23,8 +23,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "startmon": "nodemon server.js",
-    "fullinstall": "npm install && cd functions && npm install && cd .."
+    "fullinstall": "npm install && cd src && cd functions && npm install && cd .. && cd .."
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

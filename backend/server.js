@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { adicionarRotas } from "./routes/routes.js";
+import { adicionarRotas } from "./src/routes/routes.js";
 
 dotenv.config();
 

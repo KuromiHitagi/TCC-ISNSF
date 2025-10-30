@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavBar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
-import Questionario from '../../components/form/form.jsx'; 
+import Questionario from '../../layouts/form/form.jsx'
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import './form.scss';

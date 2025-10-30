@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CursosCarousel from "../carrossel-form/carrossel.jsx";
-import api from "../../api.js";
+import api from "../../services/api.js";
 
 export default function Response({ respostas }) {
   const [resultado, setResultado] = useState("Analisando suas respostas...");

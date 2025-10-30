@@ -1,5 +1,5 @@
 import { inserirAdmin, validarLoginAdmin } from '../repository/adminRepository.js';
-import { generateToken } from '../utils/jwt.js';
+import { generateToken } from '../utils/JWT.js';
 import { Router } from 'express';
 
 const endpoints = Router();

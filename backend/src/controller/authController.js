@@ -1,6 +1,6 @@
 import { Router } from "express";
-import admin from "../firebase-admin.js";
-import { generateToken } from "../utils/jwt.js";
+import admin from "../../firebase-admin.js";
+import { generateToken } from "../utils/JWT.js";
 import * as userRepo from "../repository/userRepository.js";
 import * as empresaRepo from "../repository/empresaRepository.js";
 

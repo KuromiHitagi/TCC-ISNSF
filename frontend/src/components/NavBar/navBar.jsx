@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import HamburgerMenu from "../menu/menu.jsx";
-import api from "../../api.js";
+import HamburgerMenu from "../../layouts/menu/menu.jsx";
+import api from "../../services/api.js";
+import logo from "../../assets/TecVagas_Logo.png";
 import "./navBar.scss";
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [enable, setEnable] = useState(false);
   const [enableInc, setEnableInc] = useState(false);
   const [enableUser, setEnableUser] = useState(false);
+  const [userNome, setUserNome] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhoto, setUserPhoto] = useState("");
 
@@ -35,6 +37,9 @@ const Navbar = () => {
       setUserEmail(email);
     }
 
+    const nome = localStorage.getItem("NOME")
+    setUserNome(nome)
+
     // Buscar foto do perfil
     const fetchUserPhoto = async () => {
       const userType = localStorage.getItem("USER_TYPE");
@@ -44,7 +49,7 @@ const Navbar = () => {
           const response = await api.get(endpoint);
           const photoField = userType === "usuario" ? "user_foto" : "empresa_foto";
           if (response.data[photoField]) {
-            setUserPhoto(`http://localhost:3001/storage/${response.data[photoField]}`);
+            setUserPhoto(`${api.defaults.baseURL}/storage/${response.data[photoField]}`);
           }
         } catch (error) {
           console.error("Erro ao buscar foto do perfil:", error);
@@ -64,7 +69,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="imglogodiv">
           <Link to="/" className="navbar__brand">
-            <img className="logo-2" src="/img/TecVagas_Logo.png" alt="Logo" />
+            <img className="logo-2" src={logo} alt="Logo" />
           </Link>
         </div>
         <div className="navbar__inner">
@@ -124,17 +129,6 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            {/* Busca */}
-            <div className="navbar__search">
-              <input
-                type="text"
-                placeholder="Pesquisar"
-                className="navbar__search-input"
-              />
-              <button aria-label="Pesquisar" className="navbar__search-button">
-                🔎
-              </button>
-            </div>
           </div>
 
           {/* Botão Hamburguer (só mobile) */}
@@ -153,7 +147,7 @@ const Navbar = () => {
         <div className={`spacement ${enable ? "logged" : ""}`}>
           <Link className="perfil-link" to="/perfil">
             {userPhoto && <img src={userPhoto} alt="Foto de perfil" className="navbar-profile-photo" />}
-            {userEmail}
+            {userNome}
           </Link>
         </div>
       </header>

@@ -1,10 +1,9 @@
 import NavBar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './register.scss';
 import { useState, useEffect } from 'react';
-import api from '../../api.js';
-
+import api from '../../services/api.js';
+import './register.scss';
 
 export default function CompleteGoogleRegistration() {
   const navigate = useNavigate();
@@ -56,6 +55,7 @@ export default function CompleteGoogleRegistration() {
 
           if (loginResponse.status === 200) {
             localStorage.setItem("EMAIL", googleUser.email);
+            localStorage.setItem("NOME", loginResponse.data.nome);
             localStorage.setItem("TOKEN", loginResponse.data.token);
             localStorage.setItem("USER_TYPE", "usuario");
             alert("Conta criada e logada com sucesso!");
@@ -87,6 +87,7 @@ export default function CompleteGoogleRegistration() {
 
           if (loginResponse.status === 200) {
             localStorage.setItem("EMAIL", googleUser.email);
+            localStorage.setItem("NOME", loginResponse.data.nome);
             localStorage.setItem("TOKEN", loginResponse.data.token);
             localStorage.setItem("USER_TYPE", "empresa");
             alert("Conta criada e logada com sucesso!");

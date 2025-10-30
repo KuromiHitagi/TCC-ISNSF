@@ -15,5 +15,5 @@ export function adicionarRotas(api) {
   api.use(empresaController);
   api.use(analysisController);
   api.use(authController);
-  api.use('/storage', express.static('../public/storage'));
+  api.use('/storage', express.static('public/storage'));
 }

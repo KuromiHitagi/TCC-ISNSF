@@ -3,8 +3,8 @@ import Navbar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import api from '../../api.js'
 import { useState } from 'react';
+import api from '../../services/api.js'
 
 const Vagas = () => {
     const [titulo, setTitulo] = useState("");

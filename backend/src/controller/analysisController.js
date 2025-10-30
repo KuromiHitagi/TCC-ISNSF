@@ -8,7 +8,7 @@ const router = express.Router();
 // Carregar áreas
 let areas;
 try {
-  areas = JSON.parse(fs.readFileSync('./routes/areas.json', 'utf8'));
+  areas = JSON.parse(fs.readFileSync('./src/routes/areas.json', 'utf8'));
 } catch (err) {
   console.error('Erro ao carregar areas.json:', err);
   areas = {};

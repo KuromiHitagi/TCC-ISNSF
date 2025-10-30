@@ -3,7 +3,7 @@ import Navbar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import api from '../../api.js'
+import api from '../../services/api.js'
 import { useState, useEffect } from 'react';
 
 const SearchVagas = () => {
@@ -32,6 +32,12 @@ const SearchVagas = () => {
           <h1>Buscar Vagas</h1>
           <h3>Nessa página, todas as vagas criadas serão exibidas</h3>
 
+        {/* Busca */}
+        <div className="navbar__search">
+          <input type="text" placeholder="Pesquisar" className="navbar__search-input"/>
+          <button aria-label="Pesquisar" className="navbar__search-button">🔎</button>
+        </div>
+        
           <div className="vagas-list">
             {vagas.map((vaga) => (
               <div key={vaga.id} className="vaga-item">

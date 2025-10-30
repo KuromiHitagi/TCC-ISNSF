@@ -1,29 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Response from "./response.jsx";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+import perguntasData from "./perguntas.json";
 import "./form.scss";
 
 export default function Questionario() {
-  const [perguntas, setPerguntas] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const perguntas = perguntasData;
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [respostas, setRespostas] = useState({});
   const [erro, setErro] = useState("");
   const [finalizado, setFinalizado] = useState(false);
-
-  useEffect(() => {
-    fetch('/perguntas.json')
-      .then(response => response.json())
-      .then(data => {
-        setPerguntas(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Erro ao carregar perguntas:', error);
-        setLoading(false);
-      });
-  }, []);
 
   const perguntaAtual = perguntas[indiceAtual];
 
@@ -43,10 +30,6 @@ export default function Questionario() {
       setFinalizado(true);
     }
   };
-
-  if (loading) {
-    return <div className="questionario">Carregando perguntas...</div>;
-  }
 
   if (perguntas.length === 0) {
     return <div className="questionario">Erro ao carregar perguntas.</div>;
