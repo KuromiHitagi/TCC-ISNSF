@@ -20,6 +20,10 @@ const SearchVagas = () => {
     }
     carregarVagas();
   }, []);
+
+  async function Candidatar() {
+    
+  }
   return (
     <div>
       <Navbar />
@@ -39,20 +43,23 @@ const SearchVagas = () => {
         </div>
         
           <div className="vagas-list">
-            {vagas.map((vaga) => (
-              <div key={vaga.id} className="vaga-item">
-                <div className="titulo">
-                  <h4>{vaga.titulo}</h4>
+              {vagas.map((vaga) => (
+                <div key={vaga.id} className="vaga-item">
+                  <div className="titulo">
+                    <h4>{vaga.titulo}</h4>
+                  </div>
+                  <div className="info">
+                    <p><strong>Empresa:</strong> {vaga.empresa}</p>
+                    <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                    <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                    <p><strong>Salário:</strong> R${vaga.salario}</p>
+                    <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                    <div className="btn">
+                      <button onClick={Candidatar} className="btn-cand">Candidatar-se</button>
+                    </div>
+                  </div>
                 </div>
-                <div className="info">
-                  <p><strong>Empresa:</strong> {vaga.empresa}</p>
-                  <p><strong>Descrição:</strong> {vaga.descricao}</p>
-                  <p><strong>Localização:</strong> {vaga.localizacao}</p>
-                  <p><strong>Salário:</strong> R${vaga.salario}</p>
-                  <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </motion.div>

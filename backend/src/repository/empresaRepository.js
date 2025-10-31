@@ -2,6 +2,10 @@ import { connection } from "../config/db.js";
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -28,7 +32,7 @@ export async function mostrarFotosEmpresa(idEmpresa) {
   return registros.length > 0 ? [{ caminho_foto: registros[0].caminho_foto }] : [];
 }
 
-export async function adicionarFotoEmpresa(idEmpresa, foto) {
+export async function adicionarFotoEmpresa(idEmpresa, caminhoFoto) {
   const comando = `
     UPDATE empresa
        SET empresa_foto = ?
@@ -36,7 +40,7 @@ export async function adicionarFotoEmpresa(idEmpresa, foto) {
   `;
 
   // Extrair apenas o nome do arquivo do caminho completo
-  const nomeArquivo = foto.caminho.split(/[/\\]/).pop();
+  const nomeArquivo = caminhoFoto.split(/[/\\]/).pop();
   await connection.query(comando, [nomeArquivo, idEmpresa]);
 };
 

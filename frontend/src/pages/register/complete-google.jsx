@@ -15,7 +15,6 @@ export default function CompleteGoogleRegistration() {
 
 
 
-  const [googleIdade, setGoogleIdade] = useState("");
   const [googleCpf, setGoogleCpf] = useState("");
   const [googleCnpj, setGoogleCnpj] = useState("");
   const [googleAreaInteresse, setGoogleAreaInteresse] = useState("");
@@ -37,7 +36,6 @@ export default function CompleteGoogleRegistration() {
       try {
         const body = {
           "nome": googleUser.displayName,
-          "idade": googleIdade,
           "cpf": googleCpf,
           "areainteresse": googleAreaInteresse,
           "email": googleUser.email,
@@ -117,7 +115,6 @@ export default function CompleteGoogleRegistration() {
           {tipo === "usuario" ? (
             <>
               <h3>Informações de Usuário</h3>
-              <input value={googleIdade} onChange={(e) => setGoogleIdade(e.target.value)} type="text" placeholder="Idade" required />
               <input value={googleCpf} onChange={(e) => setGoogleCpf(e.target.value)} type="text" placeholder="CPF" required />
               <input value={googleAreaInteresse} onChange={(e) => setGoogleAreaInteresse(e.target.value)} type="text" placeholder="Área de Interesse" required />
             </>

@@ -3,7 +3,7 @@ import Navbar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js'
 
 const Vagas = () => {
@@ -22,9 +22,27 @@ const Vagas = () => {
             "salario": salario
         }
         await api.post('/vaga/criar', body)
+        // Reload vagas after posting
+        carregarVagas();
         // Optionally, reset form or show success message
         setShowForm(false);
     }
+
+    const [vagas, setVagas] = useState([]);
+
+    const carregarVagas = async () => {
+        try {
+            const response = await api.get('/vaga/usuario/minhas');
+            setVagas(response.data);
+        } catch (error) {
+            console.error('Erro ao carregar vagas:', error);
+        }
+    };
+
+    useEffect(() => {
+        carregarVagas();
+    }, []);
+
 
     function AtivarForm() {
         return(
@@ -53,6 +71,23 @@ const Vagas = () => {
 
                     <button onClick={() => setShowForm(true)}>Abrir Formulário</button>
                     {showForm && AtivarForm()}
+
+                    <div className="vagas-list">
+                    {vagas.map((vaga) => (
+                        <div key={vaga.id} className="vaga-item">
+                        <div className="titulo">
+                            <h4>{vaga.titulo}</h4>
+                        </div>
+                        <div className="info">
+                            <p><strong>Empresa:</strong> {vaga.empresa}</p>
+                            <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                            <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                            <p><strong>Salário:</strong> R${vaga.salario}</p>
+                            <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                        </div>
+                        </div>
+                    ))}
+                </div>
                 </div>
             </motion.div>
             <Footer />

@@ -56,10 +56,12 @@
         .vaga-item {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
 
-            min-width: max-content;
+            min-width: 400px;
+            max-width: 400px;
+            height: 300px;
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -101,6 +103,25 @@
 
                 strong {
                     color: #333;
+                }
+
+                .btn{
+                    display: flex;
+                    justify-content: center;
+
+                    width: 100%;
+
+                    .btn-cand{
+                        background-color: #0ff;
+                        border-radius: 10px;
+                        height: 25px;
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover{
+                            background-color: #08c;
+                            transform: scale(105%);
+                        }
+                    }
                 }
             }
         }

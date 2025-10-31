@@ -11,7 +11,6 @@ CREATE TABLE admin (
 CREATE TABLE usuario (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(255) NOT NULL,
-  idade INT,
   cpf CHAR(11) UNIQUE,
   data_nascimento DATE,
   cidade VARCHAR(100),

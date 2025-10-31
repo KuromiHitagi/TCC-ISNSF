@@ -29,6 +29,20 @@ endpoints.get('/vaga/:id', async (req, resp) => {
   }
 });
 
+// Buscar vaga por ID da empresa
+endpoints.get('/vaga/:id/empresa', async (req, resp) => {
+  try{
+    const id = req.params.id;
+    const vaga = await repo.buscarVagaPorIdEmpresa(id);
+    if (!vaga) {
+      return resp.status(404).send({erro: 'Vaga não encontrada' });
+    }
+    resp.send(vaga);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
 // Criar nova vaga (autenticado)
 endpoints.post('/vaga/criar', getAuthentication(), async (req, resp) => {
   try {

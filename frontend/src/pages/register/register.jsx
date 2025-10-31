@@ -22,7 +22,6 @@ const Register = () => {
 
   const [nomeUser, setNomeUser] = useState("");
   const [nomeInc, setNomeInc] = useState("");
-  const [idade, setIdade] = useState("");
   const [cpf, setCpf] = useState("");
   const [cpfRaw, setCpfRaw] = useState("");
   const [cnpj, setCnpj] = useState("");
@@ -61,7 +60,6 @@ const Register = () => {
 
         const body = {
           nome: nomeUser,
-          idade: idade,
           cpf: cpfRaw,
           data_nascimento: formattedDate,
           cidade: cidade,
@@ -81,7 +79,6 @@ const Register = () => {
           const senha = userSenha;
 
           setNomeUser("");
-          setIdade("");
           setCpf("");
           setDataNasc(null);
           setCidade("");
@@ -98,9 +95,11 @@ const Register = () => {
             };
             const loginResponse = await api.post("/usuario/login", loginBody);
             const userToken = loginResponse.data.token;
+            const userName = loginResponse.data.nome;
 
             localStorage.setItem("EMAIL", email);
             localStorage.setItem("TOKEN", userToken);
+            localStorage.setItem("NOME", userName)
             localStorage.setItem("USER_TYPE", "usuario");
 
             Navigate("/register/complete");
@@ -273,16 +272,6 @@ const Register = () => {
           type="text"
           placeholder="Nome"
           required
-        />
-
-        <input 
-        value={idade}
-        onChange={(e) => setIdade(e.target.value)}
-        type="number"
-        min={16}
-        max={80} 
-        placeholder="Idade"
-        required
         />
 
         <IMaskInput

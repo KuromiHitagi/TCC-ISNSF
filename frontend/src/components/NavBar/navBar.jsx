@@ -40,7 +40,7 @@ const Navbar = () => {
     const nome = localStorage.getItem("NOME")
     setUserNome(nome)
 
-    // Buscar foto do perfil
+    // Buscar foto e nome do perfil
     const fetchUserPhoto = async () => {
       const userType = localStorage.getItem("USER_TYPE");
       if (userType) {
@@ -48,11 +48,16 @@ const Navbar = () => {
           const endpoint = userType === "usuario" ? "/usuario/perfil" : "/empresa/perfil";
           const response = await api.get(endpoint);
           const photoField = userType === "usuario" ? "user_foto" : "empresa_foto";
+          const nameField = userType === "usuario" ? "user_nome" : "empresa_nome";
           if (response.data[photoField]) {
             setUserPhoto(`${api.defaults.baseURL}/storage/${response.data[photoField]}`);
           }
+          if (response.data[nameField]) {
+            setUserNome(response.data[nameField]);
+            localStorage.setItem("NOME", response.data[nameField]); // Atualizar localStorage também
+          }
         } catch (error) {
-          console.error("Erro ao buscar foto do perfil:", error);
+          console.error("Erro ao buscar foto e nome do perfil:", error);
         }
       }
     };

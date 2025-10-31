@@ -24,6 +24,18 @@ export async function buscarVagaPorId(id) {
   return registros[0];
 }
 
+export async function buscarVagaPorIdEmpresa(id) {
+  const comando = `
+    SELECT v.id, v.titulo, v.descricao, e.nome as empresa, v.localizacao, v.salario, v.data_publicacao, v.empresa_id as usuario_id
+      FROM vaga v
+      LEFT JOIN empresa e ON v.empresa_id = e.id
+     WHERE v.empresa_id = ?
+  `;
+
+  const [registros] = await connection.query(comando, [id]);
+  return registros[0];
+}
+
 export async function criarVaga(vaga) {
   const comando = `
     INSERT INTO vaga (titulo, descricao, empresa_id, localizacao, salario, data_publicacao)

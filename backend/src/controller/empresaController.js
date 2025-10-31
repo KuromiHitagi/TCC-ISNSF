@@ -80,8 +80,7 @@ endpoints.delete('/empresa', getAuthentication(), async (req, resp) => {
 endpoints.post('/empresa/foto', getAuthentication(), upload.single('foto_empresa'), async (req, resp) => {
   try {
     const caminhoFoto = req.file ? req.file.path : req.body.caminho_foto;
-    const foto = { caminho: caminhoFoto };
-    await repo.adicionarFotoEmpresa(req.user.id, foto);
+    await repo.adicionarFotoEmpresa(req.user.id, caminhoFoto);
     resp.send({ mensagem: 'Foto adicionada com sucesso' });
   } catch (err) {
     resp.status(400).send({ erro: err.message });

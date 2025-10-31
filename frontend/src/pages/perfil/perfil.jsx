@@ -78,6 +78,7 @@ const Perfil = () => {
                 // Recarregar perfil
                 const userEmail = localStorage.getItem("EMAIL");
                 loadProfile(userType, userEmail);
+                window.location.reload();
             }
         } catch (error) {
             console.error("Erro ao fazer upload:", error);
