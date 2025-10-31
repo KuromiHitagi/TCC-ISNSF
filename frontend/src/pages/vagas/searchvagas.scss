@@ -92,6 +92,9 @@
                 justify-content: center;
                 align-items: start;
                 flex-direction: column;
+                  white-space: normal;
+                word-break: break-all;
+                text-align: start;
                 gap: 15px;
                 padding: 0px 20px 20px 20px;
                 margin: 0px 20px 20px 20px;
@@ -127,6 +130,3 @@
         }
     }
 }
-
-    
-

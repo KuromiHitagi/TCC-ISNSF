@@ -1,4 +1,7 @@
 import './index.scss'
+import { Link } from 'react-router-dom'
+import TermosDeUso from '../../pages/TermosDeUso.jsx'
+import PoliticaPrivacidade from '../../pages/PoliticaPrivacidade.jsx'
 import { FaHome, FaUserEdit, FaClipboardList, FaBriefcase, FaFileAlt, FaFacebook, FaInstagram,FaYoutube } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -20,8 +23,8 @@ export default function Footer() {
                 <p>Junte-se a nós e transforme sua carreira</p>
             </div>
             <div className="info2">
-                <p>Política de privacidade</p>
-                <p>Termos de Uso</p>
+                <Link className='p' to='/politicas'>Política de privacidade</Link>
+                <Link className='p' to='/termos'>Termos de Uso</Link>
                 <div className="social">
                     <p>Siga-nos em nossas redes sociais</p>
                     <div className="logo">

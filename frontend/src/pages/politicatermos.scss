@@ -1,0 +1,78 @@
+.politica-container, .termos-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.politica-container h1, .termos-container h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.politica-container h2, .termos-container h2 {
+  font-size: 1.8rem;
+  color: #0056b3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #007bff;
+  padding-left: 0.5rem;
+}
+
+.politica-container h3, .termos-container h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.politica-container p, .termos-container p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.politica-container ul, .termos-container ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.politica-container li, .termos-container li {
+  margin-bottom: 0.5rem;
+}
+
+.politica-container a, .termos-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.politica-container a:hover, .termos-container a:hover {
+  text-decoration: underline;
+}
+
+.politica-container strong, .termos-container strong {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .politica-container, .termos-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .politica-container h1, .termos-container h1 {
+    font-size: 2rem;
+  }
+
+  .politica-container h2, .termos-container h2 {
+    font-size: 1.5rem;
+  }
+}

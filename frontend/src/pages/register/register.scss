@@ -497,38 +497,42 @@ $fonte-principal: 'Poppins', sans-serif;
     gap: 100px;
 
     .google{
-      display: flex;
-      flex-direction: column;
-      width: 20%;
-      transition: all 0.3s ease-in-out;
+      display: none;
 
-      p{
-        margin-bottom: -35px;
-      }
-
-      .btn{
+      &.logged{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 5px;
-        width: 100%;
-        color: #000;
-
-        img{
-          background-color: rgb(255, 255, 255);
-          margin: 1;
-          padding: 5px;
-          height: 20px;
-          border: 1px solid #000;
-          border-radius: 12px;
-          box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.8)
-        }
+        flex-direction: column;
+        width: 20%;
+        transition: all 0.3s ease-in-out;
 
         p{
-          margin: 0;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          font-size: 16px;
+          margin-bottom: -35px;
+        }
+
+        .btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          gap: 5px;
+          width: 100%;
+          color: #000;
+
+          img{
+            background-color: rgb(255, 255, 255);
+            margin: 1;
+            padding: 5px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 12px;
+            box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.8)
+          }
+
+          p{
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+          }
         }
       }
     }

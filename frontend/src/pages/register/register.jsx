@@ -1,7 +1,7 @@
 import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signInWithGoogle, auth, googleProvider } from "../../services/firebase.js";
 import { signInWithRedirect } from "firebase/auth";
 import { IMaskInput } from "react-imask";
@@ -18,7 +18,16 @@ const Register = () => {
   const [open, setOpen] = useState(false);
   const [opcao, setOpcao] = useState("");
   let show = null;
+  const [enable, setEnable] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const Navigate = useNavigate();
+
+  useEffect(() => {
+    const userEmail = localStorage.getItem("EMAIL")
+    if(userEmail != undefined && userEmail != null&& userEmail != "") {
+        setIsLoggedIn(true);
+    }
+  }, []);
 
   const [nomeUser, setNomeUser] = useState("");
   const [nomeInc, setNomeInc] = useState("");
@@ -38,6 +47,15 @@ const Register = () => {
   const [dataNascimento, setDataNasc] = useState(null);
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
+  useEffect(() => {
+    if (opcao == "--Selecione--" || opcao == "") {
+      setEnable(false);
+    } else if (opcao == "empresa") {
+      setEnable(true)
+    } else if (opcao == "usuario") {
+      setEnable(true)
+    }
+  }, [opcao]);
 
   if (opcao == "--Selecione--" || opcao == "") {
     show = (
@@ -371,17 +389,19 @@ const Register = () => {
               Login
             </Link>
 
-            <div className="google">
-              <p>Ou cadastre-se com o</p>
-              <button
-                className="butão btn"
-                type="button"
-                onClick={registerWithGoogle}
-              >
-                <img src={googleIcon} height={20} alt="google-button" />
-                <p>Google</p>
-              </button>
-            </div>
+            {isLoggedIn ? null : (
+              <div className={`google ${enable ? "logged" : ""}`}>
+                <p>Ou cadastre-se com o</p>
+                <button
+                  className="butão btn"
+                  type="button"
+                  onClick={registerWithGoogle}
+                >
+                  <img src={googleIcon} height={20} alt="google-button" />
+                  <p>Google</p>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
