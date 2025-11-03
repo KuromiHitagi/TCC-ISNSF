@@ -21,9 +21,16 @@ const SearchVagas = () => {
     carregarVagas();
   }, []);
 
-  async function Candidatar() {
-    
+  async function Candidatar(vagaId) {
+    try {
+      await api.post('/candidatura', { vaga_id: vagaId });
+      alert('Candidatura realizada com sucesso!');
+    } catch (error) {
+      console.error('Erro ao candidatar-se:', error);
+      alert('Erro ao se candidatar. Tente novamente.');
+    }
   }
+
   return (
     <div>
       <Navbar />
@@ -55,7 +62,7 @@ const SearchVagas = () => {
                     <p><strong>Salário:</strong> R${vaga.salario}</p>
                     <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
                     <div className="btn">
-                      <button onClick={Candidatar} className="btn-cand">Candidatar-se</button>
+                      <button onClick={() => Candidatar(vaga.id)} className="btn-cand">Candidatar-se</button>
                     </div>
                   </div>
                 </div>
