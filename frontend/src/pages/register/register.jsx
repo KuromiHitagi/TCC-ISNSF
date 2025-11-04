@@ -15,6 +15,17 @@ import googleIcon from "../../assets/google.png";
 import { motion } from "framer-motion";
 
 const Register = () => {
+  const areasDisponiveis = [
+    "Tecnologia da Informação",
+    "Recursos Humanos",
+    "Marketing",
+    "Vendas",
+    "Administração",
+    "Comunicação Visual",
+    "Design gráfico",
+    "Tecnologia",
+    "Serviços Sociais"
+  ]
   const [open, setOpen] = useState(false);
   const [opcao, setOpcao] = useState("");
   let show = null;
@@ -71,20 +82,84 @@ const Register = () => {
 
   async function Criar(e) {
     e.preventDefault();
+
+    // Função para validar se o campo não está vazio ou apenas espaços
+    const isCampoValido = (valor) => valor && valor.trim() !== "";
+
     if (opcao == "usuario") {
+      // Validações para usuário
+      if (!isCampoValido(nomeUser)) {
+        alert("Nome é obrigatório e não pode conter apenas espaços.");
+        return;
+      }
+      const nomeParts = nomeUser.trim().split(/\s+/);
+      if (nomeParts.length < 3) {
+        alert("Nome deve incluir primeiro nome, nome do meio e sobrenome.");
+        return;
+      }
+      if (nomeParts[0].length < 3) {
+        alert("Primeiro nome deve ter pelo menos 3 caracteres.");
+        return;
+      }
+      if (nomeParts[1].length < 3) {
+        alert("Nome do meio deve ter pelo menos 3 caracteres.");
+        return;
+      }
+      if (nomeParts[2].length < 3) {
+        alert("Sobrenome deve ter pelo menos 3 caracteres.");
+        return;
+      }
+      if (!cpfRaw || cpfRaw.length !== 11) {
+        alert("CPF deve estar completo (11 dígitos).");
+        return;
+      }
+      if (!dataNascimento) {
+        alert("Data de nascimento é obrigatória.");
+        return;
+      }
+      if (!isCampoValido(cidade) || cidade.trim().length < 3) {
+        alert("Cidade é obrigatória, não pode conter apenas espaços e deve ter pelo menos 3 caracteres.");
+        return;
+      }
+      if (!telRaw || telRaw.trim() === "" || telRaw.length < 11) {
+        alert("Telefone é obrigatório, e deve ter pelo menos 3 caracteres.");
+        return;
+      }
+      if (!isCampoValido(areainteresse)) {
+        alert("Área de interesse é obrigatória e não pode conter apenas espaços.");
+        return;
+      }
+      if (!areasDisponiveis.includes(areainteresse.trim())) {
+        alert("Área de interesse inválida. Escolha uma das seguintes: \n" + areasDisponiveis.join(", \n"));
+        return;
+      }
+      if (!isCampoValido(emailUser)) {
+        alert("E-mail é obrigatório e não pode conter apenas espaços.");
+        return;
+      }
+      const emailTrimmed = emailUser.trim();
+      if (!emailTrimmed.includes('@') || !emailTrimmed.endsWith('.com')) {
+        alert("E-mail deve ter formato válido com @ e terminar com .com.");
+        return;
+      }
+      if (!isCampoValido(userSenha) || userSenha.length < 8) {
+        alert("Senha é obrigatória, não pode conter apenas espaços e deve ter pelo menos 8 caracteres.");
+        return;
+      }
+
       try {
         // Format date to YYYY-MM-DD for backend
         const formattedDate = dataNascimento ? dataNascimento.toISOString().split('T')[0] : null;
 
         const body = {
-          nome: nomeUser,
+          nome: nomeUser.trim(),
           cpf: cpfRaw,
           data_nascimento: formattedDate,
-          cidade: cidade,
+          cidade: cidade.trim(),
           telefone: telRaw,
-          area_interesse: areainteresse,
-          email: emailUser,
-          senha: userSenha,
+          area_interesse: areainteresse.trim(),
+          email: emailUser.trim(),
+          senha: userSenha.trim(),
         };
 
         const response = await api.post("/usuario", body);
@@ -135,13 +210,52 @@ const Register = () => {
         alert(errorMessage);
       }
     } else if (opcao == "empresa") {
+      // Validações para empresa
+      if (!isCampoValido(nomeInc) || nomeInc.trim() === "") {
+        alert("Nome da empresa é obrigatório e não pode conter apenas espaços.");
+        return;
+      }
+      if (nomeInc.length < 2) {
+        alert("O nome da empresa deve ter pelo menos 2 caracteres.");
+        return;
+      }
+      if (!cnpjRaw || cnpjRaw.trim() === "" || cnpjRaw.length !== 14) {
+        alert("CNPJ é obrigatório.");
+        return;
+      }
+      if (!isCampoValido(areaprofissionalizada)) {
+        alert("Área profissionalizada é obrigatória e não pode conter apenas espaços.");
+        return;
+      }
+      if (!areasDisponiveis.includes(areaprofissionalizada.trim())) {
+        alert("Área profissionalizada inválida. Escolha uma das seguintes: \n" + areasDisponiveis.join(", \n"));
+        return;
+      }
+      if (!isCampoValido(emailInc)) {
+        alert("E-mail é obrigatório e não pode conter apenas espaços.");
+        return;
+      }
+      const emailIncTrimmed = emailInc.trim();
+      if (!emailIncTrimmed.includes('@') || !emailIncTrimmed.endsWith('.com')) {
+        alert("E-mail deve ter formato válido com @ e terminar com .com.");
+        return;
+      }
+      if (!isCampoValido(incSenha)) {
+        alert("Senha é obrigatória e não pode conter apenas espaços.");
+        return;
+      }
+      if (incSenha.length < 8) {
+        alert("A senha deve ter pelo menos 8 caracteres.");
+        return;
+      }
+
       try {
         const body = {
-          nome: nomeInc,
+          nome: nomeInc.trim(),
           cnpj: cnpjRaw,
-          area_profissional: areaprofissionalizada,
-          email: emailInc,
-          senha: incSenha,
+          area_profissional: areaprofissionalizada.trim(),
+          email: emailInc.trim(),
+          senha: incSenha.trim(),
         };
 
         const response = await api.post("/empresa", body);
@@ -310,6 +424,8 @@ const Register = () => {
           placeholderText="Data de Nascimento"
           className="date-picker-input"
           wrapperClassName="date-picker-wrapper"
+          maxDate={new Date()}
+          minDate={new Date(new Date().getFullYear() - 80, new Date().getMonth(), new Date().getDate())}
         />
         <input
           value={cidade}

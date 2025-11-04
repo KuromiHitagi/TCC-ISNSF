@@ -148,13 +148,8 @@ const Curriculo = () => {
                                 Projetos e atividades extras:
                                 Participação em hackathons e projetos voluntários de tecnologia.`}
             >
-            </div>
-            <button id="download" onClick={baixarCurriculo}>
-              Baixar Currículo
-            </button>
-
-            {!fechado && mostrarTooltip && (
-              <div className="tooltip-box">
+              {!fechado && mostrarTooltip && (
+              <div contentEditable="false" className="tooltip-box">
                 <span className="close-btn" onClick={fecharTooltip}>
                   X
                 </span>
@@ -163,7 +158,13 @@ const Curriculo = () => {
                   formatado em ABNT quando baixar!
                 </p>
               </div>
-            )}
+              )}
+            </div>
+            <button id="download" onClick={baixarCurriculo}>
+              Baixar Currículo
+            </button>
+
+            
           </div>
         </div>
       </motion.div>

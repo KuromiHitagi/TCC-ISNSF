@@ -132,6 +132,7 @@
         }
 
         .navbar__navlist {
+          z-index: 999;
           background-color: white;
           width: 100%;
           border-radius: 0px 0px 15px 15px;
@@ -317,8 +318,8 @@
         gap: 10px;
 
         .navbar-profile-photo {
-          width: 40px;
-          height: 40px;
+          width: 100px;
+          height: 100px;
           border-radius: 50%;
           object-fit: cover;
           border: 2px solid white;
