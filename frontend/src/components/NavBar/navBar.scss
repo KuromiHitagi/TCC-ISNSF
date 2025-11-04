@@ -158,6 +158,13 @@
           }
 
           li {
+            &.forms{
+              display: none;
+
+              &.loggedUser{
+                display: block;
+              }
+            }
             &.curriculo{
               display: none;
 

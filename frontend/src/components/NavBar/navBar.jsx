@@ -102,7 +102,7 @@ const Navbar = () => {
                   isDropdownOpen ? "navbar__navlist--visible" : ""
                 }`}
               >
-                <li>
+                <li className={`forms ${enableUser ? "loggedUser" : ""}`}>
                   <NavLink className="navlink" to="/form">
                     Formulário
                   </NavLink>

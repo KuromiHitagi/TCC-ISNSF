@@ -69,7 +69,7 @@ const PoliticaPrivacidade= () => {
       <h2>6. Direitos dos Titulares</h2>
       <p>
         Você pode solicitar acesso, correção, exclusão ou portabilidade dos seus dados, além de revogar o consentimento a qualquer momento.
-        Para isso, entre em contato pelo e-mail <a href="mailto:contato@tecvagas.com.br">contato@tecvagas.com.br</a>.
+        Para isso, entre em contato pelo e-mail <a href="mailto:TecVagas076@gmail.com">tecvagas076@gmail.com</a>.
       </p>
 
       <h2>7. Retenção e Exclusão de Dados</h2>
@@ -90,7 +90,7 @@ const PoliticaPrivacidade= () => {
       <h2>10. Contato</h2>
       <p>
         Em caso de dúvidas, entre em contato pelo e-mail{" "}
-        <a href="mailto:contato@tecvagas.com.br">contato@tecvagas.com.br</a>.
+        <a href="mailto:TecVagas076@gmail.com">tecvagas076@gmail.com</a>.
       </p>
 
       <p><strong>Última atualização:</strong> 31 de Outubro de 2025</p>
