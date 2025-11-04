@@ -1,4 +1,4 @@
-import "./register.scss";
+import "./complete-register.scss";
 import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { useState, useEffect } from "react";
@@ -12,6 +12,7 @@ const CompleteRegister = () => {
   const [preview, setPreview] = useState(null);
   const [userType, setUserType] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPhotoModal, setShowPhotoModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -85,6 +86,21 @@ const CompleteRegister = () => {
             <h2>Complete seu Cadastro</h2>
             <p>Adicione uma foto de perfil para personalizar sua conta.</p>
 
+            <button onClick={() => setShowPhotoModal(true)} className="photo-button">
+              Adicionar Foto de Perfil
+            </button>
+            <button onClick={skipUpload} className="skip-button">
+              Colocar Foto de Perfil Depois
+            </button>
+          </div>
+        </div>
+      </motion.div>
+
+      {showPhotoModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Adicionar Foto de Perfil</h3>
+
             <div className="photo-upload">
               <div className="photo-preview">
                 {preview ? (
@@ -101,31 +117,30 @@ const CompleteRegister = () => {
                 type="file"
                 accept="image/*"
                 onChange={handleFileSelect}
-                id="photo-input"
+                id="photo-input-modal"
                 style={{ display: "none" }}
               />
-              <label htmlFor="photo-input" className="file-button">
-                <button>
+              <label htmlFor="photo-input-modal" className="file-button">
                 Escolher Foto
-                </button>
               </label>
 
-              <div className="buttons">
+              <div className="modal-buttons">
                 <button
                   onClick={handleUpload}
                   disabled={loading || !selectedFile}
                   className="upload-button"
                 >
-                  {loading ? "Enviando..." : "Confirmar Foto"}
+                  {loading ? "Enviando..." : "Confirmar"}
                 </button>
-                <button onClick={skipUpload} className="skip-button">
-                  Colocar Foto de Perfil Depois
+                <button onClick={() => setShowPhotoModal(false)} className="cancel-button">
+                  Cancelar
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      )}
+
       <Footer />
     </div>
   );

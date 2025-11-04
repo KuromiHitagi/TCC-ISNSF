@@ -1,14 +1,9 @@
-# TODO: Save name, email, token to localStorage and display in navbar
+# TODO: Alterar "Escolher Foto" em complete-register.jsx para Modal Funcional
 
-## Backend Changes
-- [x] Modify backend/src/controller/userController.js login endpoint to return { token, nome }
-- [x] Modify backend/src/controller/empresaController.js login endpoint to return { token, nome }
-
-## Frontend Changes
-- [x] Update frontend/src/pages/login/login.jsx to save NOME for empresas
-- [x] Update frontend/src/pages/register/register.jsx to save NOME for empresas after auto-login
-- [x] Update frontend/src/pages/register/complete-google.jsx to save NOME for both users and empresas after login
-
-## Verification
-- [ ] Test login for users and empresas to ensure NOME is saved
-- [ ] Verify navbar displays name and profile photo correctly
+- [x] Add state for showPhotoModal to control modal visibility
+- [x] Change the "Escolher Foto" label to a button that opens the modal (setShowPhotoModal(true))
+- [x] Move photo-upload elements (preview, file input, buttons) into the modal structure
+- [x] Add modal overlay and content divs with appropriate classes
+- [x] Adjust modal buttons: "Confirmar Foto" (calls handleUpload), "Cancelar" (closes modal)
+- [x] Ensure modal closes after successful upload or on cancel
+- [x] Test the functionality to match perfil.jsx behavior

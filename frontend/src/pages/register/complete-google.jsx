@@ -3,7 +3,7 @@ import Footer from '../../components/Footer/index.jsx';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
-import './register.scss';
+import './complete-google.scss';
 
 export default function CompleteGoogleRegistration() {
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ export default function CompleteGoogleRegistration() {
             localStorage.setItem("TOKEN", loginResponse.data.token);
             localStorage.setItem("USER_TYPE", "usuario");
             alert("Conta criada e logada com sucesso!");
-            navigate('/');
+            navigate('/register/complete');
           }
         }
       } catch (error) {
@@ -89,7 +89,7 @@ export default function CompleteGoogleRegistration() {
             localStorage.setItem("TOKEN", loginResponse.data.token);
             localStorage.setItem("USER_TYPE", "empresa");
             alert("Conta criada e logada com sucesso!");
-            navigate('/');
+            navigate('/register/complete');
           }
         }
       } catch (error) {
