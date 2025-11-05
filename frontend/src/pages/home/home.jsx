@@ -23,14 +23,15 @@ const Home = () => {
         <div className="main">
           <div className="apresentacao">
             <h1 className="titulo">
-              TECVAGAS: Sua plataforma de Oportunidades
+              TECVAGAS: 
+              Sua plataforma de Oportunidades
             </h1>
             {/* <pre className="texto">
-              Você está pronto para dar o próximo passo na sua carreira?
-            </pre>
-            <pre className="texto">
-              No TECVAGAS, conectamos você às melhores oportunidades de trabalho
-            </pre> */}
+            Você está pronto para dar o próximo passo na sua carreira?
+          </pre>
+          <pre className="texto">
+            No TECVAGAS, conectamos você às melhores oportunidades de trabalho
+          </pre>  */}
             <p>
             Tec Vagas — O Futuro da sua Carreira em Tecnologia Começa Aqui!
             O mercado de tecnologia não para de crescer — e as melhores oportunidades estão esperando por você na Tec Vagas, 

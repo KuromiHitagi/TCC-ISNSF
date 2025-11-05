@@ -4,19 +4,30 @@
   align-items: center;
   flex-direction: column;
 
-  .p {
+  .apresentacao {
+  text-align: center; 
+  max-width: 900px;   
+  margin: 0 auto;     
+  padding: 20px;
 
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction:column;
+  p {
+    text-align: justify; 
+    margin: 0 auto;
+    line-height: 1.6;   
   }
+
+  .texto {
+    text-align: center; /* Mantém o texto das linhas acima centralizado */
+    font-style: italic;
+  }
+}
+
 
   .butao {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(5, 131, 139);
     color: white;
     border: none;
     padding: 10px 25px;
