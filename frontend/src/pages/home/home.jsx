@@ -25,12 +25,25 @@ const Home = () => {
             <h1 className="titulo">
               TECVAGAS: Sua plataforma de Oportunidades
             </h1>
-            <pre className="texto">
+            {/* <pre className="texto">
               Você está pronto para dar o próximo passo na sua carreira?
             </pre>
             <pre className="texto">
               No TECVAGAS, conectamos você às melhores oportunidades de trabalho
-            </pre>
+            </pre> */}
+            <p>
+            Tec Vagas — O Futuro da sua Carreira em Tecnologia Começa Aqui!
+            O mercado de tecnologia não para de crescer — e as melhores oportunidades estão esperando por você na Tec Vagas, 
+            o portal que conecta talentos incríveis às empresas mais inovadoras do Brasil.
+
+            Seja você um dev júnior em busca do primeiro emprego, um engenheiro de software experiente ou uma startup procurando os melhores 
+            profissionais, aqui é o lugar certo para transformar ambição em realização.
+
+            Encontre a vaga ideal com filtros inteligentes e atualizações diárias.
+            Publique oportunidades e alcance milhares de profissionais qualificados.
+            Cadastre-se grátis e receba alertas das vagas que combinam com o seu perfil.
+            Navegação rápida, moderna e 100% focada no universo tech.
+            </p>
 
             <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
               Inscreva-se

@@ -4,6 +4,14 @@
   align-items: center;
   flex-direction: column;
 
+  .apresentação {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction:column;
+  }
+
   .butao {
     display: inline-block;
     position: relative;
