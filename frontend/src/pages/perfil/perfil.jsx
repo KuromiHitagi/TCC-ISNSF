@@ -14,6 +14,8 @@ const Perfil = () => {
     const [preview, setPreview] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showPhotoModal, setShowPhotoModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [editFormData, setEditFormData] = useState({});
     const [enableuser, setEnableuser] = useState(false);
     const [enableInc, setEnableInc] = useState(false);
     const [candidaturas, setCandidaturas] = useState([]);
@@ -152,6 +154,32 @@ const Perfil = () => {
         }
     }
 
+    const handleSaveProfile = async () => {
+        try {
+            const userType = localStorage.getItem("USER_TYPE");
+            const endpoint = userType === "usuario" ? "/usuario/perfil" : "/empresa/perfil";
+
+            const response = await api.put(endpoint, editFormData);
+            if (response.status === 200) {
+                alert("Perfil atualizado com sucesso!");
+                setShowEditModal(false);
+                // Recarregar perfil
+                const userEmail = localStorage.getItem("EMAIL");
+                loadProfile(userType, userEmail);
+                // Atualizar localStorage se o email mudou
+                if (editFormData.email !== userProfile.email) {
+                    localStorage.setItem("EMAIL", editFormData.email);
+                }
+                if (editFormData.nome !== userProfile.nome) {
+                    localStorage.setItem("NOME", editFormData.nome);
+                }
+            }
+        } catch (error) {
+            console.error("Erro ao salvar perfil:", error);
+            alert("Erro ao salvar perfil. Tente novamente.");
+        }
+    };
+
     return(
         <div>
             <Navbar />
@@ -182,6 +210,7 @@ const Perfil = () => {
                         <button onClick={() => setShowPhotoModal(true)} className="photo-button">
                             {userProfile?.user_foto || userProfile?.empresa_foto ? "Alterar Foto de Perfil" : "Adicionar Foto de Perfil"}
                         </button>
+                        <button onClick={() => { setEditFormData(userProfile); setShowEditModal(true); }} className="edit-button">Editar Perfil</button>
                         <button onClick={sair} className="logout-button">Sair</button>
                     </div>
                 </div>
@@ -227,6 +256,80 @@ const Perfil = () => {
                                     <button onClick={() => setShowPhotoModal(false)} className="cancel-button">
                                         Cancelar
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {showEditModal && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <h3>Editar Perfil</h3>
+                            <div className="edit-form">
+                                <div className="form-group">
+                                    <label htmlFor="nome">Nome:</label>
+                                    <input
+                                        type="text"
+                                        id="nome"
+                                        value={editFormData?.nome || ''}
+                                        onChange={(e) => setEditFormData({ ...editFormData, nome: e.target.value })}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email:</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={editFormData?.email || ''}
+                                        onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                                    />
+                                </div>
+                                {enableuser && (
+                                    <>
+                                        <div className="form-group">
+                                            <label htmlFor="cidade">Cidade:</label>
+                                            <input
+                                                type="text"
+                                                id="cidade"
+                                                value={editFormData?.cidade || ''}
+                                                onChange={(e) => setEditFormData({ ...editFormData, cidade: e.target.value })}
+                                            />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="telefone">Telefone:</label>
+                                            <input
+                                                type="text"
+                                                id="telefone"
+                                                value={editFormData?.telefone || ''}
+                                                onChange={(e) => setEditFormData({ ...editFormData, telefone: e.target.value })}
+                                            />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="area_interesse">Área de Interesse:</label>
+                                            <input
+                                                type="text"
+                                                id="area_interesse"
+                                                value={editFormData?.area_interesse || ''}
+                                                onChange={(e) => setEditFormData({ ...editFormData, area_interesse: e.target.value })}
+                                            />
+                                        </div>
+                                    </>
+                                )}
+                                {enableInc && (
+                                    <div className="form-group">
+                                        <label htmlFor="area_profissional">Área Profissional:</label>
+                                        <input
+                                            type="text"
+                                            id="area_profissional"
+                                            value={editFormData?.area_profissional || ''}
+                                            onChange={(e) => setEditFormData({ ...editFormData, area_profissional: e.target.value })}
+                                        />
+                                    </div>
+                                )}
+                                <div className="modal-buttons">
+                                    <button onClick={handleSaveProfile} className="upload-button">Salvar</button>
+                                    <button onClick={() => setShowEditModal(false)} className="cancel-button">Cancelar</button>
                                 </div>
                             </div>
                         </div>

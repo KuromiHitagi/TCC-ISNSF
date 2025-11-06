@@ -3,10 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './menu.scss';
 
 const HamburgerMenu = ({ isOpen, onClose }) => {
-  const handleLinkClick = () => {
-    onClose();
-  };
-
   return (
     <>
       {/* Overlay para fechar o menu ao clicar fora */}

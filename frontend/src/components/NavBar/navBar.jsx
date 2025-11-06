@@ -17,7 +17,9 @@ const Navbar = () => {
   const [enable, setEnable] = useState(false);
   const [enableInc, setEnableInc] = useState(false);
   const [enableUser, setEnableUser] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [userNome, setUserNome] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [userEmail, setUserEmail] = useState("");
   const [userPhoto, setUserPhoto] = useState("");
 

@@ -116,17 +116,16 @@ export async function buscarUsuarioPorId(id) {
 export async function atualizarUsuario(id, dados) {
   const comando = `
     UPDATE usuario
-       SET nome = ?,cpf = ?, data_nascimento = ?, cidade = ?, telefone = ?, email = ?
+       SET nome = ?, cidade = ?, telefone = ?, email = ?, area_interesse = ?
      WHERE id = ?
   `;
 
   await connection.query(comando, [
     dados.nome,
-    dados.cpf,
-    dados.data_nascimento,
     dados.cidade,
     dados.telefone,
     dados.email,
+    dados.area_interesse,
     id
   ]);
 }

@@ -69,6 +69,7 @@
             flex-wrap: wrap;
 
             .photo-button,
+            .edit-button,
             .logout-button {
                 padding: 12px 24px;
                 border: none;
@@ -84,6 +85,15 @@
 
                 &:hover {
                     background-color: #0056b3;
+                }
+            }
+
+            .edit-button {
+                background-color: #28a745;
+                color: white;
+
+                &:hover {
+                    background-color: #218838;
                 }
             }
 
@@ -206,6 +216,72 @@
                         &:disabled {
                             background-color: #6c757d;
                             cursor: not-allowed;
+                        }
+                    }
+
+                    .cancel-button {
+                        background-color: #6c757d;
+                        color: white;
+
+                        &:hover {
+                            background-color: #545b62;
+                        }
+                    }
+                }
+            }
+
+            .edit-form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+
+                    label {
+                        margin-bottom: 5px;
+                        font-weight: bold;
+                        color: #333;
+                    }
+
+                    input {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        transition: border-color 0.3s;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #007bff;
+                        }
+                    }
+                }
+
+                .modal-buttons {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    margin-top: 20px;
+
+                    .upload-button,
+                    .cancel-button {
+                        padding: 12px 24px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        transition: background-color 0.3s;
+                    }
+
+                    .upload-button {
+                        background-color: #28a745;
+                        color: white;
+
+                        &:hover {
+                            background-color: #218838;
                         }
                     }
 

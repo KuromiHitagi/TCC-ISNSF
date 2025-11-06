@@ -1,6 +1,7 @@
 import './postVagas.scss'
 import Navbar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
+//disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import api from '../../services/api.js'
@@ -101,7 +102,8 @@ const Vagas = () => {
                                     className="input"
                                     value={salario}
                                     onChange={(e) => setSalario(e.target.value)}
-                                    type="text"
+                                    type="number"
+                                    min="0"
                                     placeholder="Salário:"
                                     required
                                 />
