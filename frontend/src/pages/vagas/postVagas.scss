@@ -16,10 +16,17 @@
         flex-wrap: wrap;
         background-color: #313131;
         max-width: 90%;
+        height: auto;
         gap: 50px;
         margin-top: 20px;
         padding: 40px;
+        padding-top: 80px;
         border-radius: 8px;
+
+        h2{
+            position: absolute;
+            top: 380px;
+        }
 
         .vaga-item {
             display: flex;

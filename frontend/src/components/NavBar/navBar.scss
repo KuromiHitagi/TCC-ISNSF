@@ -310,6 +310,8 @@
       align-items: center;
 
       .perfil-link{
+        display: flex;
+        flex-direction: row-reverse;
         color: white;
         text-decoration: none;
         transition: all ease-in-out 0.3s;

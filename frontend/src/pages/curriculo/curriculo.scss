@@ -45,13 +45,13 @@
         margin: 50px 0 0 0;
 
         #word {
-            padding: 20px 30px; // muito mais limpo que 113px
+            padding: 113px 75px 75px 113px; // muito mais limpo que 113px
             min-height: 1123px;
             width: 794px;
             max-width: 794px;
             background-color: #141414;
             border-radius: 10px;
-            position: relative;
+
             color: #fff; // cor do texto real
 
             &:empty::before {
@@ -73,26 +73,28 @@
                 font-family: 'Arial', sans-serif;
                 margin: 0;
             }
+        }
 
-            .tooltip-box{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                left: 150px;
-                position: relative;
-                border: none;
-                border-radius: 15px;
-                height: 60px;
-                max-width: 500px;
-                cursor: default;
-                margin: 0;
-                background-color: #1f1e1e;
+        .tooltip-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            left: 950px;
+            top:250px;
+            position: absolute;
+            transform: translateY(-50%);
+            border: none;
+            border-radius: 15px;
+            height: 60px;
+            max-width: 500px;
+            cursor: default;
+            margin: 0;
+            background-color: #1f1e1e;
 
-                .close-btn{
-                    padding: 5px 5px 0px 20px;
-                    cursor: pointer;
-                }
+            .close-btn{
+                padding: 5px 5px 0px 20px;
+                cursor: pointer;
             }
         }
 
@@ -122,7 +124,7 @@
 
 }
 
-@media (max-width: 1235px){
+@media (max-width: 1680px){
     #main{
         flex-direction: column;
         .rules{

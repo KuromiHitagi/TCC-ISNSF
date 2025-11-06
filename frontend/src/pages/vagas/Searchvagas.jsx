@@ -27,7 +27,8 @@ const SearchVagas = () => {
       alert('Candidatura realizada com sucesso!');
     } catch (error) {
       console.error('Erro ao candidatar-se:', error);
-      alert('Erro ao se candidatar. Tente novamente.');
+      const errorMessage = error.response?.data?.erro || 'Erro ao se candidatar. Tente novamente.';
+      alert(errorMessage);
     }
   }
 

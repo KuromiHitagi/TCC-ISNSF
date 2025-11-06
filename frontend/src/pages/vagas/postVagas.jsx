@@ -63,7 +63,6 @@ const Vagas = () => {
                         Abrir / Fechar Formulário
                     </button>
 
-                    {/* Aqui é onde a mágica acontece */}
                     <AnimatePresence>
                         {showForm && (
                             <motion.div
@@ -115,6 +114,7 @@ const Vagas = () => {
                     </AnimatePresence>
 
                     <div className="vagas-list">
+                        <h2>Suas Vagas:</h2>
                         {vagas.map((vaga) => (
                             <div key={vaga.id} className="vaga-item">
                                 <div className="titulo">

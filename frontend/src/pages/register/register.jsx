@@ -399,6 +399,8 @@ const Register = () => {
     return (
       <div className="pre-input">
         <input
+          minLength={3}
+          maxLength={255}
           value={nomeUser}
           onChange={(e) => setNomeUser(e.target.value)}
           type="text"
@@ -428,6 +430,7 @@ const Register = () => {
           minDate={new Date(new Date().getFullYear() - 80, new Date().getMonth(), new Date().getDate())}
         />
         <input
+          maxLength={100}
           value={cidade}
           onChange={(e) => setCidade(e.target.value)}
           type="text"

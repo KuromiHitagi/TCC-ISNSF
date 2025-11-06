@@ -14,6 +14,13 @@ const Perfil = () => {
     const [preview, setPreview] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showPhotoModal, setShowPhotoModal] = useState(false);
+    const [enableuser, setEnableuser] = useState(false);
+    const [enableInc, setEnableInc] = useState(false);
+    const [candidaturas, setCandidaturas] = useState([]);
+    const [showCandidaturas, setShowCandidaturas] = useState(false);
+    const [vagas, setVagas] = useState([]);
+    const [showVagas, setShowVagas] = useState(false);
+    const [selectedVaga, setSelectedVaga] = useState(null);
 
     useEffect(() => {
         const userEmail = localStorage.getItem("EMAIL");
@@ -21,6 +28,16 @@ const Perfil = () => {
         if(userEmail == null || userEmail == undefined || userEmail == "") {
             Navigate('/');
             return;
+        }
+
+        // Definir tipo de usuário
+        if(userType === "usuario") {
+            setEnableuser(true);
+            setEnableInc(false);
+        } 
+        if(userType === "empresa") {
+            setEnableuser(false);
+            setEnableInc(true);
         }
 
         // Carregar dados do perfil
@@ -88,13 +105,52 @@ const Perfil = () => {
         }
     };
 
+   
     const sair = () => {
-        window.location.reload();
-        localStorage.removeItem("EMAIL");
-        localStorage.removeItem("NOME")
-        localStorage.removeItem("TOKEN");
-        localStorage.removeItem("USER_TYPE");
+        const confirmLogout = window.confirm("Tem certeza que deseja sair?");
+        if (confirmLogout) {
+            window.location.reload();
+            localStorage.removeItem("EMAIL");
+            localStorage.removeItem("NOME")
+            localStorage.removeItem("TOKEN");
+            localStorage.removeItem("USER_TYPE");
+        }
     };
+
+    async function exibirCandidaturas() {
+        try {
+            const response = await api.get('/candidatura/usuario/minhas');
+            setCandidaturas(response.data);
+            setShowCandidaturas(true);
+            console.log('Candidaturas:', response.data);
+        } catch (error) {
+            console.error('Erro ao carregar candidaturas:', error);
+            alert('Erro ao carregar candidaturas. Tente novamente.');
+        }
+    }
+
+    async function exibirVagas() {
+        try {
+            const response = await api.get('/vaga/empresa/minhas');
+            setVagas(response.data);
+            setShowVagas(true);
+            console.log('Vagas:', response.data);
+        } catch (error) {
+            console.error('Erro ao carregar vagas:', error);
+            alert('Erro ao carregar vagas. Tente novamente.');
+        }
+    }
+
+    async function verDetalhesVaga(idVaga) {
+        try {
+            const response = await api.get(`/candidatura/vaga/detalhes/${idVaga}`);
+            setSelectedVaga(response.data);
+            console.log('Detalhes da vaga:', response.data);
+        } catch (error) {
+            console.error('Erro ao carregar detalhes da vaga:', error);
+            alert('Erro ao carregar detalhes da vaga. Tente novamente.');
+        }
+    }
 
     return(
         <div>
@@ -173,6 +229,104 @@ const Perfil = () => {
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                )}
+
+                {enableuser && (
+                    <button className="exibir-Candidaturas logged" onClick={exibirCandidaturas}>Exibir Candidaturas</button>
+                )}
+                {enableInc && (
+                    <button className="exibir-minhasVagas logged" onClick={exibirVagas}>Exibir minhas Vagas</button>
+                )}
+
+                {showCandidaturas && candidaturas.length > 0 && (
+                    <div className="candidaturas-list">
+                        <div className="titulo">
+                            <h3>Minhas Candidaturas</h3>
+                        </div>
+                        {candidaturas.map((candidatura) => (
+                            <div key={candidatura.id} className="candidatura-item">
+                                <div className="info">
+                                    <p><strong>Vaga:</strong> {candidatura.vaga_titulo}</p>
+                                    <p><strong>Empresa:</strong> {candidatura.empresa}</p>
+                                    <p><strong>Localização:</strong> {candidatura.localizacao}</p>
+                                    <p><strong>Status:</strong> {candidatura.status}</p>
+                                    <p><strong>Data da Candidatura:</strong> {new Date(candidatura.data_candidatura).toLocaleDateString()}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {showCandidaturas && candidaturas.length === 0 && (
+                    <p>Você ainda não se candidatou a nenhuma vaga.</p>
+                )}
+
+                {showVagas && vagas.length > 0 && (
+                    <div className="vagas-list">
+                        <h3>Minhas Vagas</h3>
+                        {vagas.map((vaga) => (
+                            <div key={vaga.id} className="vaga-item">
+                                <div className="titulo">
+                                    <h4>{vaga.titulo}</h4>
+                                </div>
+                                <div className="info">
+                                    <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                                    <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                                    <p><strong>Salário:</strong> R$ {vaga.salario}</p>
+                                    <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                                    <div className="btn">
+                                        <button className="btn-cand" onClick={() => verDetalhesVaga(vaga.id)}>Ver Candidatos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {showVagas && vagas.length === 0 && (
+                    <p>Você ainda não criou nenhuma vaga.</p>
+                )}
+
+                {selectedVaga && (
+                    <div className="modal-overlay" onClick={() => setSelectedVaga(null)}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                            <h3>Detalhes da Vaga: {selectedVaga.vaga.titulo}</h3>
+                            <div className="vaga-details">
+                                <p><strong>Descrição:</strong> {selectedVaga.vaga.descricao}</p>
+                                <p><strong>Localização:</strong> {selectedVaga.vaga.localizacao}</p>
+                                <p><strong>Salário:</strong> R$ {selectedVaga.vaga.salario}</p>
+                                <p><strong>Data de Publicação:</strong> {new Date(selectedVaga.vaga.data_publicacao).toLocaleDateString()}</p>
+                            </div>
+                            <h4>Candidatos:</h4>
+                            {selectedVaga.candidatos.length > 0 ? (
+                                <div className="candidatos-list-modal">
+                                    {selectedVaga.candidatos.map((candidato) => (
+                                        <div key={candidato.candidatura_id} className="candidato-item">
+                                            <div className="candidato-photo">
+                                                {candidato.user_foto ? (
+                                                    <img src={`${api.defaults.baseURL}/storage/${candidato.user_foto}`} alt="Foto do candidato" />
+                                                ) : (
+                                                    <span>👤</span>
+                                                )}
+                                            </div>
+                                            <div className="candidato-info">
+                                                <p><strong>Nome:</strong> {candidato.nome}</p>
+                                                <p><strong>Email:</strong> {candidato.email}</p>
+                                                <p><strong>Data de Nascimento:</strong> {new Date(candidato.data_nascimento).toLocaleDateString()}</p>
+                                                <p><strong>Cidade:</strong> {candidato.cidade}</p>
+                                                <p><strong>Telefone:</strong> {candidato.telefone}</p>
+                                                <p><strong>Status:</strong> {candidato.status}</p>
+                                                <p><strong>Data da Candidatura:</strong> {new Date(candidato.data_candidatura).toLocaleDateString()}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p>Nenhum candidato ainda.</p>
+                            )}
+                            <button onClick={() => setSelectedVaga(null)} className="cancel-button">Fechar</button>
                         </div>
                     </div>
                 )}

@@ -104,4 +104,24 @@ endpoints.get('/candidatura/vaga/:idVaga', getAuthentication(), async (req, resp
   }
 });
 
+// Listar detalhes completos da vaga e candidatos (dono da vaga ou admin)
+endpoints.get('/candidatura/vaga/detalhes/:idVaga', getAuthentication(), async (req, resp) => {
+  try {
+    const idVaga = req.params.idVaga;
+    // Verificar se o usuário é dono da vaga ou admin
+    const vagaRepo = (await import('../repository/vagaRepository.js')).default || (await import('../repository/vagaRepository.js'));
+    const vaga = await vagaRepo.buscarVagaPorId(idVaga);
+    if (!vaga) {
+      return resp.status(404).send({ erro: 'Vaga não encontrada' });
+    }
+    if (vaga.usuario_id !== req.user.id && req.user.tipo !== 'admin') {
+      return resp.status(403).send({ erro: 'Acesso negado' });
+    }
+    const detalhes = await repo.listarCandidaturasDetalhadasPorVaga(idVaga);
+    resp.send(detalhes);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
 export default endpoints;

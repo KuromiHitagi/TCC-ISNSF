@@ -7,6 +7,7 @@
     padding: 20px;
 
     .profile-container {
+        margin: 4rem 0 2rem 0;
         max-width: 600px;
         width: 100%;
         background: white;
@@ -220,4 +221,344 @@
             }
         }
     }
+
+    .exibir-Candidaturas.logged,
+    .exibir-minhasVagas.logged {
+        margin: 20px 0 2rem 0;
+        padding: 12px 24px;
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #117a8b;
+        }
+    }
+
+    .candidaturas-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #313131;
+        max-width: 90%;
+        gap: 50px;
+        margin-top: 20px;
+        padding: 40px;
+        border-radius: 8px;
+
+        .candidatura-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            min-width: 400px;
+            max-width: 400px;
+            height: 300px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0;
+            box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 1);
+
+            transition: all ease-in-out 0.3s;
+
+            &:hover{
+                transform: scale(105%) translateY(-5px);
+            }
+            
+            .titulo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0 10px 0;
+                border-radius: 8px 8px 0px 0px;
+                color: #333;
+                width: 100%;
+                height: 35px;
+                background-color: #c7c7c7;
+            }
+
+            .info{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                  white-space: normal;
+                word-break: break-all;
+                text-align: start;
+                gap: 15px;
+                padding: 0px 20px 20px 20px;
+                margin: 0px 20px 20px 20px;
+                width: 100%;
+                p {
+                    margin: 0px 0px 0px 15px;
+                    color: #666;
+                }
+
+                strong {
+                    color: #333;
+                }
+
+                .btn{
+                    display: flex;
+                    justify-content: center;
+
+                    width: 100%;
+
+                    .btn-cand{
+                        background-color: #0ff;
+                        border-radius: 10px;
+                        height: 25px;
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover{
+                            background-color: #08c;
+                            transform: scale(105%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .vagas-list {
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #313131;
+        max-width: 90%;
+        gap: 50px;
+        margin-top: 20px;
+        padding: 40px;
+        border-radius: 8px;
+
+        .vaga-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            min-width: 400px;
+            max-width: 400px;
+            height: 250px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0;
+            box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 1);
+
+            transition: all ease-in-out 0.3s;
+
+            &:hover{
+                transform: scale(105%) translateY(-5px);
+            }
+            
+            .titulo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0 10px 0;
+                border-radius: 8px 8px 0px 0px;
+                color: #333;
+                width: 100%;
+                height: 35px;
+                background-color: #c7c7c7;
+            }
+
+            .info{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                  white-space: normal;
+                word-break: break-all;
+                text-align: start;
+                gap: 15px;
+                padding: 0px 20px 20px 20px;
+                margin: 0px 20px 20px 20px;
+                width: 100%;
+                p {
+                    margin: 0px 0px 0px 15px;
+                    color: #666;
+                }
+
+                strong {
+                    color: #333;
+                }
+
+                .btn{
+                    display: flex;
+                    justify-content: center;
+
+                    width: 100%;
+
+                    .btn-cand{
+                        background-color: #0ff;
+                        border-radius: 10px;
+                        height: 25px;
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover{
+                            background-color: #08c;
+                            transform: scale(105%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+
+        .modal-content {
+            background: rgb(240, 240, 240);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+            h3 {
+                margin-top: 0;
+                margin-bottom: 20px;
+                color: #333;
+                text-align: center;
+            }
+
+            .vaga-details {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                margin-bottom: 20px;
+                padding: 15px;
+                background-color: #ece8e8;
+                border-radius: 5px;
+                text-align: justify;
+
+                box-shadow: 0px 3px 7px -1px rgba(66, 65, 65, 0.7);
+
+                p {
+                    width: 300px;
+                    margin: 5px 0;
+                    color: #666;
+
+                    strong {
+                        color: #333;
+                    }
+                }
+            }
+
+            h4 {
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .candidatos-list-modal {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .candidato-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 15px;
+                    background-color: #e4e1e1;
+                    border-radius: 5px;
+                    gap: 50px;
+                    box-shadow: 0px 3px 7px -1px rgba(66, 65, 65, 0.7);
+
+                    .candidato-photo {
+                        width: 125px;
+                        height: 125px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        border: 2px solid #007bff;
+                        flex-shrink: 0;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        span {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 24px;
+                            background-color: #e9ecef;
+                        }
+                    }
+
+                    .candidato-info {
+                        flex: 1;
+                        max-width: 50%;
+
+                        p {
+                            margin: 2px 0;
+                            color: #666;
+                            font-size: 14px;
+                            text-align: justify;
+
+                            strong {
+                                color: #333;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .cancel-button {
+                display: block;
+                margin: 20px auto 0;
+                padding: 12px 24px;
+                background-color: #6c757d;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #545b62;
+                }
+            }
+
+            p{
+                color: #666;
+            }
+        }
+    }
+
 }
+
+    

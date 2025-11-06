@@ -108,4 +108,19 @@ endpoints.get('/vaga/usuario/minhas', getAuthentication(), async (req, resp) => 
   }
 });
 
+// Listar vagas da empresa logada
+endpoints.get('/vaga/empresa/minhas', getAuthentication(), async (req, resp) => {
+  try {
+    // Buscar empresa pelo ID do usuário logado
+    const empresa = await empresaRepo.buscarEmpresaPorId(req.user.id);
+    if (!empresa) {
+      return resp.status(400).send({ erro: 'Empresa não encontrada para o usuário logado' });
+    }
+    const vagas = await repo.listarVagasPorUsuario(empresa.id);
+    resp.send(vagas);
+  } catch (err) {
+    resp.status(400).send({ erro: err.message });
+  }
+});
+
 export default endpoints;
