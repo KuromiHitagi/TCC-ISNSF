@@ -38,6 +38,10 @@ const Navbar = () => {
       setEnableInc(false);
       setEnableUser(false);
       setEnableAdmin(true);
+    } else {
+      setEnableInc(false);
+      setEnableUser(false);
+      setEnableAdmin(false);
     }
 
     const email = localStorage.getItem("EMAIL");

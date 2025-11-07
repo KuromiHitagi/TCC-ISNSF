@@ -59,8 +59,24 @@ const Login = () => {
                 Navigate('/');
                 return;
             } catch {
-                    alert("Credenciais inválidas para usuário ou empresa");
+                // Se falhar como empresa, tentar como admin
+                try {
+                    const response = await api.post('/login/admin', body)
+                    const userEmail = email;
+                    const userName = response.data.admin.nome;
+                    const userToken = response.data.token;
+
+                    localStorage.setItem("EMAIL", userEmail);
+                    localStorage.setItem("NOME", userName);
+                    localStorage.setItem("TOKEN", userToken);
+                    localStorage.setItem("USER_TYPE", "admin");
+
+                    Navigate('/admin');
+                    return;
+                } catch {
+                    alert("Credenciais inválidas para usuário, empresa ou administrador");
                 }
+            }
             }
         }
         catch {

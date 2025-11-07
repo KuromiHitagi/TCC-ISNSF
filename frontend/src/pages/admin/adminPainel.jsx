@@ -13,7 +13,13 @@ const Admin = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchData();
+        const userType = localStorage.getItem("USER_TYPE");
+        if (userType !== "admin") {
+            alert("Acesso negado. Apenas administradores podem acessar esta página.");
+            window.location.href = "/";
+        } else {
+            fetchData();
+        }
     }, []);
 
     const fetchData = async () => {

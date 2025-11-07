@@ -15,12 +15,13 @@ const AdminRegister = () => {
   const Navigate = useNavigate();
 
   useEffect(() => {
+    const verify = localStorage.getItem("EMAIL");
     const userType = localStorage.getItem("USER_TYPE");
-    if (userType !== "admin") {
-      alert("Acesso negado. Apenas administradores podem acessar esta página.");
-      Navigate("/");
+
+    if(verify && userType === "admin") {
+      Navigate('/admin')
     }
-  }, [Navigate]);
+  })
 
   async function Criar(e) {
     e.preventDefault();

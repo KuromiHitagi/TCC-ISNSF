@@ -1,0 +1,87 @@
+#mainL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 20px;
+    background-color: #000;
+}
+
+#mainL h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.butão-submit {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.butão-submit:hover {
+    background-color: #0056b3;
+}
+
+.logs {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logs .butão {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.logs .butão:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    #mainL {
+        padding: 10px;
+    }
+
+    #mainL h2 {
+        font-size: 2rem;
+    }
+
+    .login-form {
+        max-width: 100%;
+    }
+}
