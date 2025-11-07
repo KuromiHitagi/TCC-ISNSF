@@ -119,6 +119,11 @@ const Navbar = () => {
                     Curriculo
                   </NavLink>
                 </li>
+                <li className={`candidatos ${enableInc ? "loggedInc" : ""}`}>
+                  <NavLink className="navlink" to="/candidatos">
+                    Ver Candidatos
+                  </NavLink>
+                </li>
                 <li className={`vagas_empresas ${enableInc ? "loggedInc" : ""}`}>
                   <NavLink className="navlink" to="/postar_vagas">
                     Postar Vagas

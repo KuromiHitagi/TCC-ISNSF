@@ -39,7 +39,7 @@ create table vaga (
     localizacao VARCHAR(255),
     salario DECIMAL(10, 2),
     data_publicacao DATETIME NOT NULL,
-    FOREIGN KEY (empresa_id) REFERENCES empresa(id)
+    FOREIGN KEY (empresa_id) REFERENCES empresa(id) on delete cascade
 );
 
 create table candidatura (
@@ -48,6 +48,6 @@ create table candidatura (
     usuario_id INT,
     data_candidatura DATETIME NOT NULL,
     status VARCHAR(50) DEFAULT 'Pendente',
-    FOREIGN KEY (vaga_id) REFERENCES vaga(id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    FOREIGN KEY (vaga_id) REFERENCES vaga(id) on delete cascade,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id) on delete cascade
 );

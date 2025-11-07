@@ -104,7 +104,7 @@ export async function criarConta(novoUsuario) {
 
 export async function buscarUsuarioPorId(id) {
   const comando = `
-    SELECT id, nome, cpf, data_nascimento, cidade, telefone, email, user_foto
+    SELECT id, nome, cpf, data_nascimento, cidade, telefone, email, user_foto, area_interesse
       FROM usuario
      WHERE id = ?
   `;
@@ -148,6 +148,12 @@ export async function buscarUsuarioPorEmail(email) {
 
   const [registros] = await connection.query(comando, [email]);
   return registros[0];
+}
+
+export async function mostrarCandidatos() {
+  const comando = `select id, nome, cpf, data_nascimento, cidade, telefone, email, user_foto, area_interesse from usuario`
+  const [registros] = await connection.query(comando);
+  return registros;
 }
 
 export { upload };

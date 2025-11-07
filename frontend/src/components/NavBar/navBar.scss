@@ -190,6 +190,12 @@
             &.subscribe.logged{
               display: none;
             }
+            &.candidatos{
+              display: none;
+                &.loggedInc{
+                display: block;
+              }
+            }
             .ult{
               border-radius: 0 0 15px 15px;
 

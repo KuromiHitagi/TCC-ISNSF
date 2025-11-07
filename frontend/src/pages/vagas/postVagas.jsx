@@ -1,7 +1,7 @@
 import './postVagas.scss'
 import Navbar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
-//disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import api from '../../services/api.js'
@@ -117,20 +117,22 @@ const Vagas = () => {
 
                     <div className="vagas-list">
                         <h2>Suas Vagas:</h2>
-                        {vagas.map((vaga) => (
-                            <div key={vaga.id} className="vaga-item">
-                                <div className="titulo">
-                                    <h4>{vaga.titulo}</h4>
+                        <div className="itens">
+                            {vagas.map((vaga) => (
+                                <div key={vaga.id} className="vaga-item">
+                                    <div className="titulo">
+                                        <h4>{vaga.titulo}</h4>
+                                    </div>
+                                    <div className="info">
+                                        <p><strong>Empresa:</strong> {vaga.empresa}</p>
+                                        <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                                        <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                                        <p><strong>Salário:</strong> R${vaga.salario}</p>
+                                        <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                                    </div>
                                 </div>
-                                <div className="info">
-                                    <p><strong>Empresa:</strong> {vaga.empresa}</p>
-                                    <p><strong>Descrição:</strong> {vaga.descricao}</p>
-                                    <p><strong>Localização:</strong> {vaga.localizacao}</p>
-                                    <p><strong>Salário:</strong> R${vaga.salario}</p>
-                                    <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </motion.div>

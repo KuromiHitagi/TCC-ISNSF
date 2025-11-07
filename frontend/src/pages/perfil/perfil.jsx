@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import Navbar from '../../components/NavBar/navBar.jsx'
 import Footer from '../../components/Footer/index.jsx';
 import api from '../../services/api.js';
@@ -15,6 +15,8 @@ const Perfil = () => {
     const [loading, setLoading] = useState(false);
     const [showPhotoModal, setShowPhotoModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
+    const [showEditVagas, setShowEditVagas] = useState(false);
+    const [selectedVagaId, setSelectedVagaId] = useState(null);
     const [editFormData, setEditFormData] = useState({});
     const [enableuser, setEnableuser] = useState(false);
     const [enableInc, setEnableInc] = useState(false);
@@ -23,6 +25,12 @@ const Perfil = () => {
     const [vagas, setVagas] = useState([]);
     const [showVagas, setShowVagas] = useState(false);
     const [selectedVaga, setSelectedVaga] = useState(null);
+    const [titulo, setTitulo] = useState("");
+    const [descricao, setDescricao] = useState("");
+    const [localizacao, setLocalizacao] = useState("");
+    const [salario, setSalario] = useState("");
+    const statusA = "Aprovado";
+    const statusB = "Recusado";
 
     useEffect(() => {
         const userEmail = localStorage.getItem("EMAIL");
@@ -143,6 +151,29 @@ const Perfil = () => {
         }
     }
 
+    async function editOpen(idVaga) {
+        setShowEditVagas(true);
+        setSelectedVagaId(idVaga);
+    }
+
+    async function editarVaga() {
+        try {
+            const body = {
+                titulo: titulo,
+                descricao: descricao,
+                empresa_id: userProfile.id,
+                localizacao: localizacao,
+                salario: salario
+            };
+            await api.put(`/vaga/${selectedVagaId}`, body);
+            alert('Vaga editada com sucesso!');
+            exibirVagas();   
+        } catch (error) {
+            console.error('Erro ao editar vaga:', error);
+            alert('Erro ao editar vaga. Tente novamente.');
+        }
+    }
+
     async function verDetalhesVaga(idVaga) {
         try {
             const response = await api.get(`/candidatura/vaga/detalhes/${idVaga}`);
@@ -151,6 +182,56 @@ const Perfil = () => {
         } catch (error) {
             console.error('Erro ao carregar detalhes da vaga:', error);
             alert('Erro ao carregar detalhes da vaga. Tente novamente.');
+        }
+    }
+
+    async function aceitarCandidatura(idCandidatura) {
+        try {
+            const body = { status: statusA };
+            await api.put(`/candidatura/${idCandidatura}/status`, body);
+            alert('Candidatura aprovada!');
+            // Recarregar detalhes da vaga
+            verDetalhesVaga(selectedVaga.vaga.id);
+        } catch (error) {
+            console.error('Erro ao aprovar candidatura:', error);
+            alert('Erro ao aprovar candidatura.');
+        }
+    }
+
+    async function rejeitarCandidatura(idCandidatura) {
+        try {
+            const body = { status: statusB };
+            await api.put(`/candidatura/${idCandidatura}/status`, body);
+            alert('Candidatura rejeitada!');
+            // Recarregar detalhes da vaga
+            verDetalhesVaga(selectedVaga.vaga.id);
+        } catch (error) {
+            console.error('Erro ao rejeitar candidatura:', error);
+            alert('Erro ao rejeitar candidatura.');
+        }
+    }
+
+    async function excluirCandidatura(idCandidatura) {
+        try {
+            window.confirm("Tem certeza que deseja excluir esta candidatura?");
+            await api.delete(`/candidatura/${idCandidatura}`);
+            alert('Candidatura excluída com sucesso!');
+            exibirCandidaturas();
+        } catch (error) {
+            console.error('Erro ao excluir candidatura:', error);
+            alert('Erro ao excluir candidatura.');
+        }
+    }
+
+    async function excluirVaga(idVaga) {
+        try {
+            window.confirm("Tem certeza que deseja excluir esta vaga?");
+            await api.delete(`/vaga/${idVaga}`);
+            alert('Vaga excluída com sucesso!');
+            exibirVagas();
+        } catch (error) {
+            console.error('Erro ao excluir vaga:', error);
+            alert('Erro ao excluir vaga.');
         }
     }
 
@@ -179,6 +260,25 @@ const Perfil = () => {
             alert("Erro ao salvar perfil. Tente novamente.");
         }
     };
+
+    async function deleteAccount() {
+        window.confirm("Tem certeza que deseja apagar sua conta? Esta ação é irreversível.");
+        try {
+            const userType = localStorage.getItem("USER_TYPE");
+            if(userType == "usuario") {
+                await api.delete("/usuario/delete");
+            }
+            if(userType == "empresa") {
+                await api.delete("/empresa/delete");
+            }
+            alert("Conta apagada com sucesso.");
+            localStorage.clear();
+            window.location.reload();
+        } catch (error) {
+            console.error("Erro ao apagar conta:", error);
+            alert("Erro ao apagar conta. Tente novamente.");
+        }
+    }
 
     return(
         <div>
@@ -330,6 +430,7 @@ const Perfil = () => {
                                 <div className="modal-buttons">
                                     <button onClick={handleSaveProfile} className="upload-button">Salvar</button>
                                     <button onClick={() => setShowEditModal(false)} className="cancel-button">Cancelar</button>
+                                    <button onClick={deleteAccount} className='delete-button'>Apagar</button>
                                 </div>
                             </div>
                         </div>
@@ -348,17 +449,30 @@ const Perfil = () => {
                         <div className="titulo">
                             <h3>Minhas Candidaturas</h3>
                         </div>
-                        {candidaturas.map((candidatura) => (
-                            <div key={candidatura.id} className="candidatura-item">
-                                <div className="info">
-                                    <p><strong>Vaga:</strong> {candidatura.vaga_titulo}</p>
-                                    <p><strong>Empresa:</strong> {candidatura.empresa}</p>
-                                    <p><strong>Localização:</strong> {candidatura.localizacao}</p>
-                                    <p><strong>Status:</strong> {candidatura.status}</p>
-                                    <p><strong>Data da Candidatura:</strong> {new Date(candidatura.data_candidatura).toLocaleDateString()}</p>
-                                </div>
-                            </div>
-                        ))}
+                        <div className="itens">
+                            {candidaturas.map((candidatura) => {
+                                let statusClass = "";
+                                if(candidatura.status === "Aprovado"){
+                                    statusClass = "aprovado";
+                                } else if(candidatura.status === "Recusado"){
+                                    statusClass = "recusado";
+                                } else {
+                                    statusClass = "pendente";
+                                }
+                                return (
+                                    <div key={candidatura.id} className="candidatura-item">
+                                        <h3 className='titulo'>{candidatura.vaga_titulo}</h3>
+                                        <div className="info">
+                                            <p><strong>Empresa:</strong> {candidatura.empresa}</p>
+                                            <p><strong>Localização:</strong> {candidatura.localizacao}</p>
+                                            <p className={statusClass}><strong>Status:</strong> {candidatura.status}</p>
+                                            <p><strong>Data da Candidatura:</strong> {new Date(candidatura.data_candidatura).toLocaleDateString()}</p>
+                                        </div>
+                                        <button onClick={() => excluirCandidatura(candidatura.id)} className='excluirCandidatura'> Excluir Candidatura</button>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 )}
 
@@ -369,24 +483,91 @@ const Perfil = () => {
                 {showVagas && vagas.length > 0 && (
                     <div className="vagas-list">
                         <h3>Minhas Vagas</h3>
-                        {vagas.map((vaga) => (
-                            <div key={vaga.id} className="vaga-item">
-                                <div className="titulo">
-                                    <h4>{vaga.titulo}</h4>
-                                </div>
-                                <div className="info">
-                                    <p><strong>Descrição:</strong> {vaga.descricao}</p>
-                                    <p><strong>Localização:</strong> {vaga.localizacao}</p>
-                                    <p><strong>Salário:</strong> R$ {vaga.salario}</p>
-                                    <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
-                                    <div className="btn">
-                                        <button className="btn-cand" onClick={() => verDetalhesVaga(vaga.id)}>Ver Candidatos</button>
+                        <div className="itens">
+                            {vagas.map((vaga) => (
+                                <div key={vaga.id} className="vaga-item">
+                                    <div className="titulo">
+                                        <h4>{vaga.titulo}</h4>
+                                    </div>
+                                    <div className="info">
+                                        <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                                        <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                                        <p><strong>Salário:</strong> R$ {vaga.salario}</p>
+                                        <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                                        <div className="btn">
+                                            <button className="btn-cand" onClick={() => verDetalhesVaga(vaga.id)}>Ver Candidatos</button>
+                                            <button className='btn-edit' onClick={() => editOpen(vaga.id)}>Editar Vaga</button>
+                                            <button className='btn-excluir' onClick={() => excluirVaga(vaga.id)}>Excluir Vaga</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 )}
+
+                {showEditVagas && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                        <h3>Editar Vaga</h3>
+                        <div className="edit-form">
+                            <div className="form-group">
+                            <label htmlFor="titulo">Título:</label>
+                            <input
+                                type="text"
+                                id="titulo"
+                                value={titulo}
+                                onChange={(e) => setTitulo(e.target.value)}
+                                required
+                            />
+                            </div>
+
+                            <div className="form-group">
+                            <label htmlFor="descricao">Descrição:</label>
+                            <input
+                                type="text"
+                                id="descricao"
+                                value={descricao}
+                                onChange={(e) => setDescricao(e.target.value)}
+                                required
+                            />
+                            </div>
+
+                            <div className="form-group">
+                            <label htmlFor="localizacao">Localização:</label>
+                            <input
+                                type="text"
+                                id="localizacao"
+                                value={localizacao}
+                                onChange={(e) => setLocalizacao(e.target.value)}
+                                required
+                            />
+                            </div>
+
+                            <div className="form-group">
+                            <label htmlFor="salario">Salário:</label>
+                            <input
+                                type="number"
+                                id="salario"
+                                value={salario}
+                                min="1500"
+                                onChange={(e) => setSalario(e.target.value)}
+                                required
+                            />
+                            </div>
+
+                            <div className="modal-buttons">
+                            <button onClick={editarVaga} className="upload-button">
+                                Salvar
+                            </button>
+                            <button onClick={() => setShowEditVagas(false)} className="cancel-button">
+                                Cancelar
+                            </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    )}
 
                 {showVagas && vagas.length === 0 && (
                     <p>Você ainda não criou nenhuma vaga.</p>
@@ -423,6 +604,8 @@ const Perfil = () => {
                                                 <p><strong>Status:</strong> {candidato.status}</p>
                                                 <p><strong>Data da Candidatura:</strong> {new Date(candidato.data_candidatura).toLocaleDateString()}</p>
                                             </div>
+                                            <button onClick={() => aceitarCandidatura(candidato.candidatura_id)}>Aprovar</button>
+                                            <button onClick={() => rejeitarCandidatura(candidato.candidatura_id)}>Recusar</button>
                                         </div>
                                     ))}
                                 </div>

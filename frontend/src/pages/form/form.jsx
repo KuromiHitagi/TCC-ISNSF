@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/index.jsx';
 import Questionario from '../../layouts/form/form.jsx'
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import formCharacter from '../../assets/form-character.png';
 import './form.scss';
 
 const Form = () => {
@@ -30,7 +31,7 @@ const Form = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
             className="intro">
-            <img className="form-character" src="/img/form-character.png" alt="" />
+            <img className="form-character" src={formCharacter} alt="form-character" />
             <h2 className="form-title">Bem-vindo ao Teste Vocacional</h2>
             <p>
               Para determinar qual cargo se alinha mais com suas características e preferências,

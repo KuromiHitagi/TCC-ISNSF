@@ -44,11 +44,28 @@ endpoints.post('/candidatura', getAuthentication(), async (req, resp) => {
   }
 });
 
-// Atualizar status da candidatura (admin)
-endpoints.put('/candidatura/:id/status', getAuthentication((user) => user.tipo === 'admin'), async (req, resp) => {
+// Atualizar status da candidatura (dono da vaga ou admin)
+endpoints.put('/candidatura/:id/status', getAuthentication(), async (req, resp) => {
   try {
     const id = req.params.id;
     const { status } = req.body;
+
+    // Buscar a candidatura para obter a vaga_id
+    const candidatura = await repo.buscarCandidaturaPorId(id);
+    if (!candidatura) {
+      return resp.status(404).send({ erro: 'Candidatura não encontrada' });
+    }
+
+    // Verificar se o usuário é dono da vaga ou admin
+    const vagaRepo = (await import('../repository/vagaRepository.js')).default || (await import('../repository/vagaRepository.js'));
+    const vaga = await vagaRepo.buscarVagaPorId(candidatura.vaga_id);
+    if (!vaga) {
+      return resp.status(404).send({ erro: 'Vaga não encontrada' });
+    }
+    if (vaga.usuario_id !== req.user.id && req.user.tipo !== 'admin') {
+      return resp.status(403).send({ erro: 'Acesso negado' });
+    }
+
     await repo.atualizarStatusCandidatura(id, status);
     resp.send({ mensagem: 'Status atualizado com sucesso' });
   } catch (err) {

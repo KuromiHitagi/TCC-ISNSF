@@ -80,6 +80,7 @@
             }
 
             .photo-button {
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #007bff;
                 color: white;
 
@@ -89,6 +90,7 @@
             }
 
             .edit-button {
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #28a745;
                 color: white;
 
@@ -98,15 +100,110 @@
             }
 
             .logout-button {
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #dc3545;
                 color: white;
 
                 &:hover {
-                    background-color: #c82333;
+                    background-color: #a11d2b;
                 }
             }
         }
     }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+
+        .modal-content {
+            background-color: #f2f2f2;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 600px;
+            max-width: 100%;
+            text-align: center;
+
+            h3 {
+            margin-bottom: 20px;
+            color: #333;
+            }
+
+            .edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                label {
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #333;
+                }
+
+                input {
+                width: 97%;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+
+                &:focus {
+                    border-color: #007bff;
+                }
+                }
+            }
+            }
+
+            .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            button {
+                border: none;
+                padding: 8px 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            .upload-button {
+                background-color: #28a745;
+                color: white;
+
+                &:hover {
+                background-color: #218838;
+                }
+            }
+
+            .cancel-button {
+                background-color: #6c757d;
+                color: white;
+                margin: 0 340px 0 230px;
+
+                &:hover {
+                background-color: #5a6268;
+                }
+            }
+            }
+        }
+        }
+
 
     /* Modal Styles */
     .modal-overlay {
@@ -319,85 +416,110 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         background-color: #313131;
         max-width: 90%;
-        gap: 50px;
         margin-top: 20px;
         padding: 40px;
         border-radius: 8px;
 
-        .candidatura-item {
+        .itens{
             display: flex;
-            flex-direction: column;
-            justify-content: start;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-
-            min-width: 400px;
-            max-width: 400px;
-            height: 300px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            background-color: #313131;
+            max-width: 90%;
+            gap: 50px;
+            margin-top: 20px;
+            padding: 40px;
             border-radius: 8px;
-            padding: 0;
-            box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 1);
 
-            transition: all ease-in-out 0.3s;
-
-            &:hover{
-                transform: scale(105%) translateY(-5px);
-            }
-            
-            .titulo {
+            .candidatura-item {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: start;
                 align-items: center;
-                margin: 0 0 10px 0;
-                border-radius: 8px 8px 0px 0px;
-                color: #333;
-                width: 100%;
-                height: 35px;
-                background-color: #c7c7c7;
-            }
 
-            .info{
-                display: flex;
-                justify-content: center;
-                align-items: start;
-                flex-direction: column;
-                  white-space: normal;
-                word-break: break-all;
-                text-align: start;
-                gap: 15px;
-                padding: 0px 20px 20px 20px;
-                margin: 0px 20px 20px 20px;
-                width: 100%;
-                p {
-                    margin: 0px 0px 0px 15px;
-                    color: #666;
+                min-width: 400px;
+                max-width: 400px;
+                height: 300px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 0;
+                box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 1);
+
+                transition: all ease-in-out 0.3s;
+
+                &:hover{
+                    transform: scale(105%) translateY(-5px);
                 }
-
-                strong {
+                
+                .titulo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 0 10px 0;
+                    border-radius: 8px 8px 0px 0px;
                     color: #333;
+                    width: 100%;
+                    height: 35px;
+                    background-color: #c7c7c7;
                 }
 
-                .btn{
+                .info{
                     display: flex;
                     justify-content: center;
-
+                    align-items: start;
+                    flex-direction: column;
+                    white-space: normal;
+                    word-break: break-all;
+                    text-align: start;
+                    gap: 15px;
+                    padding: 0px 20px 20px 20px;
+                    margin: 0px 20px 20px 20px;
                     width: 100%;
+                    p {
+                        margin: 0px 0px 0px 15px;
+                        color: #666;
 
-                    .btn-cand{
-                        background-color: #0ff;
-                        border-radius: 10px;
-                        height: 25px;
-                        transition: all ease-in-out 0.3s;
-    
-                        &:hover{
-                            background-color: #08c;
-                            transform: scale(105%);
+                        &.recusado{
+                            color: rgb(255, 0, 0);
+                        }
+
+                        &.aprovado{
+                            color: rgb(0, 128, 0);
+                        }
+
+                        &.pendente{
+                            text-decoration: underline;
+                        }
+                    }
+
+                    strong {
+                        color: #333;
+                        text-decoration: none;
+                    }
+
+                    .btn{
+                        display: flex;
+                        justify-content: center;
+
+                        width: 100%;
+
+                        .btn-cand{
+                            background-color: #0ff;
+                            border-radius: 10px;
+                            height: 25px;
+                            transition: all ease-in-out 0.3s;
+        
+                            &:hover{
+                                background-color: #08c;
+                                transform: scale(105%);
+                            }
                         }
                     }
                 }
@@ -417,6 +539,10 @@
         margin-top: 20px;
         padding: 40px;
         border-radius: 8px;
+
+        h3{
+            margin: -10px 0 -20px 0;
+        }
 
         .vaga-item {
             display: flex;
@@ -475,18 +601,53 @@
 
                 .btn{
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-around;
+                    align-items: center;
 
                     width: 100%;
 
                     .btn-cand{
-                        background-color: #0ff;
+                        color: white;
+                        background-color: #007bff;
+                        border: none;
+                        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                         border-radius: 10px;
-                        height: 25px;
+                        font-size: 16px;
+                        height: 40px;
                         transition: all ease-in-out 0.3s;
     
                         &:hover{
-                            background-color: #08c;
+                            background-color: #0056b3;
+                            transform: scale(105%);
+                        }
+                    }
+                    .btn-edit{
+                        color: white;
+                        background-color: #28a745;
+                        border: none;
+                        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
+                        border-radius: 10px;
+                        font-size: 16px;
+                        height: 40px;
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover{
+                            background-color: #218838;
+                            transform: scale(105%);
+                        }
+                    }
+                    .btn-excluir{
+                        color: white;
+                        background-color: rgb(200, 0, 0);
+                        border: none;
+                        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
+                        border-radius: 10px;
+                        font-size: 16px;
+                        height: 40px;
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover{
+                            background-color: #a11d2b;
                             transform: scale(105%);
                         }
                     }
@@ -626,6 +787,22 @@
 
                 &:hover {
                     background-color: #545b62;
+                }
+            }
+
+            .delete-button {
+                background-color: #dc3545;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                padding: 12px 24px;
+                margin-left: 10px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #c82333;
                 }
             }
 

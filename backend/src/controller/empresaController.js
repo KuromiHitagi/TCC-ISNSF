@@ -67,7 +67,7 @@ endpoints.put('/empresa/perfil', getAuthentication(), async (req, resp) => {
 });
 
 // Deletar conta da empresa (autenticada)
-endpoints.delete('/empresa', getAuthentication(), async (req, resp) => {
+endpoints.delete('/empresa/delete', getAuthentication(), async (req, resp) => {
   try {
     await repo.deletarEmpresa(req.user.id);
     resp.send({ mensagem: 'Conta deletada com sucesso' });

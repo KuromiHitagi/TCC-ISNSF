@@ -66,7 +66,7 @@ endpoints.put('/usuario/perfil', getAuthentication(), async (req, resp) => {
 });
 
 // Deletar conta do usuário (autenticado)
-endpoints.delete('/usuario', getAuthentication(), async (req, resp) => {
+endpoints.delete('/usuario/delete', getAuthentication(), async (req, resp) => {
   try {
     await repo.deletarUsuario(req.user.id);
     resp.send({ mensagem: 'Conta deletada com sucesso' });
@@ -96,4 +96,12 @@ endpoints.get('/usuario/foto', getAuthentication(), async (req, resp) => {
   }
 });
 
+endpoints.get('/candidatos', getAuthentication(), async (req, resp) => {
+  try {
+    const info = await repo.mostrarCandidatos();
+    resp.send(info);
+  } catch (error) {
+    resp.status(400).send({ erro: error.message });
+  }
+});
 export default endpoints;
