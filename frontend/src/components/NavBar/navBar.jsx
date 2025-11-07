@@ -17,6 +17,7 @@ const Navbar = () => {
   const [enable, setEnable] = useState(false);
   const [enableInc, setEnableInc] = useState(false);
   const [enableUser, setEnableUser] = useState(false);
+  const [enableAdmin, setEnableAdmin] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [userNome, setUserNome] = useState("");
   // eslint-disable-next-line no-unused-vars
@@ -28,9 +29,15 @@ const Navbar = () => {
     if (verify === "empresa") {
       setEnableInc(true);
       setEnableUser(false);
+      setEnableAdmin(false);
     } else if (verify === "usuario") {
       setEnableInc(false);
       setEnableUser(true);
+      setEnableAdmin(false);
+    } else if (verify === "admin") {
+      setEnableInc(false);
+      setEnableUser(false);
+      setEnableAdmin(true);
     }
 
     const email = localStorage.getItem("EMAIL");
@@ -45,7 +52,7 @@ const Navbar = () => {
     // Buscar foto e nome do perfil
     const fetchUserPhoto = async () => {
       const userType = localStorage.getItem("USER_TYPE");
-      if (userType) {
+      if (userType && userType !== "admin") {
         try {
           const endpoint = userType === "usuario" ? "/usuario/perfil" : "/empresa/perfil";
           const response = await api.get(endpoint);
@@ -132,6 +139,11 @@ const Navbar = () => {
                 <li className={`vagas_usuario ${enableUser ? "loggedUser" : ""}`}>
                   <NavLink className="navlink" to="/buscar_vagas">
                     Buscar Vagas
+                  </NavLink>
+                </li>
+                <li className={`admin ${enableAdmin ? "loggedAdmin" : ""}`}>
+                  <NavLink className="navlink" to="/admin">
+                    Admin
                   </NavLink>
                 </li>
                 <li>

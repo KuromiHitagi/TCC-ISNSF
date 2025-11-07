@@ -10,10 +10,14 @@
   margin: 0 auto;     
   padding: 20px;
 
+  .text{
+    justify-content: space-between;
+  }
+
   p {
-    text-align: justify; 
-    margin: 0 auto;
-    line-height: 1.6;   
+    text-align: justify;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
   }
 
   .texto {
@@ -74,5 +78,7 @@
     &.logged{
       display: none;
     }
+
+    
   }
 }

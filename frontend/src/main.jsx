@@ -1,3 +1,4 @@
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -15,6 +16,8 @@ import Perfil from "./pages/perfil/perfil.jsx";
 import PoliticaPrivacidade from './pages/PoliticaPrivacidade.jsx'
 import TermosDeUso from './pages/TermosDeUso.jsx'
 import Candidatos from './pages/candidatos/candidatos.jsx';
+import Admin from './pages/admin/adminPainel.jsx';
+import AdminRegister from './pages/admin/adminRegister.jsx';
 
 import './styles/index.scss'
 const elements = document.querySelectorAll('.fade-in');
@@ -48,6 +51,8 @@ createRoot(document.getElementById('root')).render(
         <Route path='/politicas' element={<PoliticaPrivacidade/>}/>
         <Route path='/termos' element={<TermosDeUso/>}/>
         <Route path='/candidatos' element={<Candidatos/>}/>
+        <Route path='/admin' element={<Admin/>}/>
+        <Route path='/admin/register' element={<AdminRegister/>}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
