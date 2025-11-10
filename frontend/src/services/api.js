@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'https://tcc-tecvagas.onrender.com'
 });
 
 // Interceptor para adicionar o token dinamicamente em cada requisição

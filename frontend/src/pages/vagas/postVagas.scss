@@ -24,9 +24,11 @@
         .itens{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100%;
+            gap: 50px;
 
             .vaga-item {
                 display: flex;

@@ -53,7 +53,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/termos' element={<TermosDeUso/>}/>
         <Route path='/candidatos' element={<Candidatos/>}/>
         <Route path='/admin' element={<Admin/>}/>
-        <Route path='/admin-login' element={<AdminLogin/>}/>
+        <Route path='/admin/login' element={<AdminLogin/>}/>
         <Route path='/admin/register' element={<AdminRegister/>}/>
       </Routes>
     </BrowserRouter>

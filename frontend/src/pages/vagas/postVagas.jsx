@@ -101,9 +101,13 @@ const Vagas = () => {
                                 <input
                                     className="input"
                                     value={salario}
-                                    onChange={(e) => setSalario(e.target.value)}
-                                    type="number"
-                                    min="0"
+                                    onChange={(e) => {
+                                        const onlyNums = e.target.value.replace(/\D/g, '');
+                                        setSalario(onlyNums);
+                                    }}
+                                    type="text"
+                                    min="1500"
+                                    pattern='0-9'
                                     placeholder="Salário:"
                                     required
                                 />

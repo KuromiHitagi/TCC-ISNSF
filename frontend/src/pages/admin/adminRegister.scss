@@ -24,6 +24,13 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
+}
+
+.pre-input button{
+  color: #696969;
+  font-size: 18px;
+  margin-right: 20px;
 }
 
 .pre-input input {
@@ -31,6 +38,7 @@
   border: 1px solid #be4242;
   border-radius: 4px;
   font-size: 16px;
+  width: 96%;
   transition: border-color 0.3s;
 }
 

@@ -12,6 +12,7 @@ import googleIcon from '../../assets/google.png';
 const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const Navigate = useNavigate();
 
     useEffect(() => {
@@ -132,12 +133,49 @@ const Login = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 id="mainL">
 
-                <h2>Login</h2>
+                <h2 className='login-title'>Login</h2>
 
                 <form onSubmit={(e) => { e.preventDefault(); login(); }} className='login-form'>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="E-mail: " required />
-                    <input value={senha} onChange={(e) => setSenha(e.target.value)} type="password" placeholder="Senha: " required />
-                    <button className="butão-submit" type="submit">Entrar</button>
+                    <input
+                        className='input'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        type="email"
+                        placeholder="E-mail:"
+                        required
+                    />
+
+                    <div className="input-pass" style={{ position: 'relative' }}>
+                        <input
+                        className='input'
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Senha:"
+                        required
+                        />
+
+                        <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="show-pass"
+                        style={{
+                            position: 'absolute',
+                            right: '10px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer'
+                        }}
+                        >
+                        {showPassword ? 'Esconder' : 'Mostrar'}
+                        </button>
+                    </div>
+
+                    <button className="butão-submit" type="submit">
+                        Entrar
+                    </button>
                 </form>
                 <div className="logs">
                     <Link className="butão" to="/register">Cadastrar-se</Link>

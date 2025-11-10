@@ -12,6 +12,8 @@ const AdminRegister = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
   const Navigate = useNavigate();
 
   useEffect(() => {
@@ -97,20 +99,58 @@ const AdminRegister = () => {
                 placeholder="E-mail"
                 required
               />
-              <input
+              <div className="input-pass" style={{ position: 'relative' }}>
+                <input
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-                type="password"
-                placeholder="Senha"
+                type={showPassword ? "text" : "password"}
+                placeholder="Senha:"
                 required
-              />
-              <input
+                />
+
+                <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="show-pass"
+                style={{
+                    position: 'absolute',
+                    right: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                }}
+                >
+                {showPassword ? 'Esconder' : 'Mostrar'}
+                </button>
+              </div>
+              <div className="input-pass" style={{ position: 'relative' }}>
+                <input
                 value={confirmarSenha}
                 onChange={(e) => setConfirmarSenha(e.target.value)}
-                type="password"
-                placeholder="Confirmar Senha"
+                type={showPassword2 ? "text" : "password"}
+                placeholder="Confirmar Senha:"
                 required
-              />
+                />
+
+                <button
+                type="button"
+                onClick={() => setShowPassword2(!showPassword2)}
+                className="show-pass"
+                style={{
+                    position: 'absolute',
+                    right: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                }}
+                >
+                {showPassword2 ? 'Esconder' : 'Mostrar'}
+                </button>
+              </div>
             </div>
 
             <button className="butão-submit" type="submit">

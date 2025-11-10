@@ -428,9 +428,9 @@ const Perfil = () => {
                                     </div>
                                 )}
                                 <div className="modal-buttons">
-                                    <button onClick={handleSaveProfile} className="upload-button">Salvar</button>
+                                    <button onClick={() => handleSaveProfile} className="upload-button">Salvar</button>
                                     <button onClick={() => setShowEditModal(false)} className="cancel-button">Cancelar</button>
-                                    <button onClick={deleteAccount} className='delete-button'>Apagar</button>
+                                    <button onClick={() => deleteAccount} className='delete-button'>Apagar</button>
                                 </div>
                             </div>
                         </div>
@@ -517,7 +517,9 @@ const Perfil = () => {
                                 type="text"
                                 id="titulo"
                                 value={titulo}
-                                onChange={(e) => setTitulo(e.target.value)}
+                                onChange={(e) => {
+                                    const onlyText = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+                                    setTitulo(onlyText);}}
                                 required
                             />
                             </div>
@@ -528,7 +530,9 @@ const Perfil = () => {
                                 type="text"
                                 id="descricao"
                                 value={descricao}
-                                onChange={(e) => setDescricao(e.target.value)}
+                                onChange={(e) => {
+                                    const onlyText = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+                                    setDescricao(onlyText)}}
                                 required
                             />
                             </div>
@@ -539,7 +543,9 @@ const Perfil = () => {
                                 type="text"
                                 id="localizacao"
                                 value={localizacao}
-                                onChange={(e) => setLocalizacao(e.target.value)}
+                                onChange={(e) => {
+                                    const onlyText = e.target.value.replace(/[^a-zA-ZÀ-ÿ0-9\s]/g, '');
+                                    setLocalizacao(onlyText)}}
                                 required
                             />
                             </div>
@@ -551,7 +557,10 @@ const Perfil = () => {
                                 id="salario"
                                 value={salario}
                                 min="1500"
-                                onChange={(e) => setSalario(e.target.value)}
+                                pattern='0-9'
+                                onChange={(e) => {
+                                    const onlyNums = e.target.value.replace(/\D/g, '');
+                                    setSalario(onlyNums)}}
                                 required
                             />
                             </div>

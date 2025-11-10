@@ -56,6 +56,7 @@ const Register = () => {
   const [telRaw, setTelRaw] = useState("");
   const [cidade, setCidade] = useState("");
   const [dataNascimento, setDataNasc] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
   useEffect(() => {
@@ -384,13 +385,32 @@ const Register = () => {
           placeholder="E-mail"
           required
         />
-        <input
+        <div className="input-pass" style={{ position: 'relative' }}>
+          <input
           value={incSenha}
           onChange={(e) => setIncSenha(e.target.value)}
-          type="password"
-          placeholder="Senha"
+          type={showPassword ? "text" : "password"}
+          placeholder="Senha:"
           required
-        />
+          />
+
+          <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="show-pass"
+          style={{
+              position: 'absolute',
+              right: '10px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer'
+          }}
+          >
+          {showPassword ? 'Esconder' : 'Mostrar'}
+          </button>
+      </div>
       </div>
     );
   }
@@ -462,13 +482,32 @@ const Register = () => {
           placeholder="E-mail"
           required
         />
-        <input
+        <div className="input-pass" style={{ position: 'relative' }}>
+          <input
           value={userSenha}
           onChange={(e) => setUserSenha(e.target.value)}
-          type="password"
-          placeholder="Senha"
+          type={showPassword ? "text" : "password"}
+          placeholder="Senha:"
           required
-        />
+          />
+
+          <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="show-pass"
+          style={{
+              position: 'absolute',
+              right: '10px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer'
+          }}
+          >
+          {showPassword ? 'Esconder' : 'Mostrar'}
+          </button>
+      </div>
       </div>
     );
   }

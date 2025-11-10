@@ -157,12 +157,51 @@ $fonte-principal: 'Poppins', sans-serif;
       width: 100%;
       gap: 1rem;
 
+      .input-pass{
+        width: 100%;
+
+        button{
+          color: white;
+          font-size: 18px;
+          margin-right: 20px;
+        }
+        input{
+          font-size: 18px;
+          background-color: #111;
+          border: 1px solid #333;
+          border-radius: 20px;
+          min-width: 97%;
+          max-width: 97%;
+          height: 30px;
+          padding: 0.6rem 1rem;
+          color: $cor-texto;
+
+          &::placeholder {
+            color: #aaa;
+          }
+
+          &:focus {
+            border-color: $cor-principal;
+            outline: none;
+          }
+
+          &[type=number]{
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+            }
+          }
+        }
+      }
+
       input {
         font-size: 18px;
         background-color: #111;
         border: 1px solid #333;
         border-radius: 20px;
-        width: 97%;
+        min-width: 97%;
+        max-width: 97%;
         height: 30px;
         padding: 0.6rem 1rem;
         color: $cor-texto;
@@ -183,7 +222,6 @@ $fonte-principal: 'Poppins', sans-serif;
           margin: 0;
         }
         }
-        
       }
 
       .date-picker-wrapper {
