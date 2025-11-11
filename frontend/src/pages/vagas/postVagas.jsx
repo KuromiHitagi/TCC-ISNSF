@@ -4,7 +4,8 @@ import Footer from '../../components/Footer/index.jsx';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import api from '../../services/api.js'
+import api from '../../services/api.js';
+import { getCidades } from '../../services/cidades.js';
 
 const Vagas = () => {
     const [titulo, setTitulo] = useState("");
@@ -13,11 +14,23 @@ const Vagas = () => {
     const [salario, setSalario] = useState("");
     const [showForm, setShowForm] = useState(false);
     const [vagas, setVagas] = useState([]);
+    const [cidades, setCidades] = useState([]);
+    const [loadingCidades, setLoadingCidades] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
 
+    // Função pra validar texto (título e descrição)
+    function validarTexto(texto) {
+        const textoTrimmed = texto.trim();
+        return textoTrimmed.length >= 2 && textoTrimmed.length <= 255;
+    }
+
+    // Puxa as vagas do usuário
     const carregarVagas = async () => {
         try {
             const response = await api.get('/vaga/usuario/minhas');
             setVagas(response.data);
+            setCurrentPage(1);
         } catch (error) {
             console.error('Erro ao carregar vagas:', error);
         }
@@ -27,18 +40,59 @@ const Vagas = () => {
         carregarVagas();
     }, []);
 
+    // Puxa as cidades da API
+    useEffect(() => {
+        const loadCidades = async () => {
+            try {
+                const cidadesList = await getCidades();
+                setCidades(cidadesList);
+            } catch (error) {
+                console.error("Erro ao carregar cidades:", error);
+            } finally {
+                setLoadingCidades(false);
+            }
+        };
+        loadCidades();
+    }, []);
+
+    // Função principal de postagem com validação
     async function PostarVagas() {
+        if (!validarTexto(titulo)) {
+            alert("O título precisa ter entre 2 e 255 caracteres.");
+            return;
+        }
+
+        if (!validarTexto(descricao)) {
+            alert("A descrição precisa ter entre 2 e 255 caracteres.");
+            return;
+        }
+
+        if (!localizacao) {
+            alert("Selecione uma localização.");
+            return;
+        }
+
+        const salarioNumero = parseInt(salario, 10);
+        if (isNaN(salarioNumero) || salarioNumero < 1500) {
+            alert("O salário deve ser no mínimo R$1500.");
+            return;
+        }
+
         const body = {
             titulo,
             descricao,
             localizacao,
-            salario
+            salario: salarioNumero
         };
 
         try {
             await api.post('/vaga/criar', body);
             carregarVagas();
-            setShowForm(false); // anima a saída
+            setShowForm(false);
+            setTitulo("");
+            setDescricao("");
+            setLocalizacao("");
+            setSalario("");
         } catch (error) {
             console.error('Erro ao postar vaga:', error);
         }
@@ -46,7 +100,7 @@ const Vagas = () => {
 
     return (
         <div>
-            <Navbar />  
+            <Navbar />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -77,27 +131,42 @@ const Vagas = () => {
                                 <input
                                     className="input"
                                     value={titulo}
+                                    minLength={2}
+                                    maxLength={255}
                                     onChange={(e) => setTitulo(e.target.value)}
                                     type="text"
                                     placeholder="Título:"
                                     required
                                 />
+
                                 <input
                                     className="input"
                                     value={descricao}
+                                    minLength={2}
+                                    maxLength={255}
                                     onChange={(e) => setDescricao(e.target.value)}
                                     type="text"
                                     placeholder="Descrição:"
                                     required
                                 />
-                                <input
-                                    className="input"
+
+                                <select
                                     value={localizacao}
                                     onChange={(e) => setLocalizacao(e.target.value)}
-                                    type="text"
-                                    placeholder="Localização:"
                                     required
-                                />
+                                >
+                                    <option value="">-- Selecione uma cidade --</option>
+                                    {loadingCidades ? (
+                                        <option disabled>Carregando cidades...</option>
+                                    ) : (
+                                        cidades.map((cidadeNome, index) => (
+                                            <option key={index} value={cidadeNome}>
+                                                {cidadeNome}
+                                            </option>
+                                        ))
+                                    )}
+                                </select>
+
                                 <input
                                     className="input"
                                     value={salario}
@@ -107,7 +176,8 @@ const Vagas = () => {
                                     }}
                                     type="text"
                                     min="1500"
-                                    pattern='0-9'
+                                    max="999999"
+                                    pattern='^[1-9][0-9]*$'
                                     placeholder="Salário:"
                                     required
                                 />
@@ -122,7 +192,7 @@ const Vagas = () => {
                     <div className="vagas-list">
                         <h2>Suas Vagas:</h2>
                         <div className="itens">
-                            {vagas.map((vaga) => (
+                            {vagas.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((vaga) => (
                                 <div key={vaga.id} className="vaga-item">
                                     <div className="titulo">
                                         <h4>{vaga.titulo}</h4>
@@ -137,6 +207,25 @@ const Vagas = () => {
                                 </div>
                             ))}
                         </div>
+                        {vagas.length > itemsPerPage && (
+                            <div className="pagination">
+                                <button
+                                    className="pagination-btn"
+                                    onClick={() => setCurrentPage(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                >
+                                    Anterior
+                                </button>
+                                <span>Página {currentPage} de {Math.ceil(vagas.length / itemsPerPage)}</span>
+                                <button
+                                    className="pagination-btn"
+                                    onClick={() => setCurrentPage(currentPage + 1)}
+                                    disabled={currentPage === Math.ceil(vagas.length / itemsPerPage)}
+                                >
+                                    Próxima
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </motion.div>

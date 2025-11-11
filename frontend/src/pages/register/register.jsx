@@ -10,22 +10,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./register.scss";
 import googleIcon from "../../assets/google.png";
+import validarCPF from "../../services/validarCPF.js";
+import { getCidades } from "../../services/cidades.js";
+import { areasDisponiveis } from "../../services/areas.js";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const Register = () => {
-  const areasDisponiveis = [
-    "Tecnologia da Informação",
-    "Recursos Humanos",
-    "Marketing",
-    "Vendas",
-    "Administração",
-    "Comunicação Visual",
-    "Design gráfico",
-    "Tecnologia",
-    "Serviços Sociais"
-  ]
+  const areasDisponiveisList = areasDisponiveis();
+
   const [open, setOpen] = useState(false);
   const [opcao, setOpcao] = useState("");
   let show = null;
@@ -38,6 +32,20 @@ const Register = () => {
     if(userEmail != undefined && userEmail != null&& userEmail != "") {
         setIsLoggedIn(true);
     }
+  }, []);
+
+  useEffect(() => {
+    const loadCidades = async () => {
+      try {
+        const cidadesList = await getCidades();
+        setCidades(cidadesList);
+      } catch (error) {
+        console.error("Erro ao carregar cidades:", error);
+      } finally {
+        setLoadingCidades(false);
+      }
+    };
+    loadCidades();
   }, []);
 
   const [nomeUser, setNomeUser] = useState("");
@@ -57,6 +65,8 @@ const Register = () => {
   const [cidade, setCidade] = useState("");
   const [dataNascimento, setDataNasc] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const [cidades, setCidades] = useState([]);
+  const [loadingCidades, setLoadingCidades] = useState(true);
 
   // Estados para cadastro com Google - removidos pois agora usa página separada
   useEffect(() => {
@@ -130,8 +140,8 @@ const Register = () => {
         alert("Área de interesse é obrigatória e não pode conter apenas espaços.");
         return;
       }
-      if (!areasDisponiveis.includes(areainteresse.trim())) {
-        alert("Área de interesse inválida. Escolha uma das seguintes: \n" + areasDisponiveis.join(", \n"));
+      if (!areasDisponiveisList.includes(areainteresse.trim())) {
+        alert("Área de interesse inválida. Escolha uma das seguintes: \n" + areasDisponiveisList.join(", \n"));
         return;
       }
       if (!isCampoValido(emailUser)) {
@@ -228,8 +238,8 @@ const Register = () => {
         alert("Área profissionalizada é obrigatória e não pode conter apenas espaços.");
         return;
       }
-      if (!areasDisponiveis.includes(areaprofissionalizada.trim())) {
-        alert("Área profissionalizada inválida. Escolha uma das seguintes: \n" + areasDisponiveis.join(", \n"));
+      if (!areasDisponiveisList.includes(areaprofissionalizada.trim())) {
+        alert("Área profissionalizada inválida. Escolha uma das seguintes: \n" + areasDisponiveisList.join(", \n"));
         return;
       }
       if (!isCampoValido(emailInc)) {
@@ -356,6 +366,8 @@ const Register = () => {
       <div className="pre-input">
         <input
           value={nomeInc}
+          minLength={2}
+          maxLength={255}
           onChange={(e) => setNomeInc(e.target.value)}
           type="text"
           placeholder="Nome"
@@ -371,23 +383,31 @@ const Register = () => {
           placeholder="CNPJ:"
           className="input-mask"
         />
-        <input
+        <select
           value={areaprofissionalizada}
           onChange={(e) => setAreaprofissionalizada(e.target.value)}
-          type="text"
-          placeholder="Área profissionalizada"
+          className="input-mask"
           required
-        />
+        >
+          <option value="">-- Selecione uma área --</option>
+          {areasDisponiveisList.map((area, index) => (
+            <option key={index} value={area}>
+              {area}
+            </option>
+          ))}
+        </select>
         <input
           value={emailInc}
           onChange={(e) => setEmailInc(e.target.value)}
           type="email"
+          pattern="^[a-zA-Z0-9._-]{2,}+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           placeholder="E-mail"
           required
         />
         <div className="input-pass" style={{ position: 'relative' }}>
           <input
           value={incSenha}
+          maxLength={255}
           onChange={(e) => setIncSenha(e.target.value)}
           type={showPassword ? "text" : "password"}
           placeholder="Senha:"
@@ -421,7 +441,7 @@ const Register = () => {
         <input
           minLength={3}
           maxLength={255}
-          pattern="^[a-zA-Z ]+$"
+          pattern="^[a-zA-ZÀ-ÿ\s]+$"
           value={nomeUser}
           onChange={(e) => setNomeUser(e.target.value)}
           type="text"
@@ -435,6 +455,14 @@ const Register = () => {
           onAccept={(value, mask) => {
             setCpf(value);
             setCpfRaw(mask.unmaskedValue);
+
+            if(mask.unmaskedValue.length === 11) {
+              if(!validarCPF(mask.unmaskedValue)) {
+                alert("CPF inválido. Por favor, verifique o número inserido.");
+                setCpf("");
+                setCpfRaw("");
+              }
+            }
           }}
           placeholder="CPF:"
           className="input-mask"
@@ -450,13 +478,23 @@ const Register = () => {
           maxDate={new Date()}
           minDate={new Date(new Date().getFullYear() - 80, new Date().getMonth(), new Date().getDate())}
         />
-        <input
-          maxLength={100}
+        <select
           value={cidade}
           onChange={(e) => setCidade(e.target.value)}
-          type="text"
-          placeholder="Cidade"
-        />
+          className="input-mask"
+          required
+        >
+          <option value="">-- Selecione uma cidade --</option>
+          {loadingCidades ? (
+            <option disabled>Carregando cidades...</option>
+          ) : (
+            cidades.map((cidadeNome, index) => (
+              <option key={index} value={cidadeNome}>
+                {cidadeNome}
+              </option>
+            ))
+          )}
+        </select>
         <IMaskInput
           mask="(00) 00000-0000"
           value={tel}
@@ -467,17 +505,24 @@ const Register = () => {
           placeholder="Telefone:"
           className="input-mask"
         />
-        <input
+        <select
           value={areainteresse}
           onChange={(e) => setAreainteresse(e.target.value)}
-          type="text"
-          placeholder="Área de Interesse"
+          className="input-mask"
           required
-        />
+        >
+          <option value="">-- Selecione uma área --</option>
+          {areasDisponiveisList.map((area, index) => (
+            <option key={index} value={area}>
+              {area}
+            </option>
+          ))}
+        </select>
         <input
           value={emailUser}
           onChange={(e) => setEmailUser(e.target.value)}
           pattern="^[a-zA-Z0-9._-]{2,}+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          maxLength={255}
           type="email"
           placeholder="E-mail"
           required
@@ -485,6 +530,7 @@ const Register = () => {
         <div className="input-pass" style={{ position: 'relative' }}>
           <input
           value={userSenha}
+          maxLength={255}
           onChange={(e) => setUserSenha(e.target.value)}
           type={showPassword ? "text" : "password"}
           placeholder="Senha:"

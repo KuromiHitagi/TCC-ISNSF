@@ -40,8 +40,14 @@ const SearchVagas = () => {
 
   async function Candidatar(vagaId) {
     try {
-      await api.post('/candidatura', { vaga_id: vagaId });
-      alert('Candidatura realizada com sucesso!');
+      let yes = window.confirm('Tem certeza que deseja se candidatar a essa vaga?');
+      if(yes === true) {
+        await api.post('/candidatura', { vaga_id: vagaId });
+        alert('Candidatura realizada com sucesso!');
+      }
+      else {
+        alert('Candidatura cancelada.');
+      }
     } catch (error) {
       console.error('Erro ao candidatar-se:', error);
       const errorMessage = error.response?.data?.erro || 'Erro ao se candidatar. Tente novamente.';

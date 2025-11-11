@@ -3,16 +3,29 @@ import Navbar from '../../components/NavBar/navBar.jsx';
 import Footer from '../../components/Footer/index.jsx';
 // eslint-disable-next-line no-unused-vars
 import {motion} from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../../services/api.js';
+import { useNavigate } from 'react-router';
 
 const Candidatos = () => {
     const [candidatos, setCandidatos] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
+    const Navigate = useNavigate();
+
+    useEffect(() => {
+        const userType = localStorage.getItem('USER_TYPE');
+        if(userType !== 'empresa' && userType !== 'admin') {
+            alert('Acesso negado! Você será redirecionado para a página inicial.');
+            Navigate('/');
+        }
+    });
 
     async function mostrarCandidatos() {
         try {
             const response = await api.get('/candidatos');
             setCandidatos(response.data);
+            setCurrentPage(1);
         } catch (error) {
             console.error('Erro ao carregar candidatos:', error);
             alert('Erro ao carregar candidatos. Por favor, tente novamente mais tarde.');
@@ -35,7 +48,7 @@ const Candidatos = () => {
                                 <h3>Candidatos</h3>
                             </div>
                             <div className="itens">
-                                {candidatos.map((candidato) => (
+                                {candidatos.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((candidato) => (
                                     <div key={candidato.id} className="candidato-item">
                                         
                                         <div className="info">
@@ -60,6 +73,25 @@ const Candidatos = () => {
                                     </div>
                                 ))}
                             </div>
+                            {candidatos.length > itemsPerPage && (
+                                <div className="pagination">
+                                    <button
+                                        className="pagination-btn"
+                                        onClick={() => setCurrentPage(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                    >
+                                        Anterior
+                                    </button>
+                                    <span>Página {currentPage} de {Math.ceil(candidatos.length / itemsPerPage)}</span>
+                                    <button
+                                        className="pagination-btn"
+                                        onClick={() => setCurrentPage(currentPage + 1)}
+                                        disabled={currentPage === Math.ceil(candidatos.length / itemsPerPage)}
+                                    >
+                                        Próxima
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>

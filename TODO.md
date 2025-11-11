@@ -1,0 +1,8 @@
+- [x] Modificar cidades.js para exportar função que busca cidades via API do IBGE
+- [x] Alterar register.jsx para usar select de cidades carregadas dinamicamente
+- [x] Ajustar validação de cidade no register.jsx
+- [x] Testar implementação
+- [x] Implementar paginação para vagas no perfil
+- [x] Implementar paginação para candidaturas no perfil
+- [x] Implementar paginação para vagas no postVagas
+- [x] Implementar paginação para candidatos no candidatos.jsx

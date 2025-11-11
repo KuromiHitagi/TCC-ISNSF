@@ -29,6 +29,9 @@ const Perfil = () => {
     const [descricao, setDescricao] = useState("");
     const [localizacao, setLocalizacao] = useState("");
     const [salario, setSalario] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPageCandidaturas, setCurrentPageCandidaturas] = useState(1);
+    const itemsPerPage = 3;
     const statusA = "Aprovado";
     const statusB = "Recusado";
 
@@ -132,6 +135,7 @@ const Perfil = () => {
             const response = await api.get('/candidatura/usuario/minhas');
             setCandidaturas(response.data);
             setShowCandidaturas(true);
+            setCurrentPageCandidaturas(1);
             console.log('Candidaturas:', response.data);
         } catch (error) {
             console.error('Erro ao carregar candidaturas:', error);
@@ -213,8 +217,9 @@ const Perfil = () => {
 
     async function excluirCandidatura(idCandidatura) {
         try {
-            window.confirm("Tem certeza que deseja excluir esta candidatura?");
-            await api.delete(`/candidatura/${idCandidatura}`);
+            let yes = window.confirm("Tem certeza que deseja excluir esta candidatura?");
+            if(yes == true) await api.delete(`/candidatura/${idCandidatura}`);
+            else return;
             alert('Candidatura excluída com sucesso!');
             exibirCandidaturas();
         } catch (error) {
@@ -450,7 +455,7 @@ const Perfil = () => {
                             <h3>Minhas Candidaturas</h3>
                         </div>
                         <div className="itens">
-                            {candidaturas.map((candidatura) => {
+                            {candidaturas.slice((currentPageCandidaturas - 1) * itemsPerPage, currentPageCandidaturas * itemsPerPage).map((candidatura) => {
                                 let statusClass = "";
                                 if(candidatura.status === "Aprovado"){
                                     statusClass = "aprovado";
@@ -473,6 +478,23 @@ const Perfil = () => {
                                 );
                             })}
                         </div>
+                        <div className="pagination">
+                            <button
+                                onClick={() => setCurrentPageCandidaturas(currentPageCandidaturas - 1)}
+                                disabled={currentPageCandidaturas === 1}
+                                className="pagination-btn"
+                            >
+                                Anterior
+                            </button>
+                            <span>Página {currentPageCandidaturas} de {Math.ceil(candidaturas.length / itemsPerPage)}</span>
+                            <button
+                                onClick={() => setCurrentPageCandidaturas(currentPageCandidaturas + 1)}
+                                disabled={currentPageCandidaturas === Math.ceil(candidaturas.length / itemsPerPage)}
+                                className="pagination-btn"
+                            >
+                                Próxima
+                            </button>
+                        </div>
                     </div>
                 )}
 
@@ -484,7 +506,7 @@ const Perfil = () => {
                     <div className="vagas-list">
                         <h3>Minhas Vagas</h3>
                         <div className="itens">
-                            {vagas.map((vaga) => (
+                            {vagas.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((vaga) => (
                                 <div key={vaga.id} className="vaga-item">
                                     <div className="titulo">
                                         <h4>{vaga.titulo}</h4>
@@ -502,6 +524,23 @@ const Perfil = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                        <div className="pagination">
+                            <button
+                                onClick={() => setCurrentPage(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="pagination-btn"
+                            >
+                                Anterior
+                            </button>
+                            <span>Página {currentPage} de {Math.ceil(vagas.length / itemsPerPage)}</span>
+                            <button
+                                onClick={() => setCurrentPage(currentPage + 1)}
+                                disabled={currentPage === Math.ceil(vagas.length / itemsPerPage)}
+                                className="pagination-btn"
+                            >
+                                Próxima
+                            </button>
                         </div>
                     </div>
                 )}
