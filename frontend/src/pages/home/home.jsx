@@ -2,7 +2,9 @@ import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
+import card1 from "../../assets/card-1.jpg";
+import card2 from "../../assets/Card-1.png";
 import "./home.scss";
 
 const Home = () => {
@@ -26,12 +28,6 @@ const Home = () => {
               TECVAGAS: 
               Sua plataforma de Oportunidades
             </h1>
-            {/* <pre className="texto">
-            Você está pronto para dar o próximo passo na sua carreira?
-          </pre>
-          <pre className="texto">
-            No TECVAGAS, conectamos você às melhores oportunidades de trabalho
-          </pre>  */}
           <div className="text">
 
             <p>
@@ -53,8 +49,24 @@ const Home = () => {
             </p>
           </div>
 
+          <div className="empresas e candidatos">
+            <div className="text">
+              <h1 className="titulo"> 
+              Empresas e Candidatos
+              </h1>
+              <p>
+                Soluções integradas para quem procura uma nova oportunidade de trabalho ou para empresas em processos de contratação.
+              </p>
+            </div>
+            <div className="cards">
+              <img src={card1} alt="card-1" height={160}/>
+
+              <img src={card2} alt="card-2" height={160}/>
+            </div>
+          </div>
+
             <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
-              Inscreva-se
+              Criar um perfil
             </Link>
           </div>
           <div className="empresas-candidatos fade-in"></div>
