@@ -11,6 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./register.scss";
 import googleIcon from "../../assets/google.png";
 import validarCPF from "../../services/validarCPF.js";
+import validarCNPJ from "../../services/validarCNPJ.js";
 import { getCidades } from "../../services/cidades.js";
 import { areasDisponiveis } from "../../services/areas.js";
 
@@ -379,6 +380,14 @@ const Register = () => {
           onAccept={(value, mask) => {
             setCnpj(value);
             setCnpjRaw(mask.unmaskedValue);
+
+            if(mask.unmaskedValue.length === 14) {
+              if(!validarCNPJ(mask.unmaskedValue)) {
+                alert("CNPJ inválido. Por favor, verifique o número inserido.");
+                setCnpj("");
+                setCnpjRaw("");
+              }
+            }
           }}
           placeholder="CNPJ:"
           className="input-mask"
