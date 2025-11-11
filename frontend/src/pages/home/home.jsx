@@ -3,14 +3,14 @@ import Footer from "../../components/Footer/index.jsx";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import card1 from "../../assets/card-1.jpg";
-import card2 from "../../assets/Card-1.png";
+import card1 from "../../assets/Card-1-M.png"
+import card2 from "../../assets/Card-2-H.png"
 import "./home.scss";
 
 const Home = () => {
   const userEmail = localStorage.getItem("EMAIL");
   let enable = true;
-  if (userEmail != null && userEmail != undefined && userEmail != "") {
+  if (userEmail != null || userEmail != undefined && userEmail != "") {
     enable = false;
   }
 
@@ -49,25 +49,42 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="empresas e candidatos">
+          <div className="conteudos">
             <div className="text">
-              <h1 className="titulo"> 
+              <h2 className="titulo"> 
               Empresas e Candidatos
-              </h1>
+              </h2>
               <p>
                 Soluções integradas para quem procura uma nova oportunidade de trabalho ou para empresas em processos de contratação.
               </p>
             </div>
-            <div className="cards">
-              <img src={card1} alt="card-1" height={160}/>
+            <div className="pre-cards">
+              <div className="cards">
+                <div className="first">
+                  <img src={card1} alt="card-1" className="card"/>
+                  <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
+                    Criar um perfil
+                  </Link>
+                  <h4 className={`h4 ${!enable ? "logged" : ""}`}>Criar um perfil</h4>
+                </div>
 
-              <img src={card2} alt="card-2" height={160}/>
+                <div className="second">
+                  <img src={card2} alt="card-2" className="card"/>
+                  <Link className={`butao ${!enable ? "logged" : ""}`} to="/register">
+                    Empresas
+                  </Link>
+                  <h4 className={`h4 ${!enable ? "logged" : ""}`}>Anunciar Vagas</h4>
+                </div>
+              </div>
             </div>
           </div>
 
-            <Link className={`butao ${!enable ? "logged" : ""}`} to="/login">
-              Criar um perfil
-            </Link>
+          <div className="parceiros">
+            <h6 className ="titulo"> 
+              Parceiros
+            </h6>
+            <img src=
+          </div>
           </div>
           <div className="empresas-candidatos fade-in"></div>
           <div className="parceiros fade-in"></div>

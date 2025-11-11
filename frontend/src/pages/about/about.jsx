@@ -19,7 +19,7 @@ const About = () => {
         <div className="info">
           <p>
             Em um mundo em constante transformação, a busca por empregos e
-            talentos nunca foi tão desafiadora. Em 2023, surgiu o Tec Vagas, uma
+            talentos nunca foi tão desafiadora. Em 2025, surgiu o Tec Vagas, uma
             plataforma inovadora criada para conectar profissionais a
             oportunidades em diversas áreas.
             <br />
