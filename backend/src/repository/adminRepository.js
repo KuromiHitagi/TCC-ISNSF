@@ -157,3 +157,10 @@ export async function atualizarCandidatura(id, dados) {
         id
     ]);
 }
+
+export async function verificarAdmin(dados) {
+    const comando = `select * from admin
+                     where email = ?`
+    const [info] = await connection.query(comando, [dados])
+    return info;
+}

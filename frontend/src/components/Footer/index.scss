@@ -82,3 +82,37 @@
     }
     
 }
+
+@media (max-width: 500px) {
+    .Footer{
+        .info1{
+            p{
+                font-size: 18px;
+            }
+
+            &.logged{
+                display: none;
+            }
+        }
+        .info2{
+            .p{
+                font-size:15px;
+            }
+
+            .social{
+                margin-right: 0;
+
+                p{
+                    font-size:15px;
+                }
+
+                .logo{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+}
+
+
+

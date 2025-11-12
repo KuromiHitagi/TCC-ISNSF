@@ -17,22 +17,9 @@ import PoliticaPrivacidade from './pages/PoliticaPrivacidade.jsx'
 import TermosDeUso from './pages/TermosDeUso.jsx'
 import Candidatos from './pages/candidatos/candidatos.jsx';
 import Admin from './pages/admin/adminPainel.jsx';
-import AdminRegister from './pages/admin/adminRegister.jsx';
 import AdminLogin from './pages/admin/adminLogin.jsx';
 
 import './styles/index.scss'
-const elements = document.querySelectorAll('.fade-in');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add('show');
-    } else {
-      el.classList.remove('show');
-    }
-  });
-});
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
@@ -54,7 +41,6 @@ createRoot(document.getElementById('root')).render(
         <Route path='/candidatos' element={<Candidatos/>}/>
         <Route path='/admin' element={<Admin/>}/>
         <Route path='/admin/login' element={<AdminLogin/>}/>
-        <Route path='/admin/register' element={<AdminRegister/>}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>,

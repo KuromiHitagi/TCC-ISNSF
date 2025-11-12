@@ -5,7 +5,7 @@
     flex-direction: column;
     background-color: black;
     color: white;
-    max-width: 100%;
+    width: 96%;
 
     h1{
         margin-top: 70px;
@@ -108,7 +108,7 @@
             flex-direction: column;
 
             @media (max-width:768px) {
-                .abu{
+                .About{
                     display: flex;
                     justify-content: center;
                     align-items: center;

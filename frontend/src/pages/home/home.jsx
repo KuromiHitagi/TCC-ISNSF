@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import card1 from "../../assets/Card-1-M.png"
 import card2 from "../../assets/Card-2-H.png"
-import parceiro1 from "../../assets/catho.png"
-import parceiro3 from "../../assets/santander.png"
-import parceiro4 from "../../assets/itau.png"
+import parceiro1 from "../../assets/santander.png"
+import parceiro2 from "../../assets/frei-logo.png"
+import parceiro3 from "../../assets/pwi.png"
 import "./home.scss";
 
 const Home = () => {
@@ -88,10 +88,9 @@ const Home = () => {
             </h6>
 
             <div className="imgs-parceiros">
-              <a href="https://www.catho.com.br" target="_blank"><img src={parceiro1} alt="catho"/></a>
-              <a href="https://br.linkedin.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0bGEl9v47XieEtHyj0TqTr1tOXJmib-KHtw&s" alt="linkedIn"/></a>
-              <a href="https://www.santander.com.br" target="_blank"><img src={parceiro3} alt="Santander"/></a>
-              <a href="https://www.itau.com.br" target="_blank"><img src={parceiro4} alt="Itau"/></a>
+              <a href="https://www.santander.com.br/" target="_blank"><img src={parceiro1} alt="santander"/></a>
+              <a href="https://www.acaonsfatima.org.br/" target="_blank"><img src={parceiro2} alt="frei-logo"/></a>
+              <a href="https://pwi.com.br/" target="_blank"><img src={parceiro3} alt="pwi-logo" /></a>
             </div>
             
           </div>

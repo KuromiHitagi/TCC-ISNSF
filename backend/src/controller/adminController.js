@@ -4,18 +4,6 @@ import { Router } from 'express';
 
 const endpoints = Router();
 
-endpoints.post('/register/admin', async (req, resp) => {
-    try {
-        const admin = req.body;
-        const id = await inserirAdmin(admin);
-        resp.send({ novoId: id });
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-    }
-});
-
 endpoints.post('/login/admin', async (req, resp) => {
     try {
         const { email, senha } = req.body;
@@ -165,5 +153,19 @@ endpoints.put('/admin/candidatura/:id', getAuthentication(), async (req, resp) =
         resp.status(400).send({ erro: err.message });
     }
 });
+
+endpoints.get('/admin/verify', async (req, resp) => {
+    try {
+        const email = req.query.email;
+        const admin = await verificarAdmin(email);
+        if (admin.length > 0) {
+            resp.send({ mensagem: 'Admin verificado!', verified: true });
+        } else {
+            resp.send({ mensagem: "Admin não cadastrado", verified: false });
+        }
+    } catch (error) {
+        resp.status(500).send({ erro: "Erro interno do servidor" });
+    }
+})
 
 export default endpoints;

@@ -13,13 +13,32 @@ const Admin = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const userType = localStorage.getItem("USER_TYPE");
-        if (userType !== "admin") {
-            alert("Acesso negado. Apenas administradores podem acessar esta página.");
-            window.location.href = "/";
-        } else {
-            fetchData();
-        }
+        const verifyAdmin = async () => {
+            const email = localStorage.getItem("EMAIL");
+            const userType = localStorage.getItem("USER_TYPE");
+
+            if (userType !== "admin") {
+                alert("Acesso negado. Apenas administradores podem acessar esta página.");
+                window.location.href = "/";
+                return;
+            }
+
+            try {
+                const response = await api.get('/admin/verify', { params: { email } });
+                if (!response.data.verified) {
+                    alert("Acesso negado. Email não cadastrado como administrador.");
+                    window.location.href = "/";
+                } else {
+                    fetchData();
+                }
+            } catch (error) {
+                console.error("Erro ao verificar admin:", error);
+                alert("Erro ao verificar permissões. Redirecionando para a página inicial.");
+                window.location.href = "/";
+            }
+        };
+
+        verifyAdmin();
     }, []);
 
     const fetchData = async () => {
