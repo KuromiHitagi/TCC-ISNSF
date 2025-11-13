@@ -125,9 +125,9 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             min-width: max-content;
-            min-height: none;
-            max-height: 40vh !important;
-            max-width: 100%;
+            min-width: 60vh !important;
+            max-height: 80vh !important;
+            max-width: 500px;
             text-align: center;
 
             h3 {
@@ -745,9 +745,9 @@
             background: rgb(240, 240, 240);
             border-radius: 10px;
             padding: 30px;
-            max-width: 800px;
+            max-width: 600px;
             width: 90%;
-            min-height: 90%;
+            min-height: 70%;
             overflow-y: auto;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -965,6 +965,7 @@
 
 @media (max-width: 500px) {
     .main {
+        padding-top: 50px !important;
         .profile-container {
             margin: 0;
             max-width: 360px;
@@ -1014,6 +1015,7 @@
                 }
 
                 .photo-upload {
+                    width: 100%;
                     .photo-preview {
                         width: 100px;
                         height: 100px;
@@ -1034,6 +1036,7 @@
                 }
 
                 .edit-form {
+                    width: 100%;
                     .form-group {
                         width: 95%;
                         padding: 0px 15px;
@@ -1057,8 +1060,8 @@
                         }
                     
                         .delete-button{
-                            margin: 0;
-                            padding: 12px 24px;
+                            width: 30%;
+                            padding: 8px 16px;
                         }
                     }
                 }
@@ -1139,6 +1142,7 @@
 
     .modal-overlay {
         .modal-content {
+            min-height: 95vh !important;
             max-height: none !important;
             padding: 0px !important;
             max-width: 90% !important;
@@ -1147,6 +1151,7 @@
                 width: 100%;
                 justify-content: center;
                 align-items: center;
+
                 .candidato-item{
                     flex-direction: column;
                     padding: 0px !important;
