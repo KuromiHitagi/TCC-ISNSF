@@ -8,8 +8,18 @@ import { useState, useEffect } from 'react';
 import SearchBar from './searchbar.jsx';
 
 const SearchVagas = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemPerPage] = useState(3);
   const [vagas, setVagas] = useState([]);
   const [filteredVagas, setFilteredVagas] = useState([]);
+
+  useEffect(() => {
+    if(window.innerWidth <= 500) {
+        setItemPerPage(1);
+    } else{
+        setItemPerPage(3);
+    }
+  }, [])
 
   useEffect(() => {
     async function carregarVagas() {
@@ -71,23 +81,42 @@ const SearchVagas = () => {
         <SearchBar onSearch={handleSearch} placeholder="Pesquisar vagas por título, empresa, descrição ou localização" />
         
           <div className="vagas-list">
-              {filteredVagas.map((vaga) => (
-                <div key={vaga.id} className="vaga-item">
-                  <div className="titulo">
-                    <h4>{vaga.titulo}</h4>
-                  </div>
-                  <div className="info">
-                    <p><strong>Empresa:</strong> {vaga.empresa}</p>
-                    <p><strong>Descrição:</strong> {vaga.descricao}</p>
-                    <p><strong>Localização:</strong> {vaga.localizacao}</p>
-                    <p><strong>Salário:</strong> R${vaga.salario}</p>
-                    <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
-                    <div className="btn">
-                      <button onClick={() => Candidatar(vaga.id)} className="btn-cand">Candidatar-se</button>
+              <div className="itens">
+                {filteredVagas.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((vaga) => (
+                  <div key={vaga.id} className="vaga-item">
+                    <div className="titulo">
+                      <h4>{vaga.titulo}</h4>
+                    </div>
+                    <div className="info">
+                      <p><strong>Empresa:</strong> {vaga.empresa}</p>
+                      <p><strong>Descrição:</strong> {vaga.descricao}</p>
+                      <p><strong>Localização:</strong> {vaga.localizacao}</p>
+                      <p><strong>Salário:</strong> R${vaga.salario}</p>
+                      <p><strong>Data de Publicação:</strong> {new Date(vaga.data_publicacao).toLocaleDateString()}</p>
+                      <div className="btn">
+                        <button onClick={() => Candidatar(vaga.id)} className="btn-cand">Candidatar-se</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="pagination">
+                <button
+                    onClick={() => setCurrentPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="pagination-btn"
+                >
+                    Anterior
+                </button>
+                <span>Página {currentPage} de {Math.ceil(vagas.length / itemsPerPage)}</span>
+                <button
+                    onClick={() => setCurrentPage(currentPage + 1)}
+                    disabled={currentPage === Math.ceil(vagas.length / itemsPerPage)}
+                    className="pagination-btn"
+                >
+                    Próxima
+                </button>
+            </div>
           </div>
         </div>
       </motion.div>
