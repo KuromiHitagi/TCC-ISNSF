@@ -1,8 +1,6 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
-import TermosDeUso from '../../pages/TermosDeUso.jsx'
-import PoliticaPrivacidade from '../../pages/PoliticaPrivacidade.jsx'
-import { FaHome, FaUserEdit, FaClipboardList, FaBriefcase, FaFileAlt, FaFacebook, FaInstagram,FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram,FaYoutube } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -19,10 +17,10 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
            className="Footer">
-            <div className={`info1 ${enable ? "logged" : ""}`}>
+            <div className={`content1 ${enable ? "logged" : ""}`}>
                 <p>Junte-se a nós e transforme sua carreira</p>
             </div>
-            <div className="info2">
+            <div className="content2">
                 <Link className='p' to='/politicas'>Política de privacidade</Link>
                 <Link className='p' to='/termos'>Termos de Uso</Link>
                 <div className="social">

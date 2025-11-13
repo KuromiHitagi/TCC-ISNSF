@@ -484,3 +484,149 @@ $fonte-principal: 'Poppins', sans-serif;
     }
   }
 }
+
+@media (max-width: 500px) {
+  .main {
+    .title {
+      font-size: 32px;
+      margin: 80px 0 48px;
+    }
+
+    .register-form {
+      width: 100%;
+      
+      h2{
+        font-size: 18px;
+      }
+
+      .opcoes{
+        margin-left: 45px;
+        padding: 0;
+        width: 80%;
+        font-size: 16px;
+
+        option{
+          max-width: 80%;
+        }
+      }
+
+      .cadastro {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto 4rem auto;
+        padding: 2rem;
+
+        h2 {
+          font-size: 16px;
+          margin-bottom: 1rem;
+          color: $cor-texto;
+        }
+
+        p {
+          color: #aaa;
+          margin-bottom: 2rem;
+        }
+
+        .additional-form {
+          width: 60%;
+
+          input {
+            font-size: 16px;
+            width: 97%;
+          }
+
+          button {
+            margin-top: 1rem;
+            background-color: $cor-botao;
+            color: $cor-fundo;
+            border: none;
+            border-radius: 25px;
+            height: 50px;
+            padding: 0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              text-decoration: underline;
+              background-color: $cor-hover;
+              color: $cor-texto;
+            }
+          }
+        }
+
+        .butão {
+          margin-top: 3rem;
+          width: 20%;
+        }
+      }
+
+      .pre-input{
+        width: 100%;
+
+        .input-pass{
+          width: 80%;
+
+          button{
+            color: #d3d3d3;
+            font-size: 16px;
+            margin-right: 0px;
+          }
+          input{
+            margin-left: -17px;
+            font-size: 16px;
+            min-width: 100%;
+            max-width: 100%;
+          }
+        }
+
+        select{
+          font-size: 18px;
+          width: 88%;
+        }
+
+        input {
+          font-size: 16px;
+          min-width: 80%;
+          max-width: 80%;
+        }
+
+        .date-picker-wrapper {
+          width: 80%;
+        }
+
+        .date-picker-input {
+          font-size: 16x;
+          min-width: 100%;
+          margin-left: -16px;
+        }
+      }
+
+      .butão-submit{
+        margin-left: 45px;
+        width: 76.7%;
+        font-size: 16px;
+      }
+    }
+
+    .logs{
+      .google{
+        display: none;
+
+        &.logged{
+          width: 30%;
+
+          p{
+            font-size: 16px;
+            margin-bottom: -35px;
+          }
+        }
+      }
+
+      .butão{
+        width: 30%;
+      }
+    }
+  }
+}

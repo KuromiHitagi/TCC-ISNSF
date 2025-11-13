@@ -8,17 +8,16 @@ import logo from "../../assets/TecVagas_Logo.png";
 import "./navBar.scss";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  // const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  // const closeMenu = () => setIsMenuOpen(false);
 
   const [enable, setEnable] = useState(false);
   const [enableInc, setEnableInc] = useState(false);
   const [enableUser, setEnableUser] = useState(false);
   const [enableAdmin, setEnableAdmin] = useState(false);
-  // eslint-disable-next-line no-unused-vars
   const [userNome, setUserNome] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [userEmail, setUserEmail] = useState("");
@@ -50,13 +49,18 @@ const Navbar = () => {
       setUserEmail(email);
     }
 
-    const nome = localStorage.getItem("NOME")
-    setUserNome(nome)
-
     // Buscar foto e nome do perfil
     const fetchUserPhoto = async () => {
       const userType = localStorage.getItem("USER_TYPE");
       if (userType && userType !== "admin") {
+        if(userType == "usuario") {
+          const nome = localStorage.getItem("NOME")?.trim();
+          const primeiroNome = nome.split(" ")[0];
+          setUserNome(primeiroNome)
+        } else if(userType == "empresa") {
+          const nome = localStorage.getItem("NOME");
+          setUserNome(nome)
+        }
         try {
           const endpoint = userType === "usuario" ? "/usuario/perfil" : "/empresa/perfil";
           const response = await api.get(endpoint);
@@ -90,7 +94,7 @@ const Navbar = () => {
             <img className="logo-2" src={logo} alt="Logo" />
           </Link>
         </div>
-        <div className="navbar__inner">
+        <div className={`navbar__inner ${enable ? "logged" : ""}`}>
           <div className="navbar__nav-and-search">
             {/* Home sempre visível */}
             <div
@@ -159,7 +163,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Botão Hamburguer (só mobile) */}
+          {/*
           <button
             className="navbar__hamburger"
             onClick={toggleMenu}
@@ -169,8 +173,8 @@ const Navbar = () => {
             ☰
           </button>
 
-          {/* Menu Hamburguer */}
-          <HamburgerMenu isOpen={isMenuOpen} onClose={closeMenu} />
+          
+          <HamburgerMenu isOpen={isMenuOpen} onClose={closeMenu} />*/}
         </div>
         <div className={`spacement ${enable ? "logged" : ""}`}>
           <Link className="perfil-link" to="/perfil">

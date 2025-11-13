@@ -71,6 +71,8 @@
             .photo-button,
             .edit-button,
             .logout-button {
+                color: white;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 padding: 12px 24px;
                 border: none;
                 border-radius: 5px;
@@ -80,9 +82,7 @@
             }
 
             .photo-button {
-                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #007bff;
-                color: white;
 
                 &:hover {
                     background-color: #0056b3;
@@ -90,10 +90,7 @@
             }
 
             .edit-button {
-                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #28a745;
-                color: white;
-                justify-content: center;
 
                 &:hover {
                     background-color: #218838;
@@ -101,10 +98,7 @@
             }
 
             .logout-button {
-                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
                 background-color: #dc3545;
-                color: white;
-                justify-content: center;
 
                 &:hover {
                     background-color: #a11d2b;
@@ -131,6 +125,8 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             min-width: max-content;
+            min-height: none;
+            max-height: 40vh !important;
             max-width: 100%;
             text-align: center;
 
@@ -215,36 +211,6 @@
             
         }
 
-
-    /* Modal Styles */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-
-        .modal-content {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-
-            h3 {
-                margin-top: 0;
-                margin-bottom: 20px;
-                color: #333;
-                text-align: center;
-            }
 
             .photo-upload {
                 display: flex;
@@ -403,8 +369,6 @@
                     }
                 }
             }
-        }
-    }
 
     .exibir-Candidaturas.logged,
     .exibir-minhasVagas.logged {
@@ -541,6 +505,19 @@
                                 transform: scale(105%);
                             }
                         }
+                    }
+                }
+
+                .excluirCandidatura{
+                    border: none;
+                    color: white;
+                    height: 45px;
+                    font-size: 18px;
+                    background-color: #dc3545;
+                    border-radius: 10px;
+
+                    &:hover{
+                        background-color: #a11d2b;
                     }
                 }
             }
@@ -770,9 +747,13 @@
             padding: 30px;
             max-width: 800px;
             width: 90%;
-            max-height: 80vh;
+            min-height: 90%;
             overflow-y: auto;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
 
             h3 {
                 margin-top: 0;
@@ -788,6 +769,7 @@
                 flex-direction: column;
 
                 margin-bottom: 20px;
+                width: 90%;
                 padding: 15px;
                 background-color: #ece8e8;
                 border-radius: 5px;
@@ -796,7 +778,7 @@
                 box-shadow: 0px 3px 7px -1px rgba(66, 65, 65, 0.7);
 
                 p {
-                    width: 300px;
+                    width: 50%;
                     margin: 5px 0;
                     color: #666;
 
@@ -813,13 +795,14 @@
 
             .candidatos-list-modal {
                 display: flex;
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                gap: 60px;
 
                 .candidato-item {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-direction: column;
                     padding: 15px;
                     background-color: #e4e1e1;
                     border-radius: 5px;
@@ -852,10 +835,17 @@
                     }
 
                     .candidato-info {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 5px;
+                        margin: -30px 0 -25px 0;
                         flex: 1;
-                        max-width: 50%;
+                        max-width: 100%;
 
                         p {
+                            width: 90%;
                             margin: 2px 0;
                             color: #666;
                             font-size: 14px;
@@ -865,6 +855,33 @@
                                 color: #333;
                             }
                         }
+                    }
+                }
+
+                .aprove-recuse{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    .btn-aprove,
+                    .btn-recuse{
+                        color: white;
+                        border: none;
+                        border-radius: 15px;
+                        width: 30%;
+                        height: 35px;
+                        font-size: 18px;
+                        box-shadow: 0px 0px 10px 2px rgba(80, 80, 80, 0.8);
+                        margin-bottom: 5px;
+                    }
+                    
+                    .btn-aprove{
+                        background-color: #28a745;
+                    }
+
+                    .btn-recuse{
+                        background-color: #c82333;
                     }
                 }
             }
@@ -906,8 +923,258 @@
                 color: #666;
             }
         }
+        .pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                margin-top: 20px;
+                background-color: #333;
+                padding: 10px;
+                border: none;
+                border-radius: 15px;
+
+                .pagination-btn {
+                    padding: 10px 20px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s;
+
+                    &:hover:not(:disabled) {
+                        background-color: #0056b3;
+                    }
+
+                    &:disabled {
+                        background-color: #6c757d;
+                        cursor: not-allowed;
+                    }
+                }
+
+                span {
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
     }
 
 }
 
-    
+@media (max-width: 500px) {
+    .main {
+        .profile-container {
+            margin: 0;
+            max-width: 360px;
+            padding: 0;
+
+            .profile-header {
+                .profile-photo {
+                    margin: 5px;
+                    width: 75px;
+                    height: 75px;
+                    border: 3px solid #777;
+                }
+
+                .profile-info {
+                    h2 {
+                        margin: 10px 0 10px 0;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .profile-actions {
+                display: flex;
+                gap: 0px;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                .photo-button,
+                .edit-button,
+                .logout-button {
+                    width: 30%;
+                    padding: 2px;
+                    margin: -5px 0 15px 0;
+                }
+            }
+        }
+
+        .modal-overlay {
+            max-width: 430px;
+            .modal-content {
+                padding: 15px 0px !important;
+                min-width: 380px !important;
+                max-width: 380px !important;
+
+                h3 {
+                    width: 100%;
+                }
+
+                .photo-upload {
+                    .photo-preview {
+                        width: 100px;
+                        height: 100px;
+                        border: 3px solid #777;
+                    }
+
+                    .modal-buttons {
+                        width: 100%;
+                        .upload-button {
+                            width: 30%;
+                        }
+
+                        .cancel-button {
+                            width: 30%;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .edit-form {
+                    .form-group {
+                        width: 95%;
+                        padding: 0px 15px;
+
+                        input {
+                            width: 90%;
+                            padding: 8px 10px;
+                        }
+                    }
+
+                    .modal-buttons {
+                        width: 100%;
+
+                        .upload-button {
+                            width: 30%;
+                        }
+
+                        .cancel-button {
+                            width: 30%;
+                            margin: 0;
+                        }
+                    
+                        .delete-button{
+                            margin: 0;
+                            padding: 12px 24px;
+                        }
+                    }
+                }
+            }   
+        }
+
+        .exibir-Candidaturas.logged,
+        .exibir-minhasVagas.logged {
+            margin: 20px 0 2rem 0;
+            padding: 12px 24px;
+        }
+
+        .candidaturas-list {
+            width: 90%;
+            margin-top: 20px;
+            padding: 0px !important;
+            border-radius: 8px;
+
+            .titulo {
+                margin: 20px 0px;
+
+                h3 {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            .itens{
+                max-width: 90%;
+                gap: 0px;
+                margin: 0px;
+                padding: 0px;
+
+                .candidatura-item {
+                    padding-bottom: 10px;
+                    height: auto;
+                    min-width: 350px;
+                    max-width: 350px;
+                    
+                    .excluirCandidatura{
+                        height: 35px;
+                        font-size: 16px;
+                    }
+                }
+            }   
+        }
+
+        .vagas-list {
+            height: auto;
+            width: 90%;
+            margin-top: 20px;
+            padding: 0px !important;
+            border-radius: 8px;
+
+            .titulo {
+                margin: 20px 0px;
+
+                h3 {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            .itens{
+                max-width: 90%;
+                gap: 0px;
+                margin: 0px;
+                padding: 0px;
+
+                .vaga-item {
+                    height: auto;
+                    min-width: 350px;
+                    max-width: 350px;
+                }
+            }  
+        }
+    }
+
+    .modal-overlay {
+        .modal-content {
+            max-height: none !important;
+            padding: 0px !important;
+            max-width: 90% !important;
+
+            .candidatos-list-modal {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                .candidato-item{
+                    flex-direction: column;
+                    padding: 0px !important;
+                    min-width: 95% !important;
+                    max-width: 95% !important;
+
+                    .candidato-photo {
+                        width: 105px !important;
+                        height: 105px !important;
+                    }
+
+                    .candidato-info{
+                        margin: -20px 0px;
+                        min-width: 100%;
+ 
+
+                        p{  
+                            font-size: 16px !important;
+                            width: 80%;
+                            text-align: start;
+                        }
+                    }
+                }
+                .aprove-recuse{
+                    width: 100%;
+                }
+            }
+            
+        }   
+    }
+}

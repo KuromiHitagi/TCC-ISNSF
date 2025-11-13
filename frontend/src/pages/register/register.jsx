@@ -109,15 +109,15 @@ const Register = () => {
         alert("Nome deve incluir primeiro nome, nome do meio e sobrenome.");
         return;
       }
-      if (nomeParts[0].length < 3) {
+      if (nomeParts[0].length < 2) {
         alert("Primeiro nome deve ter pelo menos 3 caracteres.");
         return;
       }
-      if (nomeParts[1].length < 3) {
+      if (nomeParts[1].length < 2) {
         alert("Nome do meio deve ter pelo menos 3 caracteres.");
         return;
       }
-      if (nomeParts[2].length < 3) {
+      if (nomeParts[2].length < 2) {
         alert("Sobrenome deve ter pelo menos 3 caracteres.");
         return;
       }
@@ -391,6 +391,7 @@ const Register = () => {
           }}
           placeholder="CNPJ:"
           className="input-mask"
+          required
         />
         <select
           value={areaprofissionalizada}
@@ -448,7 +449,7 @@ const Register = () => {
     return (
       <div className="pre-input">
         <input
-          minLength={3}
+          minLength={2}
           maxLength={255}
           pattern="^[a-zA-ZÀ-ÿ\s]+$"
           value={nomeUser}
@@ -486,6 +487,7 @@ const Register = () => {
           wrapperClassName="date-picker-wrapper"
           maxDate={new Date()}
           minDate={new Date(new Date().getFullYear() - 80, new Date().getMonth(), new Date().getDate())}
+          required
         />
         <select
           value={cidade}
@@ -577,7 +579,7 @@ const Register = () => {
         transition={{ duration: 0.8, delay: 0.8 }}
       >
         <div className="main">
-          <h2>Cadastro</h2>
+          <h2 className="title">Cadastro</h2>
 
           <form className="register-form" onSubmit={Criar}>
             <select
@@ -606,7 +608,7 @@ const Register = () => {
 
             {isLoggedIn ? null : (
               <div className={`google ${enable ? "logged" : ""}`}>
-                <p>Ou cadastre-se com o</p>
+                <p>Ou crie com o</p>
                 <button
                   className="butão btn"
                   type="button"

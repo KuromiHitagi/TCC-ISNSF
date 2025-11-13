@@ -10,10 +10,6 @@
   border-bottom: 3px solid white;
   background-color: black;
 
-  @media (max-width: 768px) {
-    height: 150px;
-  }
-
   .imglogodiv {
     width: 275px;
     padding: 0;
@@ -363,5 +359,47 @@
   }
   100% {
     left: 125%;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-height: 150px;
+    max-width: 100%;
+    padding: 10px;
+    padding-bottom: -50px !important;
+
+    .imglogodiv {
+      width: auto;
+
+      .navbar__brand img {
+        margin-top: 0;
+        height: 70px;
+        width: auto;
+      }
+    }
+
+    .spacement {
+      .perfil-link {
+        margin: -155px -630px 0 0;
+
+        .navbar-profile-photo {
+          max-width: 50px;
+          max-height: 50px;
+        }
+      }
+    }
+
+    .navbar__inner {
+      width: 100%;
+      
+      &.logged{
+        width: 100%;
+        margin-bottom: -100px;
+      }
+    }
   }
 }

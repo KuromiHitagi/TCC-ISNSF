@@ -18,7 +18,7 @@
     }
 
     .vamos-la {
-      position: relative; /* necessário pro pseudo-elemento ficar dentro */
+      position: relative; 
       background-color: rgb(15, 15, 15);
       color: white;
       border: none;
@@ -28,7 +28,7 @@
       border-radius: 25px;
       cursor: pointer;
       margin-top: 25px;
-      overflow: hidden; /* pra esconder o brilho quando ele sai do botão */
+      overflow: hidden; 
       transition: background-color 0.4s ease, transform 0.4s ease;
 
       &:hover {
@@ -42,7 +42,7 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -75%; /* começa fora da esquerda */
+        left: -75%; 
         width: 50%;
         height: 100%;
         background: linear-gradient(
@@ -64,8 +64,50 @@
         left: -75%;
       }
       100% {
-        left: 125%; /* passa totalmente pra direita */
+        left: 125%; 
       }
     }
   }
 }
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main {
+    padding: 50px 25px;
+
+    .intro {
+      .form-character {
+        height: 160px;
+        margin-bottom: 20px;
+      }
+
+      .form-title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 95%;
+        margin-bottom: 20px;
+      }
+
+      .vamos-la {
+        font-size: 1rem;
+        padding: 8px 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -155,3 +155,45 @@ $fonte-principal: Verdana, Geneva, Tahoma, sans-serif;
     }
   }
 }
+
+@media (max-width: 500px) {
+  #mainL {
+    max-width: 100%;
+
+    .login-title{
+      margin-top: -5rem;
+      margin-bottom: 3rem;
+      color: #e9e9e9;
+    }
+
+    .login-form {
+      min-width: 80%;
+
+      .input {
+        width: 90%;
+      }
+
+      .input-pass{
+        button{
+          color: #d3d3d3;
+          font-size: 16px;
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .logs{
+      .google{
+        width: 30%;
+
+        p{
+          font-size: 15px;
+        }
+      }
+
+      .butão{
+        width: 30%; 
+      }
+    }
+  }
+}

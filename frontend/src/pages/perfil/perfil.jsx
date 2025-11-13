@@ -31,9 +31,21 @@ const Perfil = () => {
     const [salario, setSalario] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [currentPageCandidaturas, setCurrentPageCandidaturas] = useState(1);
-    const itemsPerPage = 3;
+    const [currentPageCandidatos, setCurrentPageCandidatos] = useState(1); // Novo estado para paginação de candidatos
+    const [itemsPerPage, setItemPerPage] = useState(3);
+    const [itemsPerPageCandidatos, setItemsPerPageCandidatos] = useState(2); // Novo estado para itens por página de candidatos
     const statusA = "Aprovado";
     const statusB = "Recusado";
+
+    useEffect(() => {
+        if(window.innerWidth <= 500) {
+            setItemPerPage(1);
+            setItemsPerPageCandidatos(1); // Ajustar para candidatos também
+        } else{
+            setItemPerPage(3);
+            setItemsPerPageCandidatos(2); // Ajustar para candidatos também
+        }
+    }, [])
 
     useEffect(() => {
         const userEmail = localStorage.getItem("EMAIL");
@@ -182,6 +194,7 @@ const Perfil = () => {
         try {
             const response = await api.get(`/candidatura/vaga/detalhes/${idVaga}`);
             setSelectedVaga(response.data);
+            setCurrentPageCandidatos(1); // Resetar página ao abrir detalhes
             console.log('Detalhes da vaga:', response.data);
         } catch (error) {
             console.error('Erro ao carregar detalhes da vaga:', error);
@@ -230,8 +243,9 @@ const Perfil = () => {
 
     async function excluirVaga(idVaga) {
         try {
-            window.confirm("Tem certeza que deseja excluir esta vaga?");
-            await api.delete(`/vaga/${idVaga}`);
+            let yes = window.confirm("Tem certeza que deseja excluir esta vaga?");
+            if(yes == true) await api.delete(`/vaga/${idVaga}`);
+            else return;
             alert('Vaga excluída com sucesso!');
             exibirVagas();
         } catch (error) {
@@ -267,7 +281,8 @@ const Perfil = () => {
     };
 
     async function deleteAccount() {
-        window.confirm("Tem certeza que deseja apagar sua conta? Esta ação é irreversível.");
+        const confirmDelete = window.confirm("Tem certeza que deseja apagar sua conta? Esta ação é irreversível.");
+        if (!confirmDelete) return;
         try {
             const userType = localStorage.getItem("USER_TYPE");
             if(userType == "usuario") {
@@ -297,7 +312,7 @@ const Perfil = () => {
                     <div className="profile-header">
                         <div className="profile-photo">
                             {userProfile?.user_foto || userProfile?.empresa_foto ? (
-                                <img src={`${api.defaults.baseURL}/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto de perfil" className="profile-image" />
+                                <img src={`${api}/storage/${userProfile.user_foto || userProfile.empresa_foto}`} alt="Foto de perfil" className="profile-image" />
                             ) : (
                                 <div className="photo-placeholder">
                                     <span>👤</span>
@@ -433,9 +448,9 @@ const Perfil = () => {
                                     </div>
                                 )}
                                 <div className="modal-buttons">
-                                    <button onClick={() => handleSaveProfile} className="upload-button">Salvar</button>
+                                    <button onClick={handleSaveProfile} className="upload-button">Salvar</button>
                                     <button onClick={() => setShowEditModal(false)} className="cancel-button">Cancelar</button>
-                                    <button onClick={() => deleteAccount} className='delete-button'>Apagar</button>
+                                    <button onClick={deleteAccount} className='delete-button'>Apagar</button>
                                 </div>
                             </div>
                         </div>
@@ -634,7 +649,7 @@ const Perfil = () => {
                             <h4>Candidatos:</h4>
                             {selectedVaga.candidatos.length > 0 ? (
                                 <div className="candidatos-list-modal">
-                                    {selectedVaga.candidatos.map((candidato) => (
+                                    {selectedVaga.candidatos.slice((currentPageCandidatos - 1) * itemsPerPageCandidatos, currentPageCandidatos * itemsPerPageCandidatos).map((candidato) => (
                                         <div key={candidato.candidatura_id} className="candidato-item">
                                             <div className="candidato-photo">
                                                 {candidato.user_foto ? (
@@ -652,14 +667,33 @@ const Perfil = () => {
                                                 <p><strong>Status:</strong> {candidato.status}</p>
                                                 <p><strong>Data da Candidatura:</strong> {new Date(candidato.data_candidatura).toLocaleDateString()}</p>
                                             </div>
-                                            <button onClick={() => aceitarCandidatura(candidato.candidatura_id)}>Aprovar</button>
-                                            <button onClick={() => rejeitarCandidatura(candidato.candidatura_id)}>Recusar</button>
+                                            <div className="aprove-recuse">
+                                                <button className='btn-aprove' onClick={() => aceitarCandidatura(candidato.candidatura_id)}>Aprovar</button>
+                                                <button className='btn-recuse' onClick={() => rejeitarCandidatura(candidato.candidatura_id)}>Recusar</button>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             ) : (
                                 <p>Nenhum candidato ainda.</p>
                             )}
+                            <div className="pagination">
+                                <button
+                                    onClick={() => setCurrentPageCandidatos(currentPageCandidatos - 1)}
+                                    disabled={currentPageCandidatos === 1 || currentPageCandidatos < 0}
+                                    className="pagination-btn"
+                                >
+                                    Anterior
+                                </button>
+                                <span>Página {currentPageCandidatos} de {Math.ceil(selectedVaga.candidatos.length / itemsPerPageCandidatos)}</span>
+                                <button
+                                    onClick={() => setCurrentPageCandidatos(currentPageCandidatos + 1)}
+                                    disabled={currentPageCandidatos === Math.ceil(selectedVaga.candidatos.length / itemsPerPageCandidatos) || currentPageCandidatos > selectedVaga.candidatos.length}
+                                    className="pagination-btn"
+                                >
+                                    Próxima
+                                </button>
+                            </div>
                             <button onClick={() => setSelectedVaga(null)} className="cancel-button">Fechar</button>
                         </div>
                     </div>

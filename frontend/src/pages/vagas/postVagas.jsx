@@ -17,7 +17,7 @@ const Vagas = () => {
     const [cidades, setCidades] = useState([]);
     const [loadingCidades, setLoadingCidades] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;
+    const [itemsPerPage, setItemsPerPage] = useState(3);
 
     // Função pra validar texto (título e descrição)
     function validarTexto(texto) {
@@ -37,7 +37,18 @@ const Vagas = () => {
     };
 
     useEffect(() => {
+        const updateItemsPerPage = () => {
+            if(window.innerWidth <= 500) {
+                setItemsPerPage(1)
+            } else{
+                setItemsPerPage(3)
+            }
+        };
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+
         carregarVagas();
+        return () => window.removeEventListener('resize', updateItemsPerPage)
     }, []);
 
     // Puxa as cidades da API

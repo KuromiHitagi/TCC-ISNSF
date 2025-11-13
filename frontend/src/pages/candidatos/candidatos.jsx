@@ -10,8 +10,22 @@ import { useNavigate } from 'react-router';
 const Candidatos = () => {
     const [candidatos, setCandidatos] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     const Navigate = useNavigate();
+
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            if(window.innerWidth <= 500) {
+                setItemsPerPage(1)
+            } else{
+                setItemsPerPage(3)
+            }
+        };
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+
+        return () => window.removeEventListener('resize', updateItemsPerPage)
+    }, [])
 
     useEffect(() => {
         const userType = localStorage.getItem('USER_TYPE');
@@ -55,7 +69,7 @@ const Candidatos = () => {
                                             <div className="apresentacao">
                                                 <div className="candidato-photo">
                                                     {candidato.user_foto ? (
-                                                        <img src={`${api.defaults.baseURL}/storage/${candidato.user_foto}`} alt="Foto do candidato" />
+                                                        <img src={`${api}/storage/${candidato.user_foto}`} alt="Foto do candidato" />
                                                     ) : (
                                                         <span>👤</span>
                                                     )}

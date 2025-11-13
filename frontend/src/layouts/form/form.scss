@@ -45,7 +45,7 @@
           content: "";
           position: absolute;
           top: 0;
-          left: -75%; /* começa fora da esquerda */
+          left: -75%; 
           width: 50%;
           height: 100%;
           background: linear-gradient(
@@ -94,4 +94,136 @@
       }
     }
   }
+  
+  @media (max-width: 500px){
+
+
+
+    
+
+  .questionario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    text-align: center;
+    min-height: calc(100vh - 140px); 
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .pergunta {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #fff;
+      line-height: 1.4;
+      word-wrap: break-word;
+      max-width: 90%;
+    }
+
+    .opcoes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 15px;
+
+      .opcao {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #1a1a1a;
+        width: 100%;
+        max-width: 320px; 
+        padding: 10px 15px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-sizing: border-box;
+        color: #fff;
+        font-size: 0.95rem;
+        position: relative;
+
+        input {
+          margin-right: 10px;
+          accent-color: cyan;
+        }
+
+        &:hover {
+          background: linear-gradient(
+            to right,
+            rgb(20, 20, 20),
+            rgb(40, 40, 40),
+            rgb(51, 51, 51)
+          );
+          transform: scale(1.05) translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(211, 211, 211, 0.4),
+            transparent
+          );
+          transform: skewX(-25deg);
+        }
+
+        &:hover::before {
+          animation: shine 0.5s forwards;
+        }
+
+        @keyframes shine {
+          0% {
+            left: -75%;
+          }
+          100% {
+            left: 125%;
+          }
+        }
+      }
+    }
+
+    .erro {
+      color: #ff5c5c;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    button {
+      background: cyan;
+      border: none;
+      font-size: 18px;
+      margin-top: 15px;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      color: #000;
+
+      &:hover {
+        background: #00aec5;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+
   

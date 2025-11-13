@@ -115,7 +115,7 @@ const Curriculo = () => {
               ref={wordRef}
               contentEditable="true"
               data-placeholder=
-              {`João da Silva
+              "João da Silva
 (11) 99999-9999 | joaosilva@email.com | São Paulo/SP
 LinkedIn: linkedin.com/in/joaosilva | GitHub: github.com/joaosilva
 
@@ -152,7 +152,7 @@ Inglês – Intermediário
 
 
 Projetos e atividades extras:
-Participação em hackathons e projetos voluntários de tecnologia.`}
+Participação em hackathons e projetos voluntários de tecnologia."
             >
             </div>
             {!fechado && mostrarTooltip && (
