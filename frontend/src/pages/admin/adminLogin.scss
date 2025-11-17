@@ -52,26 +52,6 @@
     background-color: #0056b3;
 }
 
-.logs {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.logs .butão {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.logs .butão:hover {
-    background-color: #218838;
-}
-
 @media (max-width: 768px) {
     #mainL {
         padding: 10px;

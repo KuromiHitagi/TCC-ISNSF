@@ -62,9 +62,6 @@ const AdminLogin = () => {
                     <input value={senha} onChange={(e) => setSenha(e.target.value)} type="password" placeholder="Senha: " required />
                     <button className="butão-submit" type="submit">Entrar</button>
                 </form>
-                <div className="logs">
-                    <Link className="butão" to="/admin/register">Cadastrar Administrador</Link>
-                </div>
             </motion.div>
 
             <Footer />

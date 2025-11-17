@@ -2,7 +2,11 @@ import NavBar from "../../components/NavBar/navBar.jsx";
 import Footer from "../../components/Footer/index.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { signInWithGoogle, auth, googleProvider } from "../../services/firebase.js";
+import {
+  signInWithGoogle,
+  auth,
+  googleProvider,
+} from "../../services/firebase.js";
 import { signInWithRedirect } from "firebase/auth";
 import { IMaskInput } from "react-imask";
 import api from "../../services/api.js";
@@ -24,14 +28,14 @@ const Register = () => {
   const [open, setOpen] = useState(false);
   const [opcao, setOpcao] = useState("");
   let show = null;
-  const [enable, setEnable] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [enable, setEnable] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const Navigate = useNavigate();
 
   useEffect(() => {
-    const userEmail = localStorage.getItem("EMAIL")
-    if(userEmail != undefined && userEmail != null&& userEmail != "") {
-        setIsLoggedIn(true);
+    const userEmail = localStorage.getItem("EMAIL");
+    if (userEmail != undefined && userEmail != null && userEmail != "") {
+      setIsLoggedIn(true);
     }
   }, []);
 
@@ -74,9 +78,9 @@ const Register = () => {
     if (opcao == "--Selecione--" || opcao == "") {
       setEnable(false);
     } else if (opcao == "empresa") {
-      setEnable(true)
+      setEnable(true);
     } else if (opcao == "usuario") {
-      setEnable(true)
+      setEnable(true);
     }
   }, [opcao]);
 
@@ -130,7 +134,9 @@ const Register = () => {
         return;
       }
       if (!isCampoValido(cidade) || cidade.trim().length < 3) {
-        alert("Cidade é obrigatória, não pode conter apenas espaços e deve ter pelo menos 3 caracteres.");
+        alert(
+          "Cidade é obrigatória, não pode conter apenas espaços e deve ter pelo menos 3 caracteres."
+        );
         return;
       }
       if (!telRaw || telRaw.trim() === "" || telRaw.length < 11) {
@@ -138,11 +144,16 @@ const Register = () => {
         return;
       }
       if (!isCampoValido(areainteresse)) {
-        alert("Área de interesse é obrigatória e não pode conter apenas espaços.");
+        alert(
+          "Área de interesse é obrigatória e não pode conter apenas espaços."
+        );
         return;
       }
       if (!areasDisponiveisList.includes(areainteresse.trim())) {
-        alert("Área de interesse inválida. Escolha uma das seguintes: \n" + areasDisponiveisList.join(", \n"));
+        alert(
+          "Área de interesse inválida. Escolha uma das seguintes: \n" +
+            areasDisponiveisList.join(", \n")
+        );
         return;
       }
       if (!isCampoValido(emailUser)) {
@@ -150,18 +161,22 @@ const Register = () => {
         return;
       }
       const emailTrimmed = emailUser.trim();
-      if (!emailTrimmed.includes('@') || !emailTrimmed.endsWith('.com')) {
+      if (!emailTrimmed.includes("@") || !emailTrimmed.endsWith(".com")) {
         alert("E-mail deve ter formato válido com @ e terminar com .com.");
         return;
       }
       if (!isCampoValido(userSenha) || userSenha.length < 8) {
-        alert("Senha é obrigatória, não pode conter apenas espaços e deve ter pelo menos 8 caracteres.");
+        alert(
+          "Senha é obrigatória, não pode conter apenas espaços e deve ter pelo menos 8 caracteres."
+        );
         return;
       }
 
       try {
         // Format date to YYYY-MM-DD for backend
-        const formattedDate = dataNascimento ? dataNascimento.toISOString().split('T')[0] : null;
+        const formattedDate = dataNascimento
+          ? dataNascimento.toISOString().split("T")[0]
+          : null;
 
         const body = {
           nome: nomeUser.trim(),
@@ -196,7 +211,7 @@ const Register = () => {
           try {
             const loginBody = {
               email: email,
-              senha: senha
+              senha: senha,
             };
             const loginResponse = await api.post("/usuario/login", loginBody);
             const userToken = loginResponse.data.token;
@@ -204,13 +219,15 @@ const Register = () => {
 
             localStorage.setItem("EMAIL", email);
             localStorage.setItem("TOKEN", userToken);
-            localStorage.setItem("NOME", userName)
+            localStorage.setItem("NOME", userName);
             localStorage.setItem("USER_TYPE", "usuario");
 
             Navigate("/register/complete");
           } catch (loginError) {
             console.error("Erro no login automático:", loginError);
-            alert("Conta criada, mas erro no login automático. Faça login manualmente.");
+            alert(
+              "Conta criada, mas erro no login automático. Faça login manualmente."
+            );
             Navigate("/login");
           }
         } else {
@@ -218,13 +235,16 @@ const Register = () => {
         }
       } catch (error) {
         console.error("Erro:", error);
-        const errorMessage = error.response?.data?.erro || "Erro ao conectar com o servidor.";
+        const errorMessage =
+          error.response?.data?.erro || "Erro ao conectar com o servidor.";
         alert(errorMessage);
       }
     } else if (opcao == "empresa") {
       // Validações para empresa
       if (!isCampoValido(nomeInc) || nomeInc.trim() === "") {
-        alert("Nome da empresa é obrigatório e não pode conter apenas espaços.");
+        alert(
+          "Nome da empresa é obrigatório e não pode conter apenas espaços."
+        );
         return;
       }
       if (nomeInc.length < 2) {
@@ -236,11 +256,16 @@ const Register = () => {
         return;
       }
       if (!isCampoValido(areaprofissionalizada)) {
-        alert("Área profissionalizada é obrigatória e não pode conter apenas espaços.");
+        alert(
+          "Área profissionalizada é obrigatória e não pode conter apenas espaços."
+        );
         return;
       }
       if (!areasDisponiveisList.includes(areaprofissionalizada.trim())) {
-        alert("Área profissionalizada inválida. Escolha uma das seguintes: \n" + areasDisponiveisList.join(", \n"));
+        alert(
+          "Área profissionalizada inválida. Escolha uma das seguintes: \n" +
+            areasDisponiveisList.join(", \n")
+        );
         return;
       }
       if (!isCampoValido(emailInc)) {
@@ -248,7 +273,7 @@ const Register = () => {
         return;
       }
       const emailIncTrimmed = emailInc.trim();
-      if (!emailIncTrimmed.includes('@') || !emailIncTrimmed.endsWith('.com')) {
+      if (!emailIncTrimmed.includes("@") || !emailIncTrimmed.endsWith(".com")) {
         alert("E-mail deve ter formato válido com @ e terminar com .com.");
         return;
       }
@@ -289,7 +314,7 @@ const Register = () => {
           try {
             const loginBody = {
               email: email,
-              senha: senha
+              senha: senha,
             };
             const loginResponse = await api.post("/empresa/login", loginBody);
             const userToken = loginResponse.data.token;
@@ -303,7 +328,9 @@ const Register = () => {
             Navigate("/register/complete");
           } catch (loginError) {
             console.error("Erro no login automático:", loginError);
-            alert("Conta criada, mas erro no login automático. Faça login manualmente.");
+            alert(
+              "Conta criada, mas erro no login automático. Faça login manualmente."
+            );
             Navigate("/login");
           }
         } else {
@@ -311,7 +338,8 @@ const Register = () => {
         }
       } catch (error) {
         console.error("Erro:", error);
-        const errorMessage = error.response?.data?.erro || "Erro ao conectar com o servidor.";
+        const errorMessage =
+          error.response?.data?.erro || "Erro ao conectar com o servidor.";
         alert(errorMessage);
       }
     }
@@ -381,8 +409,8 @@ const Register = () => {
             setCnpj(value);
             setCnpjRaw(mask.unmaskedValue);
 
-            if(mask.unmaskedValue.length === 14) {
-              if(!validarCNPJ(mask.unmaskedValue)) {
+            if (mask.unmaskedValue.length === 14) {
+              if (!validarCNPJ(mask.unmaskedValue)) {
                 alert("CNPJ inválido. Por favor, verifique o número inserido.");
                 setCnpj("");
                 setCnpjRaw("");
@@ -414,33 +442,33 @@ const Register = () => {
           placeholder="E-mail"
           required
         />
-        <div className="input-pass" style={{ position: 'relative' }}>
+        <div className="input-pass" style={{ position: "relative" }}>
           <input
-          value={incSenha}
-          maxLength={255}
-          onChange={(e) => setIncSenha(e.target.value)}
-          type={showPassword ? "text" : "password"}
-          placeholder="Senha:"
-          required
+            value={incSenha}
+            maxLength={255}
+            onChange={(e) => setIncSenha(e.target.value)}
+            type={showPassword ? "text" : "password"}
+            placeholder="Senha:"
+            required
           />
 
           <button
-          type="button"
-          onClick={() => setShowPassword(!showPassword)}
-          className="show-pass"
-          style={{
-              position: 'absolute',
-              right: '10px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer'
-          }}
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="show-pass"
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
           >
-          {showPassword ? 'Esconder' : 'Mostrar'}
+            {showPassword ? "Esconder" : "Mostrar"}
           </button>
-      </div>
+        </div>
       </div>
     );
   }
@@ -466,8 +494,8 @@ const Register = () => {
             setCpf(value);
             setCpfRaw(mask.unmaskedValue);
 
-            if(mask.unmaskedValue.length === 11) {
-              if(!validarCPF(mask.unmaskedValue)) {
+            if (mask.unmaskedValue.length === 11) {
+              if (!validarCPF(mask.unmaskedValue)) {
                 alert("CPF inválido. Por favor, verifique o número inserido.");
                 setCpf("");
                 setCpfRaw("");
@@ -486,7 +514,13 @@ const Register = () => {
           className="date-picker-input"
           wrapperClassName="date-picker-wrapper"
           maxDate={new Date()}
-          minDate={new Date(new Date().getFullYear() - 80, new Date().getMonth(), new Date().getDate())}
+          minDate={
+            new Date(
+              new Date().getFullYear() - 80,
+              new Date().getMonth(),
+              new Date().getDate()
+            )
+          }
           required
         />
         <select
@@ -538,33 +572,33 @@ const Register = () => {
           placeholder="E-mail"
           required
         />
-        <div className="input-pass" style={{ position: 'relative' }}>
+        <div className="input-pass" style={{ position: "relative" }}>
           <input
-          value={userSenha}
-          maxLength={255}
-          onChange={(e) => setUserSenha(e.target.value)}
-          type={showPassword ? "text" : "password"}
-          placeholder="Senha:"
-          required
+            value={userSenha}
+            maxLength={255}
+            onChange={(e) => setUserSenha(e.target.value)}
+            type={showPassword ? "text" : "password"}
+            placeholder="Senha:"
+            required
           />
 
           <button
-          type="button"
-          onClick={() => setShowPassword(!showPassword)}
-          className="show-pass"
-          style={{
-              position: 'absolute',
-              right: '10px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer'
-          }}
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="show-pass"
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
           >
-          {showPassword ? 'Esconder' : 'Mostrar'}
+            {showPassword ? "Esconder" : "Mostrar"}
           </button>
-      </div>
+        </div>
       </div>
     );
   }

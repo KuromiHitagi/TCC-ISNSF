@@ -250,8 +250,10 @@
             width: 85%;
         }
         .vagas-list {
+            min-height: 350px;
             h2 {
                 color: #e9e9e9;
+                margin: 0;
             }
 
             .itens{
