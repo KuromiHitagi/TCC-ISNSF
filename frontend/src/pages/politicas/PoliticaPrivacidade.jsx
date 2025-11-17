@@ -2,8 +2,8 @@ import React from "react";
 import './politicatermos.scss'
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import Footer from "../components/Footer/index.jsx";
-import Navbar from "../components/NavBar/navBar.jsx";
+import Footer from "../../components/Footer/index.jsx";
+import Navbar from "../../components/NavBar/navBar.jsx";
 
 const PoliticaPrivacidade= () => {
   return (

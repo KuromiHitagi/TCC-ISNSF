@@ -13,8 +13,8 @@ import SearchVagas from "./pages/vagas/Searchvagas.jsx";
 import CompleteGoogleRegistration from "./pages/register/complete-google.jsx";
 import Curriculo from "./pages/curriculo/curriculo.jsx";
 import Perfil from "./pages/perfil/perfil.jsx";
-import PoliticaPrivacidade from './pages/PoliticaPrivacidade.jsx'
-import TermosDeUso from './pages/TermosDeUso.jsx'
+import PoliticaPrivacidade from './pages/politicas/PoliticaPrivacidade.jsx'
+import TermosDeUso from './pages/politicas/TermosDeUso.jsx'
 import Candidatos from './pages/candidatos/candidatos.jsx';
 import Admin from './pages/admin/adminPainel.jsx';
 import AdminLogin from './pages/admin/adminLogin.jsx';
