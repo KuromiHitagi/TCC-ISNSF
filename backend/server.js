@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware CORS manual
 app.use((req, res, next) => {
-  const allowedOrigin = "http://localhost:5173";
+  const allowedOrigin = "http://localhost:5174";
   res.header("Access-Control-Allow-Origin", allowedOrigin);
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, x-access-token");

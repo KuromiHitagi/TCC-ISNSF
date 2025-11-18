@@ -438,7 +438,7 @@ const Register = () => {
           value={emailInc}
           onChange={(e) => setEmailInc(e.target.value)}
           type="email"
-          pattern="^[a-zA-Z0-9._-]{2,}+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          pattern="^[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           placeholder="E-mail"
           required
         />
@@ -566,7 +566,7 @@ const Register = () => {
         <input
           value={emailUser}
           onChange={(e) => setEmailUser(e.target.value)}
-          pattern="^[a-zA-Z0-9._-]{2,}+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          pattern="^[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           maxLength={255}
           type="email"
           placeholder="E-mail"

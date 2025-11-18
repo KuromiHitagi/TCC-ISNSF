@@ -1,0 +1,3 @@
+- [x] Fix invalid regex pattern in email inputs in register.jsx (remove extra '+' after {2,})
+- [x] Verify CORS origin in server.js (ensure it's set to http://localhost:5174)
+- [x] Start the backend server to resolve connection issues
